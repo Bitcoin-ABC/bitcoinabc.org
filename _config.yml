@@ -23,7 +23,7 @@ description: Bitcoin ABC - Software for Bitcoin Cash nodes
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: "blog"
+  Blog: "blog/"
   Download:
     - Binaries: "https://download.bitcoinabc.org/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
@@ -179,6 +179,8 @@ prose:
   rooturl: '_posts'
   media: 'img'
   ignore:
+    - Rakefile
+    - nginx.conf
     - 404.html
     - LICENSE
     - feed.xml

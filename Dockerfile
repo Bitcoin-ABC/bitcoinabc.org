@@ -1,13 +1,4 @@
-FROM jekyll/jekyll
-
-WORKDIR /srv/jekyll
-COPY Gemfile .
-
-RUN gem install bundler
-RUN bundle install --clean --quiet
-
-EXPOSE 4000
-
-CMD [ "/usr/gem/bin/bundle", "exec", "/usr/local/bundle/bin/jekyll", "serve", "--port", "4000", "--host", "0.0.0.0" ]
-
-STOPSIGNAL 2
+FROM nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY _site/ /usr/share/nginx/html/
+RUN chmod 755 /usr/share/nginx/html/
