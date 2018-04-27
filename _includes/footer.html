@@ -1,69 +1,57 @@
 <footer>
   <div class="container beautiful-jekyll-footer">
-    
- 
-    
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <ul class="list-inline text-center footer-links">
           {%- for link in site.social-network-links -%}
-            {%- assign curkey = link[0] -%}
-            {%- assign element = site.data.SocialNetworks[curkey] -%}
-            <li>
+          {%- assign curkey = link[0] -%}
+          {%- assign element = site.data.SocialNetworks[curkey] -%}
+          <li>
             {%- if curkey == 'rss' -%}
-              <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="{{ element.name }}">
+            <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="{{ element.name }}">
             {%- elsif curkey == 'yelp' -%}
-              <a href="https://{{ site.social-network-links[curkey] }}.yelp.com" title="{{ element.name }}">
+            <a href="https://{{ site.social-network-links[curkey] }}.yelp.com" title="{{ element.name }}">
             {%- else -%}
-              <a href="{{element.baseURL}}{{ site.social-network-links[curkey] }}" title="{{ element.name }}">
+            <a href="{{element.baseURL}}{{ site.social-network-links[curkey] }}" title="{{ element.name }}">
             {%- endif -%}
-                <span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa {{ element.icon }} fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">{{ element.name }}</span>
-              </a>
-            </li>
+            <span class="fa-stack fa-lg" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa {{ element.icon }} fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">{{ element.name }}</span>
+            </a>
+          </li>
           {%- endfor -%}
         </ul>
-              
-                 <CENTER>
-    <P>
-
-You can help us by making a Bitcoin Cash donation.<BR><B>
-      bitcoincash:qqeht8vnwag20yv8dvtcrd4ujx09fwxwsqqqw93w88</B>
-
-<P>Support is welcome as long as you understand<BR>
-that any funds sent are considered a donation<BR>
-to be used at the sole discretion of Bitcoin ABC. 
-
-
-  </CENTER>
-  
-              
-      <p class="copyright text-muted">
-      {{ site.author.name }}
-      &nbsp;&bull;&nbsp;
-      {{ site.time | date: '%Y' }}
-
-      {% if site.url-pretty %}
-      &nbsp;&bull;&nbsp;
-      <a href="{{ site.url }}">{{ site.url-pretty }}</a>
-      {% endif %}
-
-      {% if site.matomo %}
-        {% if site.matomo.opt-out %}
-          &nbsp;&bull;&nbsp;
-          <a href="http://{{- site.matomo.uri -}}/index.php?module=CoreAdminHome&action=optOut" target="_blank" class="text_muted">Do-not-Track</a>
-        {% endif %}
-      {% endif%}
-      </p>
-          <!-- Please don't remove this, keep my open source work credited :)  
+        <div style="text-align:center; margin-top: 1em;">
+          You can help us by making a Bitcoin Cash donation.
+          <br>
+          <a href="https://blockdozer.com/address/qqeht8vnwag20yv8dvtcrd4ujx09fwxwsqqqw93w88" style="font-weight:bold;">bitcoincash:qqeht8vnwag20yv8dvtcrd4ujx09fwxwsqqqw93w88</a>
+        <div>
+        <div style="text-align:center; margin-top: 1em;">
+          Support is welcome as long as you understand
+          <br>
+          that any funds sent are considered a donation
+          <br>
+          to be used at the sole discretion of Bitcoin ABC.
+        </div>
+        <div style="text-align:center; margin-top: 1em;">
+          <p class="copyright text-muted">
+            Copyright 2017-2018 {{ site.author.name }}           
+            {% if site.matomo %}
+            {% if site.matomo.opt-out %}
+            &nbsp;&bull;&nbsp;
+            <a href="http://{{- site.matomo.uri -}}/index.php?module=CoreAdminHome&action=optOut" target="_blank" class="text_muted">Do-not-Track</a>
+            {% endif %}
+            {% endif%}
+          </p>
+        </div>
+<!-- Please don't remove this, keep my open source work credited :)  
     <p class="theme-by text-muted">
       Theme by
       <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
-    </p> -->
-      </div>
-    </div>
+    </p> 
+-->
   </div>
+</div>
 </footer>
