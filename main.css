@@ -1,0 +1,12 @@
+div#content {
+	text-align: center;
+}
+
+div#content > div {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+span#subtext {
+	font-size: .8em;
+}
