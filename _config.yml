@@ -72,7 +72,7 @@ author:
 social-network-links: 
   email: "info@bitcoinabc.org"
   facebook: bitcoinabcorg
-  github: bitcoin-ABC
+  github: bitcoin-abc
   twitter: bitcoin_abc
 #  reddit: yourname
 #  google-plus: +DeanAttali
@@ -97,7 +97,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "BitcoinABC.org"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "bitcoinabc.org"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
