@@ -10,3 +10,8 @@ div#content > div {
 span#subtext {
 	font-size: .8em;
 }
+
+#content .post-preview .post-read-more {
+  font-weight: normal;
+  color: #0066CC;
+}

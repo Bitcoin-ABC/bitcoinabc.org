@@ -125,7 +125,10 @@ url-pretty: "bitcoinabc.org"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
-excerpt_length: 50
+excerpt_length: 30
+
+# Number of announcements to appear on the front page
+front_page_posts: 2
 
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
