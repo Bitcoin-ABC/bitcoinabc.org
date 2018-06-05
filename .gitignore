@@ -2,6 +2,7 @@
 _site
 .sass-cache
 .vagrant
+_config.yml
 
 # general
 .DS_Store
