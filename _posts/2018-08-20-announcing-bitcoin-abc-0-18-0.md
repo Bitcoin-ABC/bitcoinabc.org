@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Announcing Bitcoin ABC 0.18.0
-subtitle: Be sure to upgrade before the November upgrade
+subtitle: Be sure to upgrade before November
 ---
 
 We are pleased to announce that Bitcoin ABC 0.18.0 has been released. You can download it at: 
@@ -22,9 +22,9 @@ this collaborative process. It implements network upgrade features developed wit
 from many different groups. It is an important step in the process of careful and incremental technical
 progress to improve the utility of Bitcoin Cash and enable massive on-chain scaling.
 
-The specific features included in the November 15th upgrade, and included in Bitcoin ABC 0.18.0, include:
+The specific features included in the November 15th upgrade, and provided by Bitcoin ABC 0.18.0, are:
  * A new opcode called OP_CHECKDATASIG that improves the BCH scripting language to permit the validation
- of messages from outside the blockchain. This will enable uses such as the use of oracles, and cross-chain atomic contracts.
+ of messages from outside the blockchain. This will enable uses such as the use of oracles and cross-chain atomic contracts.
  * The introduction of canonical transaction ordering. This is a technical building block that lays the
  foundation for massive scaling improvements in the future.
  * Several minor technical fixes and improvements.
