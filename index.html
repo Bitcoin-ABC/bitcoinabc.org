@@ -23,7 +23,8 @@ use-site-title: true
     <a style="margin-right: 1em;" href="https://github.com/Bitcoin-ABC/bitcoin-abc">Source Code</a>
     <a style="margin-left: 1em;" href="https://download.bitcoinabc.org/">Binaries</a>
   </div>
-  {% assign first_posts = site.posts | slice: 0, site.front_page_posts %}
+  {% assign english_posts = site.posts | where: "lang", "en" %}
+  {% assign first_posts = english_posts | slice: 0, site.front_page_posts %}
   <div class="posts-list">
     {% for post in first_posts %}
     <article class="post-preview">

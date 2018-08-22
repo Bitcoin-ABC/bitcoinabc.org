@@ -2,6 +2,8 @@
 layout: post
 title: November Upgrade Timeline
 subtitle: Planning ahead for the upcoming network upgrade
+multiLangId: 2018-07-05-nov-hardfork-timeline
+lang: en
 ---
 
 As the November 15th hardfork upgrade approaches and proposals continue to be discussed, the Bitcoin ABC team would like to set a timeline to ensure a smooth upgrade in November. Using our learnings from the previous fork in May, we want to make sure people are aware of these dates in advance, and more importantly, that the community help us encourage everyone to stick to them.  

@@ -2,6 +2,8 @@
 layout: post
 title: Bitcoin-ABC incident report (26APR2018)
 subtitle: 
+multiLangId: 2018-05-07-incident-report
+lang: en
 ---
 
 This document contains information regarding the response to a critical vulnerability applicable to miners of Bitcoin Cash using Bitcoin-ABC 0.17.0. Appropriate action has been taken to mitigate the impact of this vulnerability. This document is provided for information purposes only.
