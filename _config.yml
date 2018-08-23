@@ -30,6 +30,16 @@ navbar-links:
     - Ubuntu Packages: "https://launchpad.net/~bitcoin-abc/+archive/ubuntu/ppa"
   Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
 
+supported-languages:
+  en: "English"
+  es: "Español"
+  fr: "Français"
+  jp: "日本語"
+  nl: "Nederlands"
+  pt: "Português"
+  zh_simple: "简体中文"
+  zh_traditional: "繁体中文"
+
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
 #avatar: "/img/avatar-icon.png"

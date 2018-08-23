@@ -19,3 +19,10 @@ Then run the build locally:
 ```
 bundle exec jekyll serve
 ```
+
+# Providing Translations
+
+1. Copy the file in `_posts/` that you wish to translate.
+2. Set `lang` to the desired language code.
+3. Verify that `multiLangId` is the same as the base filename **without** the language code.
+4. Translate the file.

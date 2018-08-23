@@ -2,6 +2,8 @@
 layout: post
 title: Announcing Bitcoin ABC 0.18.0
 subtitle: Be sure to upgrade before November
+multiLangId: 2018-08-20-announcing-bitcoin-abc-0-18-0
+lang: en
 ---
 
 We are pleased to announce that Bitcoin ABC 0.18.0 has been released. You can download it at: 
