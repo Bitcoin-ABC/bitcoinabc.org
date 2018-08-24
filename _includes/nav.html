@@ -22,7 +22,6 @@
         <li class="navlinks-container">
           <a class="navlinks-parent" href="javascript:void(0)">{{ currentLanguage }}</a>
           <div class="navlinks-children">
-            {% assign multiLangPosts = site.posts | where:"multiLangId", page.multiLangId %}
             {% for post in multiLangPosts %}
               <a href="{{ post.url }}">{{ site.supported-languages[post.lang] }}</a>
             {% endfor %}
