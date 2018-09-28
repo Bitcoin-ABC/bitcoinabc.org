@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reporte de incidente de Bitcoin ABC ( 26 de Abril de 2018)
+title: Reporte de incidente de Bitcoin ABC (26 de Abril de 2018)
 subtitle:
 multiLangId: 2018-05-07-incident-report
 lang: es
