@@ -41,6 +41,6 @@ Bitcoin ABC will be taking various actions to improve and streamline the respons
 
 ## Acknowledgement
 
-Bitcoin ABC would like to thank the anonymous person who disclosed the vulnerability responsibly (this person has now been self-identified as Bitcoin Unlimited developer, Awemany, through his [Medium post](https://medium.com/@awemany/600-microseconds-b70f87b0b2a6).
+Bitcoin ABC would like to thank the anonymous person who disclosed the vulnerability responsibly. This person has now been self-identified as Bitcoin Unlimited developer, Awemany, through his [Medium post](https://medium.com/@awemany/600-microseconds-b70f87b0b2a6).
 
 We would also like to thank the miners and other node operators who took immediate action in upgrading their Bitcoin ABC software.  In doing so, they have provided security and protection to the Bitcoin Cash network and its users.
