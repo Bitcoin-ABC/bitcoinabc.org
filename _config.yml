@@ -187,6 +187,9 @@ exclude:
   - LICENSE
   - README.md
   - Vagrantfile
+  - nginx.conf
+  - Makefile
+  - Rakefile
 
 # prose.io config
 prose:
