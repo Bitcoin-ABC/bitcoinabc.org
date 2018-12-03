@@ -23,6 +23,7 @@ description: Bitcoin ABC - Software for Bitcoin Cash nodes
 
 # List of links in the navigation bar
 navbar-links:
+  Latest Roadmap: "latest-roadmap/"
   Announcements: "announcements/"
   Download:
     - Binaries: "https://download.bitcoinabc.org/"
