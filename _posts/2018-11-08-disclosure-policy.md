@@ -65,13 +65,6 @@ Bitcoin ABC Lead Developer
 629D7E5DDDA0512BD5860F2C5D7922BBD649C4A7
 </div>
 
-#### Shammah Chancellor
-<div>
-Bitcoin ABC Developer
-<div class="email-obfuscation"><span>disclo</span><span>###</span><span>sure</span><span>###</span><span>@</span><span>###</span><span>shablag</span><span>###</span><span>.com</span><span>###</span></div>
-7A55A44F3A3239827C8A594E7D3958C44427674A
-</div>
-
 #### Jason B. Cox
 <div>
 Bitcoin ABC Developer
