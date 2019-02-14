@@ -54,11 +54,20 @@ func getVersion() string {
 	return v
 }
 
+func getSeparator(str string) string {
+	if strings.Contains(str, "\r\n") {
+		return "\r\n"
+	} else {
+		return "\n"
+	}
+}
+
 func main() {
 	version := getVersion()
 
 	first := run("help")
-	split := strings.Split(first, "\n")
+	sep := getSeparator(first)
+	split := strings.Split(first, sep)
 
 	groups := make([]Group, 0)
 	commands := make([]Command, 0)
