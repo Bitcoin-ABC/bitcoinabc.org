@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Bitcoin-ABC incident report (17SEPT2018)
+title: Bitcoin ABC Incident Report (17SEPT2018)
 multiLangId: 2018-09-26-incident-report
 lang: en
 ---
-
-Bitcoin-ABC incident report (17SEPT2018)
 
 This document contains information regarding our response to a critical vulnerability affecting all versions of Bitcoin ABC, Bitcoin Core versions 0.14.3 to 0.16.2, and various versions of Bitcoin Core-derived code bases such as Litecoin, Dash, and others. Appropriate action has been taken to mitigate the impact of this vulnerability. This document is provided for information purposes only.
 
