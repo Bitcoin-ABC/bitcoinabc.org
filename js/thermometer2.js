@@ -1,24 +1,24 @@
 
 function updateCard(data) {
-    for ( i=0; i<data.length; i++) {
-        balance += data[i].totalReceived;
-        balance += data[i].unconfirmedBalance;
-        transactions += data[i].transactions.length
-      }
+  for (i=0; i<data.length; i++) {
+    balance += data[i].totalReceived;
+    balance += data[i].unconfirmedBalance;
+    transactions += data[i].transactions.length
+  }
 
-      var countDownDate = new Date("Aug 1, 2019 15:37:25").getTime();
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      $("#days-to-go").html( days );
+  var countDownDate = new Date("Aug 1, 2019 15:37:25").getTime();
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  $("#days-to-go").html( days );
 
 
-      $("#balance").html( balance.toFixed(2) + " BCH" );
-      $("#transactions").html( transactions );
+  $("#balance").html( balance.toFixed(2) + " BCH" );
+  $("#transactions").html( transactions );
 
-      var balance_percentage = ( balance / goal) * 100;
-      $("#goal-bar").css("width", balance_percentage + "%");
-      $(".goal-percentage").html(balance_percentage.toFixed() + "% of goal reached");
+  var balance_percentage = ( balance / goal) * 100;
+  $("#goal-bar").css("width", balance_percentage + "%");
+  $(".goal-percentage").html(balance_percentage.toFixed() + "% of goal reached");
 }
 
 let goal = 800;
@@ -70,53 +70,46 @@ $.ajax({
 let txWatcher = new WebSocket("wss://ws.blockchain.info/bch/inv")
 
 txWatcher.onopen = event => {
-    txWatcher.send(JSON.stringify({ "op":"addr_sub", "addr": general_legacy }))
-    console.log(`Subscribed to ${general_legacy}`)
-  }
+  txWatcher.send(JSON.stringify({ "op":"addr_sub", "addr": general_legacy }))
+  console.log(`Subscribed to ${general_legacy}`)
+}
 
-  function onWatchedTx() {
-    // Code below will be entered every time a BCH tx is received by a subscribed address
-    txWatcher.onmessage = event => {
-      let tx = JSON.parse(event.data)
-      // Parse the received transaction
-      console.log(`New transaction!`)
-      console.log(tx)
-      // Get the sending address (mb you want to have a popup saying "Received x from y!")
-      console.log(`Sending Address:`)
-      let sendingAddr = tx.x.inputs[0].prev_out.addr
-      console.log(sendingAddr)
-      // Parse the transaction to figure out how much was sent and to what address
-      // First, initialize variables for this tx
+function onWatchedTx() {
+  // Code below will be entered every time a BCH tx is received by a subscribed address
+  txWatcher.onmessage = event => {
+    let tx = JSON.parse(event.data)
+    // Parse the received transaction
+    console.log(`New transaction!`)
+    console.log(tx)
+    // Get the sending address (mb you want to have a popup saying "Received x from y!")
+    console.log(`Sending Address:`)
+    let sendingAddr = tx.x.inputs[0].prev_out.addr
+    console.log(sendingAddr)
+    // Parse the transaction to figure out how much was sent and to what address
+    // First, initialize variables for this tx
 
-      let amountGeneral = 0
-      for (let i=0; i<tx.x.out.length; i++) {
-        switch(tx.x.out[i].addr) {
-          case general_legacy:
-            amountGeneral += tx.x.out[i].value
-            break
-          default:
-            // Do nothing
-            // This case happens when the output didn't go to one of the watched addresses
-            // Means it's probably a change output, back to sender
-            //console.log(`Output not received by watched address; probably change from sender`)
-        }
-      }
-
-      if (amountGeneral !== 0) {
-        balance += amountGeneral/1e8;
-        transactions += 1;
-        $("#balance").html( balance.toFixed(2) + " BCH" );
-        $("#transactions").html( transactions );
-        $("#thank-you-card-general").fadeIn().html("<div class='inner-thank-you'><p>New Donation Received!</p><div>" + amountGeneral/1e8.toFixed(2) + " BCH was just donated from " + "<span>" + sendingAddr + "</span>" + " <br>Thank you!</div></div>").delay(5000).fadeOut();
+    let amountGeneral = 0
+    for (let i=0; i<tx.x.out.length; i++) {
+      switch(tx.x.out[i].addr) {
+        case general_legacy:
+          amountGeneral += tx.x.out[i].value
+          break
+        default:
+          // Do nothing
+          // This case happens when the output didn't go to one of the watched addresses
+          // Means it's probably a change output, back to sender
+          //console.log(`Output not received by watched address; probably change from sender`)
       }
     }
+
+    if (amountGeneral !== 0) {
+      balance += amountGeneral/1e8;
+      transactions += 1;
+      $("#balance").html( balance.toFixed(2) + " BCH" );
+      $("#transactions").html( transactions );
+      $("#thank-you-card-general").fadeIn().html("<div class='inner-thank-you'><p>New Donation Received!</p><div>" + amountGeneral/1e8.toFixed(2) + " BCH was just donated from " + "<span>" + sendingAddr + "</span>" + " <br>Thank you!</div></div>").delay(5000).fadeOut();
+    }
   }
-  // Call this function onLoad
-  onWatchedTx()
-
-
-
-
-
-
-
+}
+// Call this function onLoad
+onWatchedTx()
