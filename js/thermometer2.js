@@ -16,20 +16,18 @@ function updateCard(data) {
   $("#balance").html( balance.toFixed(2) + " BCH" );
   $("#transactions").html( transactions );
 
-  var balance_percentage = ( balance / goal) * 100;
+  balance_percentage = ( balance / goal) * 100;
   $("#goal-bar").css("width", balance_percentage + "%");
-  $(".goal-percentage").html(balance_percentage.toFixed() + "% of goal reached");
+  $(".goal-percentage").html(balance_percentage.toFixed(2) + "% of goal reached");
 }
 
 let goal = 800;
 let balance = 0;
 let transactions = 0;
+let balance_percentage = 0;
 
 let ABC_address = "bitcoincash:qp0kctzt552fhpypt7e6v5dtk3u4qjp3pst59ct28x";
 let ABC_legacy = "19hYnDdS1hoMSxNbzLSWuso1jLSnntE3J7";
-
-let BU_address = "bitcoincash:qpe28qt72runzsru4pp9cwmf7veppx9rpva4eqv9rf";
-let BU_legacy = "1BT9uTHRJ1uxcoa9GEQctmagApwpAa1LXy";
 
 let HD_address = "bitcoincash:qrr4f95f3n682ue6wxdn03ncptyjc53k7uyxwlt2tt";
 let HD_legacy = "1KAxoTLSc8KYMucetJRBYWdK9n7yszMC3J";
@@ -43,7 +41,6 @@ let general_legacy = "12rVQxQ31ZtpRCRKM924W7fs35GBdQm65J";
 let restCall = {
   "addresses": [
     ABC_address,
-    BU_address,
     HD_address,
     BC_address,
     general_address
@@ -105,6 +102,9 @@ function onWatchedTx() {
     if (amountGeneral !== 0) {
       balance += amountGeneral/1e8;
       transactions += 1;
+      balance_percentage = ( balance / goal) * 100;
+      $("#goal-bar").css("width", balance_percentage + "%");
+      $(".goal-percentage").html(balance_percentage.toFixed(2) + "% of goal reached");
       $("#balance").html( balance.toFixed(2) + " BCH" );
       $("#transactions").html( transactions );
       $("#thank-you-card-general").fadeIn().html("<div class='inner-thank-you'><p>New Donation Received!</p><div>" + amountGeneral/1e8.toFixed(2) + " BCH was just donated from " + "<span>" + sendingAddr + "</span>" + " <br>Thank you!</div></div>").delay(5000).fadeOut();
