@@ -21,7 +21,7 @@ function updateCard(data) {
   $(".goal-percentage").html(balance_percentage.toFixed(2) + "% of goal reached");
 }
 
-let goal = 800;
+let goal = 1600;
 let balance = 0;
 let transactions = 0;
 let balance_percentage = 0;
