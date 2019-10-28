@@ -1,0 +1,9 @@
+version: '2.4'
+services:
+  bitcoin-abc-org:
+    build: .
+    image: bitcoin-abc-org:latest
+    ports:
+      - '8080:80'
+    volumes:
+      - /usr/share/nginx/html/
