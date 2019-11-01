@@ -14,7 +14,7 @@ In just over two weeks, on Nov 15th 2019, the Bitcoin Cash network will undergo 
 
 All node operators will need to update their node software to a recent version. For Bitcoin ABC users, this means any version 0.20.0 or above, which can be downloaded [here](https://download.bitcoinabc.org/).
 
-Anyone running a service such as a block explorer, and exchange, or other services provided by a full node needs to upgrade.
+Anyone running a service such as a block explorer, an exchange, or any other service provided by a full node, needs to upgrade.
 
 Regular users do not have to do anything. Wallets are not affected by this upgrade, and should continue to function normally.
 
