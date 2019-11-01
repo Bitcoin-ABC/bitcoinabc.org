@@ -121,15 +121,6 @@ url-pretty: "bitcoinabc.org"  # eg. "deanattali.com/beautiful-jekyll"
 # Google Tag Manager ID
 #gtm: ""
 
-# Matomo (aka Piwik) Web statistics
-# Uncomment the following section to enable Matomo. The opt-out parameter controls
-# whether or not you want to allow users to opt out of tracking.
-
-#matomo:
-#  site_id: "9"
-#  uri: "demo.wiki.pro"
-#  opt-out: true
-
 # --- Misc --- #
 # Facebook App ID
 # fb_app_id: ""
