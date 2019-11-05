@@ -16,17 +16,19 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-      {% assign multiLangPosts = site.posts | where:"multiLangId", page.multiLangId %}
-      {% if multiLangPosts.size > 1 %}
-        {% assign currentLanguage = site.supported-languages[page.lang] %}
-        <li class="navlinks-container">
-          <a class="navlinks-parent" href="javascript:void(0)">{{ currentLanguage }}</a>
-          <div class="navlinks-children">
-            {% for post in multiLangPosts %}
-              <a href="{{ post.url }}">{{ site.supported-languages[post.lang] }}</a>
-            {% endfor %}
-          </div>
-        </li>
+      {% if page.multiLangId %}
+        {% assign multiLangPosts = site.posts | where:"multiLangId", page.multiLangId %}
+        {% if multiLangPosts.size > 1 %}
+          {% assign currentLanguage = site.supported-languages[page.lang] %}
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">{{ currentLanguage }}</a>
+            <div class="navlinks-children">
+              {% for post in multiLangPosts %}
+                <a href="{{ post.url }}">{{ site.supported-languages[post.lang] }}</a>
+              {% endfor %}
+            </div>
+          </li>
+        {% endif %}
       {% endif %}
       {% for link in site.navbar-links %}
         {% if link[1].first %}
