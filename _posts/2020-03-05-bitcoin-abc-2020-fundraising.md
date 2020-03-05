@@ -35,5 +35,7 @@ Join us in building censorship-resistant P2P electronic cash for the world and r
 To schedule your presentation of the Bitcoin ABC 2020 Business Plan, please contact George Donnelly, Bitcoin ABC’s business development manager. Please note that priority for presentations is currently assigned to miners, exchanges and other Bitcoin Cash businesses.
 
 george@bitcoinabc.org
+
 [https://t.me/georgedonnelly](https://t.me/georgedonnelly)
+
 +573218423668 (cell, Signal, Whatsapp)
