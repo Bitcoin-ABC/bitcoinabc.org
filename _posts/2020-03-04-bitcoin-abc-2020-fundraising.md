@@ -2,7 +2,7 @@
 layout: post
 title: Bitcoin ABC Kicks Off 2020 Business Plan Fundraising
 subtitle: Seeks funding to make progress on the Bitcoin Cash roadmap
-multiLangId: 2020-03-05-bitcoin-abc-2020-fundraising
+multiLangId: 2020-03-04-bitcoin-abc-2020-fundraising
 lang: en
 ---
 
