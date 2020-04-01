@@ -24,6 +24,8 @@ Bitcoin ABC is the Bitcoin Cash full node software development team led by Amaur
 
 Bitcoin ABC will also participate in the first Flipstarter.cash full node fundraiser alongside other Bitcoin Cash full node software projects. Flipstarter is a new and innovative assurance-contract-based funding mechanism on the Bitcoin Cash blockchain.
 
+“With the financial crisis looming, the importance of digital cash will become more critical than ever before. Bitcoin Cash has the best chances to make this a reality, and the window of opportunity is now. However, Bitcoin Cash’s infrastructure has been underfunded, which has led to brain drain and long standing issues left unaddressed. If the situation doesn’t change, then Bitcoin Cash might see a once-in-a-decade opportunity pass by without seizing it,” said Bitcoin ABC Lead Developer Amaury Séchet.
+
 For full information on the Bitcoin ABC 2020 Bitcoin Cash Protocol Development Fundraiser, please visit [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
 ## Press Contact
