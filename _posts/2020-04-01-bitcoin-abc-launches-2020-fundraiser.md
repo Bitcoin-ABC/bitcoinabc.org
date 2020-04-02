@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Press Release: Bitcoin ABC Launches 2020 Bitcoin Cash Protocol Development Fundraiser
+title: Press Release - Bitcoin ABC Launches 2020 Bitcoin Cash Protocol Development Fundraiser
 subtitle: The full node development team is raising USD$3.3 million to scale Bitcoin Cash over the next year
 multiLangId: 2020-04-01-bitcoin-abc-launches-2020-fundraiser
 lang: en
