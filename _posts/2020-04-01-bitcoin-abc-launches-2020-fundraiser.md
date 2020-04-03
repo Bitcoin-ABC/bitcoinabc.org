@@ -6,6 +6,8 @@ multiLangId: 2020-04-01-bitcoin-abc-launches-2020-fundraiser
 lang: en
 ---
 
+![Bitcoin ABC 2020 Funding Campaign](/img/BitcoinABC-2020-Funding.png)
+
 Bitcoin ABC, the preeminent Bitcoin Cash $BCH protocol development and devops team, is launching its 2020 fundraiser at [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
 The team is focused on scaling Bitcoin Cash to serve billions of daily users as "censorship-resistant peer-to-peer electronic cash for the world."
