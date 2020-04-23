@@ -776,3 +776,14 @@ td.gutter {
   }
 }
 
+.sponsor-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sponsor {
+  margin: 10px 30px;
+}
+
