@@ -18,9 +18,10 @@ navbar-links:
   Latest Roadmap: "https://www.bitcoincash.org/roadmap.html"
   Announcements: "announcements/"
   Download:
-    - Binaries: "https://download.bitcoinabc.org/"
+    - Binaries: "https://download.bitcoinabc.org/latest/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
     - Ubuntu Packages: "https://launchpad.net/~bitcoin-abc/+archive/ubuntu/ppa"
+    - Archived Binaries: "https://download.bitcoinabc.org/"
   Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
 
 supported-languages:
