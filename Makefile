@@ -5,19 +5,8 @@
 
 PROJECT ?= 
 PORT ?= 8080
-APP_ENV=dev
 
 default: container
-
-.PHONY: _config.yml
-_config.yml:
-	cp _config-$(APP_ENV).yml _config.yml
-
-prod: APP_ENV=prod
-prod: _config.yml
-
-dev: APP_ENV=dev
-dev: _config.yml
 
 .PHONY: container
 container:

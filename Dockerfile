@@ -23,7 +23,6 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN bundle install
 COPY . .
-RUN mv _config-prod.yml _config.yml
 RUN bundle exec jekyll build
 
 # Hosting Layer
