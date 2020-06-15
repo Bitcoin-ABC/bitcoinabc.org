@@ -17,4 +17,4 @@ run: container
 	docker run -it -p $(PORT):80 $(PROJECT)bitcoinabcorg:latest
 
 serve: _config.yml
-	bundler exec jekyll serve &
+	bundler exec jekyll serve
