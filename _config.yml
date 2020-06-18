@@ -22,7 +22,9 @@ navbar-links:
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
     - Ubuntu Packages: "https://launchpad.net/~bitcoin-abc/+archive/ubuntu/ppa"
     - Archived Binaries: "https://download.bitcoinabc.org/"
-  Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
+  Developers:
+    - Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
+    - Code Coverage: "https://build.bitcoinabc.org/viewLog.html?buildId=lastSuccessful&buildTypeId=BitcoinABC_Master_BitcoinAbcMasterCoverage&tab=report__Root_Code_Coverage&guest=1"
 
 supported-languages:
   en: "English"
