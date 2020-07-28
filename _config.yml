@@ -26,6 +26,7 @@ navbar-links:
     - Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
     - Code Coverage: "https://build.bitcoinabc.org/viewLog.html?buildId=lastSuccessful&buildTypeId=BitcoinABC_Master_BitcoinAbcMasterCoverage&tab=report__Root_Code_Coverage&guest=1"
     - Code Documentation: "doc/dev/"
+    - RPC Documentation: "doc/"
   Blog: "https://blog.bitcoinabc.org/"
 
 supported-languages:
