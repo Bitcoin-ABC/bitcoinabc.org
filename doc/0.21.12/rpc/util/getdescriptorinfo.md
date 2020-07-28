@@ -1,0 +1,28 @@
+---
+name: getdescriptorinfo
+version: 0.21.12
+group: util
+permalink: doc/0.21.12/rpc/util/getdescriptorinfo/
+---
+
+getdescriptorinfo "descriptor"
+
+Analyses a descriptor.
+
+Arguments:
+1. descriptor    (string, required) The descriptor.
+
+Result:
+{
+  "descriptor" : "desc",         (string) The descriptor in canonical form, without private keys
+  "checksum" : "chksum",         (string) The checksum for the input descriptor
+  "isrange" : true|false,        (boolean) Whether the descriptor is ranged
+  "issolvable" : true|false,     (boolean) Whether the descriptor is solvable
+  "hasprivatekeys" : true|false, (boolean) Whether the input descriptor contained at least one private key
+}
+
+Examples:
+Analyse a descriptor
+> bitcoin-cli getdescriptorinfo "pkh([d34db33f/84h/0h/0h]0279be667ef9dcbbac55a06295Ce870b07029Bfcdb2dce28d959f2815b16f81798)"
+
+
