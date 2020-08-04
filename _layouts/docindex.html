@@ -1,0 +1,17 @@
+---
+layout: page
+title: RPC Documentation by Version
+permalink: /doc
+---
+<link rel="stylesheet" href="/overrides.css">
+<div id="content" style="font-size: 26px">
+  <ul>
+    {% for version in page.versions %}
+    <li><a href="/doc/{{ version }}">{{ version }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- TODO: Remove this line once the footer is correctly floated
+to the bottom of the page -->
+<div style="margin-bottom: 250px"></div>
