@@ -1,0 +1,29 @@
+---
+layout: base
+---
+<div class="intro-header no-img">
+  <div class="container">
+    <h1 class="page-heading">v{{ page.version }} RPC Commands</h1>
+  </div>
+</div>
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <ul>
+        {% assign groups = site.doc | where:"version", page.version | where_exp:"group", "group" | group_by:"group" | sort:"name" %}
+        {% for group in groups %}
+          {% if group.name != "index" %}
+          <li>{{ group.name }}
+            <ul>
+              {% assign commands = site.doc | where:"version", page.version | where:"group", group.name | sort:"name" %}
+              {% for command in commands %}
+                <li><a href="{{ command.url }}">{{ command.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
