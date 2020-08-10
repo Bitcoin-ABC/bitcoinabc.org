@@ -30,14 +30,6 @@ A Bitcoin ABC também participará do primeiro fundraiser para full nodes do Fli
 
 Para informações completas sobre o Fundraiser de 2020 para desenvolvimento do protocolo Bitcoin Cash, por favor acesse [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
-## Contato Imprensa
-
-<p>George Donnelly <br />
-Gerente de Desenvolvimento de Negócios @ Bitcoin ABC<br />
-<a href="mailto:george@bitcoinabc.org">george@bitcoinabc.org</a><br />
-<a href="https://t.me/georgedonnelly">https://t.me/georgedonnelly</a><br />
-+573218423668 (celular, Signal, Whatsapp)</p>
-
 Um kit para imprensa está disponível em [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
 ## Sobre Bitcoin ABC

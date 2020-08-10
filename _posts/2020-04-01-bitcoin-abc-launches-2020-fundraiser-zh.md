@@ -28,14 +28,6 @@ lang: zh_simple
 
 有关比特币ABC 2020年的比特币现金协议开发募资活动的完整信息，请访问[https://fund.bitcoinabc.org](https://fund.bitcoinabc.org)
 
-## 媒体联络
-
-<p>乔治·唐纳利 （George Donnelly）<br />
-@比特币ABC 业务开发经理<br />
-<a href="mailto:george@bitcoinabc.org">george@bitcoinabc.org</a><br />
-<a href="https://t.me/georgedonnelly">https://t.me/georgedonnelly</a><br />
-+573218423668 (手机, Signal, Whatsapp)</p>
-
 新闻包链接： [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org)
 
 ## 比特币ABC简介

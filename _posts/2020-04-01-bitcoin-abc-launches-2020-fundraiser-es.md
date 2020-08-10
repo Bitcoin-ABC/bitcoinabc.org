@@ -30,14 +30,6 @@ Bitcoin ABC también participará en la primera recaudación de fondos de nodo c
 
 Para obtener información completa sobre la Recaudación de Fondos para el Desarrollo del Protocolo de Bitcoin Cash de Bitcoin ABC 2020, favor visitar a [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
-## Contacto de Prensa
-
-<p>George Donnelly<br />
-Gerente de Desarrollo de Negocios @ Bitcoin ABC<br />
-<a href="mailto:george@bitcoinabc.org">george@bitcoinabc.org</a><br />
-<a href="https://t.me/georgedonnelly">https://t.me/georgedonnelly</a><br />
-+573218423668 (celular, Signal, Whatsapp)</p>
-
 Un kit de prensa está disponible en [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
 ## Sobre Bitcoin ABC

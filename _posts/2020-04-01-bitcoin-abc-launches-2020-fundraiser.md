@@ -30,14 +30,6 @@ Bitcoin ABC will also participate in the first Flipstarter.cash full node fundra
 
 For full information on the Bitcoin ABC 2020 Bitcoin Cash Protocol Development Fundraiser, please visit [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
-## Press Contact
-
-<p>George Donnelly <br />
-Business Development Manager @ Bitcoin ABC<br />
-<a href="mailto:george@bitcoinabc.org">george@bitcoinabc.org</a><br />
-<a href="https://t.me/georgedonnelly">https://t.me/georgedonnelly</a><br />
-+573218423668 (cell, Signal, Whatsapp)</p>
-
 A press kit, including translations of this press release, is available at [https://fund.bitcoinabc.org](https://fund.bitcoinabc.org).
 
 ## About Bitcoin ABC
