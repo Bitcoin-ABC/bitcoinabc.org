@@ -1,0 +1,54 @@
+---
+name: importmulti
+version: 0.21.13
+group: wallet
+permalink: doc/0.21.13/rpc/wallet/importmulti/
+---
+
+importmulti "requests" ( "options" )
+
+Import addresses/scripts (with private or public keys, redeem script (P2SH)), rescanning all addresses in one-shot-only (rescan can be disabled via options). Requires a new wallet backup.
+
+Arguments:
+1. requests                                                         (json array, required) Data to be imported
+     [
+       {                                                            (json object)
+         "desc": "str",                                             (string) Descriptor to import. If using descriptor, do not also provide address/scriptPubKey, scripts, or pubkeys
+         "scriptPubKey": "<script>" | { "address":"<address>" },    (string / json, required) Type of scriptPubKey (string for script, json for address). Should not be provided if using a descriptor
+         "timestamp": timestamp | "now",                            (integer / string, required) Creation time of the key in seconds since epoch (Jan 1 1970 GMT),
+                                                                    or the string "now" to substitute the current synced blockchain time. The timestamp of the oldest
+                                                                    key will determine how far back blockchain rescans need to begin for missing wallet transactions.
+                                                                    "now" can be specified to bypass scanning, for keys which are known to never have been used, and
+                                                                    0 can be specified to scan the entire blockchain. Blocks up to 2 hours before the earliest key
+                                                                    creation time of all keys being imported by the importmulti call will be scanned.
+         "redeemscript": "str",                                     (string) Allowed only if the scriptPubKey is a P2SH address/scriptPubKey
+         "pubkeys": [                                               (json array, optional, default=empty array) Array of strings giving pubkeys to import. They must occur in P2PKH scripts. They are not required when the private key is also provided (see the "keys" argument).
+           "pubKey",                                                (string)
+           ...
+         ],
+         "keys": [                                                  (json array, optional, default=empty array) Array of strings giving private keys to import. The corresponding public keys must occur in the output or redeemscript.
+           "key",                                                   (string)
+           ...
+         ],
+         "range": n or [n,n],                                       (numeric or array) If a ranged descriptor is used, this specifies the end or the range (in the form [begin,end]) to import
+         "internal": bool,                                          (boolean, optional, default=false) Stating whether matching outputs should be treated as not incoming payments (also known as change)
+         "watchonly": bool,                                         (boolean, optional, default=false) Stating whether matching outputs should be considered watched even when not all private keys are provided.
+         "label": "str",                                            (string, optional, default='') Label to assign to the address, only allowed with internal=false
+       },
+       ...
+     ]
+2. options                                                          (json object, optional)
+     {
+       "rescan": bool,                                              (boolean, optional, default=true) Stating if should rescan the blockchain after all imports
+     }
+
+Result:
+
+Response is an array with the same size as the input that has the execution result :
+  [{"success": true}, {"success": true, "warnings": ["Ignoring irrelevant private key"]}, {"success": false, "error": {"code": -1, "message": "Internal Server Error"}}, ...]
+
+Examples:
+> bitcoin-cli importmulti '[{ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }, { "scriptPubKey": { "address": "<my 2nd address>" }, "label": "example 2", "timestamp": 1455191480 }]'
+> bitcoin-cli importmulti '[{ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }]' '{ "rescan": false}'
+
+
