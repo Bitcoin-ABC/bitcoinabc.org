@@ -15,9 +15,9 @@ Esto es lo que está obteniendo un nuevo formato. Técnicamente, es una nueva �
 **Cómo son las nuevas direcciones?**
 
 Sigue un ejemplo:
-~~~
- bitcoincash:qqeht8vnwag20yv8dvtcrd4ujx09fwxwsqqqw93w88
-~~~
+```
+bitcoincash:qqeht8vnwag20yv8dvtcrd4ujx09fwxwsqqqw93w88
+```
 
 Tené en cuenta el prefijo "bitcoincash:", que técnicamente es siempre parte de la dirección, aunque el mismo puede ser opcional o faltar por completo, dependiendo de la cartera o de la implementación.
 
