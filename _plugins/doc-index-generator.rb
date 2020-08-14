@@ -30,9 +30,7 @@ module Jekyll
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'docindex.html')
-      p versions
       self.data['versions'] = versions
-      p self.data
     end
   end
 
