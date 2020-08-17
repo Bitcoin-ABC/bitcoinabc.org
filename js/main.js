@@ -138,3 +138,18 @@ var main = {
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', main.init);
+
+// sub navigation toggle
+$(function() {
+  $(".subnav header").each(function(){
+    var header = $(this);
+    var drawer = header.find(".subnav-drawer");
+    header.find(".subnav-header").click(function(){
+      drawer.toggleClass("js-hidden");
+    });
+  });
+  $(".subnav-drawer.js-hide-on-start").each(function(){
+    var drawer = $(this);
+    drawer.toggleClass("js-hidden");
+  });
+});

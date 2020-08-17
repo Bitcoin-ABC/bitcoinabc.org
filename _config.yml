@@ -148,19 +148,22 @@ kramdown:
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
+      layout: post
       comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
+  - scope:
+      path: ""
+      type: doc
+    values:
+      layout: doc
+  - scope:
       path: "" # all files
     values:
-      layout: "page"
+      layout: page
       show-avatar: true
 
 # Use tags index page and make tags on each post clickable
