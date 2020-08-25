@@ -33,6 +33,23 @@ use-site-title: true
   <a class="twitter-timeline" data-height="450" href="https://twitter.com/Bitcoin_ABC?ref_src=twsrc%5Etfw">Tweets by Bitcoin_ABC</a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+  <!-- Blog feed -->
+  <div class="abc-blog-feed posts-list">
+    {% if site.data.blog-feed %}
+    {% assign blogFeedItems = site.data.blog-feed.items | reverse %}
+    {% for post in blogFeedItems limit:3 %}
+      <article class="post-preview">
+        <a href="{{ post.url }}"><h2 class="post-title">{{ post.title }}</h2></a>
+        <p class="post-meta">Posted on {{ post.date_published | date: "%a %b %e %Y" }}</p>
+        <div class="post-entry-container"><div class="post-entry">
+          {{ post.content_text }}
+        </div></div>
+        <a class="post-read-more" href="{{ post.url }}">[Read More]</a>
+      </article>
+    {% endfor %}
+    {% endif %}
+  </div>
+
   {% assign english_posts = site.posts | where: "lang", "en" %}
   {% assign first_posts = english_posts | slice: 0, site.front_page_posts %}
   <div class="posts-list">
@@ -84,6 +101,10 @@ use-site-title: true
 
      </article>
     {% endfor %}
+  </div>
+
+  <div style="font-size: 24px">
+    <a href="/announcements/" class="post-read-more">Older Announcements</a>
   </div>
 
   <!-- 2020 fundraiser sponsor logos -->

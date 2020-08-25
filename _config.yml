@@ -16,7 +16,7 @@ description: Bitcoin ABC - Software for Bitcoin Cash nodes
 # List of links in the navigation bar
 navbar-links:
   Latest Roadmap: "https://www.bitcoincash.org/roadmap.html"
-  Announcements: "announcements/"
+  Blog: "https://blog.bitcoinabc.org/"
   Download:
     - Binaries: "https://download.bitcoinabc.org/latest/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
@@ -27,7 +27,6 @@ navbar-links:
     - Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
     - Code Coverage: "https://build.bitcoinabc.org/viewLog.html?buildId=lastSuccessful&buildTypeId=BitcoinABC_Master_BitcoinAbcMasterCoverage&tab=report__Root_Code_Coverage&guest=1"
     - Code Documentation: "doc/dev/"
-  Blog: "https://blog.bitcoinabc.org/"
 
 supported-languages:
   en: "English"

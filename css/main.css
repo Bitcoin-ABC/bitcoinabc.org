@@ -304,10 +304,6 @@ footer .theme-by {
   }
 }
 
-.post-preview:last-child {
-  border-bottom: 0;
-}
-
 .post-preview a {
   text-decoration: none;
   color: #404040;
@@ -333,7 +329,7 @@ footer .theme-by {
   color: #808080;
   font-size: 18px;
   font-style: italic;
-  margin: 0 0 10px;
+  margin: 0;
 }
 .post-preview .post-entry {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -344,6 +340,9 @@ footer .theme-by {
 }
 .post-entry {
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .post-image {
   float: right;
