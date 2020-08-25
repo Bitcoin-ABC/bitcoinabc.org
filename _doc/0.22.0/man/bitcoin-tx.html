@@ -1,0 +1,77 @@
+---
+category: man
+group: Bitcoin ABC 
+name: bitcoin-tx
+version: 0.22.0
+---
+<!-- @generated -->
+<h1>NAME</h1>
+<p>bitcoin-tx - manual page for bitcoin-tx v0.22.0</p>
+<h1>SYNOPSIS</h1>
+<p><strong>bitcoin-tx</strong> [<em>options</em>] <em>&lt;hex-tx&gt; </em>[<em>commands</em>] <em>Update hex-encoded bitcoin transaction</em><br />
+<strong>bitcoin-tx</strong> [<em>options</em>] <em>-create </em>[<em>commands</em>] <em>Create hex-encoded bitcoin transaction</em></p>
+<h1>DESCRIPTION</h1>
+<p>Bitcoin ABC bitcoin-tx utility version v0.22.0</p>
+<h1>OPTIONS</h1>
+<p>-?</p>
+<blockquote>
+<p>This help message</p>
+</blockquote>
+<p><strong>-create</strong></p>
+<blockquote>
+<p>Create new, empty TX.</p>
+</blockquote>
+<p><strong>-json</strong></p>
+<blockquote>
+<p>Select JSON output</p>
+</blockquote>
+<p><strong>-txid</strong></p>
+<blockquote>
+<p>Output only the hex-encoded transaction id of the resultant transaction.</p>
+</blockquote>
+<p>Chain selection options:</p>
+<p><strong>-chain=</strong>&lt;chain&gt;</p>
+<blockquote>
+<p>Use the chain &lt;chain&gt; (default: main). Allowed values: main, test, regtest</p>
+</blockquote>
+<p><strong>-testnet</strong></p>
+<blockquote>
+<p>Use the test chain. Equivalent to <strong>-chain</strong>=<em>test</em>.</p>
+</blockquote>
+<p>Commands:</p>
+<blockquote>
+<p>delin=N</p>
+<p>Delete input N from TX</p>
+<p>delout=N</p>
+<p>Delete output N from TX</p>
+<p>in=TXID:VOUT(:SEQUENCE_NUMBER)</p>
+<p>Add input to TX</p>
+<p>locktime=N</p>
+<p>Set TX lock time to N</p>
+<p>nversion=N</p>
+<p>Set TX version to N</p>
+<p>outaddr=VALUE:ADDRESS</p>
+<p>Add address-based output to TX</p>
+<p>outdata=[VALUE:]DATA</p>
+<p>Add data-based output to TX</p>
+<p>outmultisig=VALUE:REQUIRED:PUBKEYS:PUBKEY1:PUBKEY2:....[:FLAGS]</p>
+<p>Add Pay To n-of-m Multi-sig output to TX. n = REQUIRED, m = PUBKEYS. Optionally add the "S" flag to wrap the output in a pay-to-script-hash.</p>
+<p>outpubkey=VALUE:PUBKEY[:FLAGS]</p>
+<p>Add pay-to-pubkey output to TX. Optionally add the "S" flag to wrap the output in a pay-to-script-hash.</p>
+<p>outscript=VALUE:SCRIPT[:FLAGS]</p>
+<p>Add raw script output to TX. Optionally add the "S" flag to wrap the output in a pay-to-script-hash.</p>
+<p>sign=SIGHASH-FLAGS</p>
+<p>Add zero or more signatures to transaction. This command requires JSON registers:prevtxs=JSON object, privatekeys=JSON object. See signrawtransactionwithkey docs for format of sighash flags, JSON objects.</p>
+</blockquote>
+<p>Register Commands:</p>
+<blockquote>
+<p>load=NAME:FILENAME</p>
+<p>Load JSON file FILENAME into register NAME</p>
+<p>set=NAME:JSON-STRING</p>
+<p>Set register NAME to given JSON-STRING</p>
+</blockquote>
+<h1>COPYRIGHT</h1>
+<p>Copyright (C) 2009-2020 The Bitcoin developers</p>
+<p>Please contribute if you find Bitcoin ABC useful. Visit &lt;https://www.bitcoinabc.org&gt; for further information about the software. The source code is available from &lt;https://github.com/Bitcoin-ABC/bitcoin-abc&gt;.</p>
+<p>This is experimental software. Distributed under the MIT software license, see the accompanying file COPYING or &lt;https://opensource.org/licenses/MIT&gt;</p>
+<p>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</p>

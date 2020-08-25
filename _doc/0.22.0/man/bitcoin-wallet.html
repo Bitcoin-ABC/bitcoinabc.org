@@ -1,0 +1,59 @@
+---
+category: man
+group: Bitcoin ABC 
+name: bitcoin-wallet
+version: 0.22.0
+---
+<!-- @generated -->
+<h1>NAME</h1>
+<p>bitcoin-wallet - manual page for bitcoin-wallet v0.22.0</p>
+<h1>DESCRIPTION</h1>
+<p>Bitcoin ABC bitcoin-wallet version v0.22.0</p>
+<p>wallet-tool is an offline tool for creating and interacting with Bitcoin ABC wallet files. By default wallet-tool will act on wallets in the default mainnet wallet directory in the datadir. To change the target wallet, use the <strong>-datadir</strong>, <strong>-wallet</strong> and <strong>-testnet</strong>/-regtest arguments.</p>
+<h2>Usage:</h2>
+<blockquote>
+<p>bitcoin-wallet [options] &lt;command&gt;</p>
+</blockquote>
+<h1>OPTIONS</h1>
+<p>-?</p>
+<blockquote>
+<p>This help message</p>
+</blockquote>
+<p><strong>-datadir=</strong>&lt;dir&gt;</p>
+<blockquote>
+<p>Specify data directory</p>
+</blockquote>
+<p><strong>-wallet=</strong>&lt;wallet-name&gt;</p>
+<blockquote>
+<p>Specify wallet name</p>
+</blockquote>
+<p>Debugging/Testing options:</p>
+<p><strong>-debug=</strong>&lt;category&gt;</p>
+<blockquote>
+<p>Output debugging information (default: 0).</p>
+</blockquote>
+<p><strong>-printtoconsole</strong></p>
+<blockquote>
+<p>Send trace/debug info to console (default: 1 when no <strong>-debug</strong> is true, 0 otherwise.</p>
+</blockquote>
+<p>Chain selection options:</p>
+<p><strong>-chain=</strong>&lt;chain&gt;</p>
+<blockquote>
+<p>Use the chain &lt;chain&gt; (default: main). Allowed values: main, test, regtest</p>
+</blockquote>
+<p><strong>-testnet</strong></p>
+<blockquote>
+<p>Use the test chain. Equivalent to <strong>-chain</strong>=<em>test</em>.</p>
+</blockquote>
+<p>Commands:</p>
+<blockquote>
+<p>create</p>
+<p>Create new wallet file</p>
+<p>info</p>
+<p>Get wallet info</p>
+</blockquote>
+<h1>COPYRIGHT</h1>
+<p>Copyright (C) 2009-2020 The Bitcoin developers</p>
+<p>Please contribute if you find Bitcoin ABC useful. Visit &lt;https://www.bitcoinabc.org&gt; for further information about the software. The source code is available from &lt;https://github.com/Bitcoin-ABC/bitcoin-abc&gt;.</p>
+<p>This is experimental software. Distributed under the MIT software license, see the accompanying file COPYING or &lt;https://opensource.org/licenses/MIT&gt;</p>
+<p>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</p>
