@@ -1,18 +1,21 @@
 ---
 layout: page
-title: RPC Documentation by Version
+title: Documentation by Version
 permalink: doc/
 ---
 <link rel="stylesheet" href="/overrides.css">
 <div id="content" style="font-size: 26px">
-  <ul>
-    {% for version in page.versions %}
-      {% assign rpccommand = site.doc | where:"version",version | first %}
-      {% if rpccommand %}
-        <li><a href="{{ rpccommand.url }}">{{ version }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  <table style="min-width: 90%">
+    <tbody>
+      {% for version in page.versions %}
+        <tr>
+          <td><strong>{{ version }}</strong></td>
+          {% assign rpccommand = site.doc | where:"version",version | where:"category","rpc" | first %}
+          <td>{% if rpccommand %}<a href="{{ rpccommand.url }}">RPC documentation</a>{% endif %}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 <!-- TODO: Remove this line once the footer is correctly floated
