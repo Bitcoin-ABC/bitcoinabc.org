@@ -3,18 +3,18 @@
 # goal of this makefile is to avoid needing to install a ruby toolchain for
 # casual contributors.
 
-PROJECT ?= 
 PORT ?= 8080
+TAG = bitcoin-abc-org
 
 default: container
 
 .PHONY: container
 container:
-	docker build -t $(PROJECT)bitcoinabcorg .
+	docker build -t $(TAG) .
 
 .PHONY: run
 run: container
-	docker run -it -p $(PORT):80 $(PROJECT)bitcoinabcorg:latest
+	docker run -it -p $(PORT):80 $(TAG)
 
 serve: _config.yml
 	bundler exec jekyll serve
