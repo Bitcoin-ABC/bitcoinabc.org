@@ -79,4 +79,4 @@ No.
 
 **Existe alguna especificación *CashAddr* oficial para desarrolladores?**
 
-Sí, [aquí.](Https://github.com/bitcoincashorg/spec/blob/master/cashaddr.md)
+Sí, [aquí.](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md)
