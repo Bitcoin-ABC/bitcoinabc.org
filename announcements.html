@@ -7,7 +7,7 @@ use-site-title: true
   {% assign english_posts = site.posts | where: "lang", "en" %}
   {% for post in english_posts %}
   <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
+    <a href="{{ post.url }}">
 	  <h2 class="post-title">{{ post.title }}</h2>
 
 	  {% if post.subtitle %}
@@ -24,7 +24,7 @@ use-site-title: true
     <div class="post-entry-container">
       {% if post.image %}
       <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
+        <a href="{{ post.url }}">
           <img src="{{ post.image }}">
         </a>
       </div>
@@ -33,7 +33,7 @@ use-site-title: true
         {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
+          <a href="{{ post.url }}" class="post-read-more">[Read&nbsp;More]</a>
         {% endif %}
       </div>
     </div>

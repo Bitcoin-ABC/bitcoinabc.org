@@ -10,7 +10,7 @@ of the "beautiful Jekyll" theme.  Please refer upstream for helpful notes on usi
 Install rvm: https://rvm.io/rvm/install
 
 ```
-rvm install <version in .ruby-version file>
+rvm install "$(cat .ruby-version)"
 gem install jekyll bundler
 bundle install
 ```
