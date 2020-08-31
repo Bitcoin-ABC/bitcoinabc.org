@@ -2,6 +2,7 @@
 _site
 .jekyll-cache
 .sass-cache
+.user-doc-cache
 .vagrant
 
 # general

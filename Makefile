@@ -18,3 +18,7 @@ run: container
 
 serve: _config.yml
 	bundler exec jekyll serve
+
+.PHONY: doc
+doc:
+	./scripts/fetch_documentation.sh

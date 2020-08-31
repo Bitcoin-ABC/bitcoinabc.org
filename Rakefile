@@ -2,15 +2,20 @@ require 'bundler'
 Bundler.setup
 
 namespace :jekyll do
-	desc "serve jekyll site locally"
-	task :serve do
-	  sh "bundle exec jekyll serve"
-	end
-	
-	desc "serve jekyll site locally"
-	task :build do
-	  sh "bundle exec jekyll build"
-	end
+  desc "serve jekyll site locally"
+  task :serve do
+    sh "bundle exec jekyll serve"
+  end
+
+  desc "build jekyll site"
+  task :build do
+    sh "bundle exec jekyll build"
+  end
+
+  desc "populate the user documentation"
+  task :doc do
+    sh "scripts/fetch_documentation.sh"
+  end
 end
 
 namespace :docker do
