@@ -101,22 +101,37 @@ do
     BITCOIND_PID_FILE="${VERSION_DIR}/bitcoind_${VERSION}.pid"
     "${INSTALL_DIR}"/bin/bitcoind -regtest -daemon -pid="${BITCOIND_PID_FILE}"
 
-    PID_WAIT_COUNT=0
-    while [ ! -e "${BITCOIND_PID_FILE}" ]
-    do
-      ((PID_WAIT_COUNT+=1))
-      if [ "${PID_WAIT_COUNT}" -gt 10 ]
-      then
-        echo "Timed out waiting for bitcoind PID file"
-        exit 1
+    echo "Waiting for bitcoind to spin up..."
+    READY="no"
+    for _ in {1..5}; do
+      if "${INSTALL_DIR}"/bin/bitcoin-cli -regtest help > /dev/null ; then
+        READY="yes"
+        break
       fi
-      sleep 0.5
+      sleep 1
     done
-    BITCOIND_PID=$(cat "${BITCOIND_PID_FILE}")
+
+    if [ "${READY}" != "yes" ]; then
+      echo "Error: bitcoind is not ready or was not started"
+      exit 1
+    fi
 
     ninja doc-rpc
 
-    kill "${BITCOIND_PID}"
+    "${INSTALL_DIR}"/bin/bitcoin-cli -regtest stop
+
+    PID_WAIT_COUNT=0
+    echo "Waiting for bitcoind shut down..."
+    while [ -e "${BITCOIND_PID_FILE}" ]
+    do
+      ((PID_WAIT_COUNT+=1))
+      if [ "${PID_WAIT_COUNT}" -gt 20 ]
+      then
+        echo "Timed out waiting for bitcoind to stop"
+        exit 2
+      fi
+      sleep 0.5
+    done
 
     # Cache the result
     cp -R "${BUILD_DIR}/doc/rpc/en/${VERSION}/rpc" "${VERSION_DIR}/"
