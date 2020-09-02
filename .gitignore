@@ -4,6 +4,7 @@ _site
 .sass-cache
 .user-doc-cache
 .vagrant
+abc_md_docs
 
 # general
 .DS_Store

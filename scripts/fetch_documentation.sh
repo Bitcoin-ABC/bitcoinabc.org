@@ -166,3 +166,26 @@ do
 
 done
 
+# Pull all the markdown files from the ABC repository so they can be converted
+# and rendered by jekyll. The tree directory structure is preserved in order to
+# keep the links working.
+pushd "${SRC_DIR}"
+git checkout master
+
+ABC_MD_DOCS_BASE="${TOPLEVEL}/abc_md_docs"
+mkdir -p "${ABC_MD_DOCS_BASE}"
+
+FILES=($(git ls-files "*.md"))
+
+for FILE in "${FILES[@]}"
+do
+  FILE_DST="${ABC_MD_DOCS_BASE}/${FILE}"
+  mkdir -p "$(dirname ${FILE_DST})"
+
+  NAME="${FILE}" \
+  PERMALINK="/${FILE%.*}.html" \
+  envsubst < "${TOPLEVEL}/scripts/md_docs_frontmatter.yml.in" > "${FILE_DST}"
+  cat "${FILE}" >> "${FILE_DST}"
+done
+
+popd
