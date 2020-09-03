@@ -11,10 +11,12 @@ layout: base
   {% assign maybeHideOnStart = 'js-hide-on-start' %}
 {% endif %}
   <header>
-    <h3 class="subnav-header">
-      <i class="fa fa-book"></i>
-      {{ group.name }}
-    </h3>
+    {% if groups.size > 1 %}
+      <h3 class="subnav-header">
+        <i class="fa fa-book"></i>
+        {{ group.name }}
+      </h3>
+    {% endif %}
     <div class="subnav-drawer {{ maybeHideOnStart }}">
       <ul>
         {% for article in group.items %}
