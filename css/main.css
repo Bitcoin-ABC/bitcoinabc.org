@@ -818,6 +818,16 @@ td.gutter {
   font-size: 1.15em;
 }
 
+.subnav-strong-link {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px 0px 20px 5px;
+}
+
+.subnav-strong-link:before {
+  margin-right: 5px;
+}
+
 .js-hidden {
   max-height: 0;
   overflow: hidden;

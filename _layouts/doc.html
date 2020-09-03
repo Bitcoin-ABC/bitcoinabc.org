@@ -5,6 +5,7 @@ layout: base
 {% assign groups = site.doc | where:"version", page.version | where:"category", page.category | group_by:"group" | sort:"name" %}
 
 <div class="subnav">
+  <a href="/doc" class="fa fa-chevron-left subnav-strong-link">Version {{ page.version }}</a>
 {% for group in groups %}
 {% assign maybeHideOnStart = '' %}
 {% if group.name != page.group %}
