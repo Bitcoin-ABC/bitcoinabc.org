@@ -10,9 +10,9 @@ permalink: doc/
       {% for version in page.versions %}
         <tr>
           <td><strong>{{ version }}</strong></td>
-          {% assign rpccommand = site.doc | where:"version",version | where:"category","rpc" | first %}
+          {% assign rpccommand = site.doc | where:"version",version | where:"category","rpc" | sort:"name.help","last" | first %}
           <td>{% if rpccommand %}<a href="{{ rpccommand.url }}">RPC documentation</a>{% endif %}</td>
-          {% assign manpage = site.doc | where:"version",version | where:"category","man" | first %}
+          {% assign manpage = site.doc | where:"version",version | where:"category","man" | sort:"name.bitcoind","last" | first %}
           <td>{% if manpage %}<a href="{{ manpage.url }}">Man pages</a>{% endif %}</td>
         </tr>
       {% endfor %}
