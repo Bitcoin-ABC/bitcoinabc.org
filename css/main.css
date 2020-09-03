@@ -813,6 +813,11 @@ td.gutter {
 .subnav-drawer {
 }
 
+.subnav-selected {
+  text-decoration: underline;
+  font-size: 1.15em;
+}
+
 .js-hidden {
   max-height: 0;
   overflow: hidden;

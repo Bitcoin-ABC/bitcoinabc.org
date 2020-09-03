@@ -20,7 +20,7 @@ layout: base
     <div class="subnav-drawer {{ maybeHideOnStart }}">
       <ul>
         {% for article in group.items %}
-          <li><a href="{{ article.url }}">{{ article.name }}</a></li>
+          <li><a href="{{ article.url }}" {% if article.name == page.name %}class="subnav-selected"{% endif %}>{{ article.name }}</a></li>
         {% endfor %}
       </ul>
     </div>
