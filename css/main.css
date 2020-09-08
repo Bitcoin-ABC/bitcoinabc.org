@@ -206,11 +206,17 @@ img {
 /* --- Footer --- */
 
 footer {
-  padding: 30px 0;
+  display: flex;
+  flex: 1 100%;
+  flex-flow: row wrap;
+
+  text-align: center;
+  padding: 20px 0;
   border-top: 1px #EAEAEA solid;
   margin-top: 50px;
   font-size: 14px;
   background-color: {{ site.footer-col }};
+
   {% if site.footer-img %}
   background-image: url({{ site.footer-img }});
   background-attachment: fixed;
@@ -223,26 +229,16 @@ footer p.text-muted {
 
 footer a {
   color: {{site.footer-link-col}};
+  font-weight: bold;
 }
 
-footer .list-inline {
-  margin: 0;
-  padding: 0;
-}
 footer .copyright {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
-  margin-bottom: 0;
-}
-footer .theme-by {
-  text-align: center;
-  margin: 10px 0 0;
+  margin-top: 1em;
 }
 
 @media only screen and (min-width: 768px) {
-  footer {
-    padding: 50px 0;
-  }
   footer .footer-links {
     font-size: 18px;
   }
@@ -637,6 +633,9 @@ td.gutter {
   display: none;
 }
 
+.footer-donation-addr {
+  margin-bottom: 1em;
+}
 .footer-donation-addr a {
   font-size: 0.8vw
 }
@@ -713,4 +712,8 @@ td.gutter {
 .js-hidden {
   max-height: 0;
   overflow: hidden;
+}
+
+.flex-row {
+  flex: 1 100%;
 }
