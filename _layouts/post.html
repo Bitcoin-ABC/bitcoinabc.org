@@ -2,11 +2,9 @@
 layout: base
 ---
 
-{% include header.html type="post" %}
+<div class="flex-content">
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-lg-offset-1">
+{% include header.html type="post" %}
 
       {% if page.gh-repo %}
         {% assign gh_split =  page.gh-repo | split:'/'  %}
@@ -64,6 +62,5 @@ layout: base
         </li>
         {% endif %}
       </ul>
-    </div>
-  </div>
+
 </div>

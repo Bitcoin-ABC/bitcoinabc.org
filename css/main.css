@@ -35,6 +35,7 @@ a:focus {
 blockquote {
   color: #808080;
   font-style: italic;
+  word-wrap: break-word;
 }
 blockquote p:first-child {
   margin-top: 0;
@@ -291,14 +292,13 @@ footer .copyright {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .post-entry-container {
-  display: inline-block;
-  width: 100%;
+  display: flex;
 }
 .post-entry {
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 1 100%;
 }
 .post-image {
   float: right;
@@ -372,8 +372,12 @@ footer .copyright {
 }
 /* --- Post and page headers --- */
 
+header {
+  flex: 1 100%;
+}
+
 .intro-header {
-  margin: 80px 0 20px;
+  margin-bottom: 20px;
   position: relative;
   pointer-events: none;
 }
@@ -399,11 +403,6 @@ footer .copyright {
 }
 .intro-header .post-heading .post-subheading {
   margin-bottom: 20px;
-}
-@media only screen and (min-width: 768px) {
-  .intro-header {
-    margin-top: 130px;
-  }
 }
 
 .header-section.has-img .no-img {
@@ -662,19 +661,9 @@ td.gutter {
 }
 
 .subnav {
+  flex: 1;
   font-size: 14px;
-  position: relative;
-}
-@media only screen and (max-width: 1000px) {
-  .subnav {
-    margin-top: 100px;
-  }
-}
-@media only screen and (min-width: 1000px) {
-  .subnav {
-    position: absolute;
-    left: 0;
-  }
+  min-width: 150px;
 }
 .subnav h3 {
   font-size: 18px;
@@ -712,6 +701,29 @@ td.gutter {
 .js-hidden {
   max-height: 0;
   overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 120px 10px 0 10px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  .flex-container {
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flex-container {
+    margin-top: 60px;
+  }
+}
+
+.flex-content {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .flex-row {

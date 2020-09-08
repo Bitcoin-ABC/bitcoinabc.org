@@ -6,39 +6,40 @@ layout: base
 
 <div class="subnav">
   <a href="/doc" class="fa fa-chevron-left subnav-strong-link">Version {{ page.version }}</a>
-{% for group in groups %}
-{% assign maybeHideOnStart = '' %}
-{% if group.name != page.group %}
-  {% assign maybeHideOnStart = 'js-hide-on-start' %}
-{% endif %}
-  <header>
-    {% if groups.size > 1 %}
-      <h3 class="subnav-header">
-        <i class="fa fa-book"></i>
-        {{ group.name }}
-      </h3>
+  {% for group in groups %}
+    {% assign maybeHideOnStart = '' %}
+    {% if group.name != page.group %}
+      {% assign maybeHideOnStart = 'js-hide-on-start' %}
     {% endif %}
-    <div class="subnav-drawer {{ maybeHideOnStart }}">
-      <ul>
-        {% for article in group.items %}
-          <li><a href="{{ article.url }}" {% if article.name == page.name %}class="subnav-selected"{% endif %}>{{ article.name }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </header>
-{% endfor %}
+    <header>
+      {% if groups.size > 1 %}
+        <h3 class="subnav-header">
+          <i class="fa fa-book"></i>
+          {{ group.name }}
+        </h3>
+      {% endif %}
+      <div class="subnav-drawer {{ maybeHideOnStart }}">
+        <ul>
+          {% for article in group.items %}
+            <li><a href="{{ article.url }}" {% if article.name == page.name %}class="subnav-selected"{% endif %}>
+              {{ article.name }}
+            </a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </header>
+  {% endfor %}
 </div>
 
-{% include header.html type="page" %}
+<div class="flex-content flex-row">
+  {% include header.html type="page" %}
 
-<div class="container" role="main" style="min-height: 500px">
-  <div class="row">
-    <div class="col-lg-11 col-lg-offset-1 col-md-10 col-md-offset-2">
-    {% if page.category == "man" %}
-      {{ content }}
-    {% else %}
-      {% highlight text %}{{ content }}{% endhighlight %}
-    {% endif %}
-    </div>
-  </div>
+  {% if page.category == "man" %}
+    {{ content }}
+  {% else %}
+    {% highlight text %}{{ content }}{% endhighlight %}
+  {% endif %}
 </div>
+
+<!-- Dummy flexbox container to counteract the growth of the subnav -->
+<div style="flex: 1;"></div>
