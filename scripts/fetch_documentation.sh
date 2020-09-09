@@ -96,42 +96,54 @@ do
   then
     # Build and install the release version
     cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
-    ninja install/strip
 
-    BITCOIND_PID_FILE="${VERSION_DIR}/bitcoind_${VERSION}.pid"
-    "${INSTALL_DIR}"/bin/bitcoind -regtest -daemon -pid="${BITCOIND_PID_FILE}"
+    # Prior to version 0.22.2, the rpc-doc target required to manually spin a
+    # regtest bitcoind server.
+    if version_greater_equal "${VERSION}" "0.22.2"
+    then
+      ninja doc-rpc
+    else
+      # FIXME Remove the else branch after versions < 0.22.2 are obsolete
+      (
+        ninja install/strip
 
-    echo "Waiting for bitcoind to spin up..."
-    READY="no"
-    for _ in {1..5}; do
-      if "${INSTALL_DIR}"/bin/bitcoin-cli -regtest help > /dev/null ; then
-        READY="yes"
-        break
-      fi
-      sleep 1
-    done
+        BITCOIND_PID_FILE="${VERSION_DIR}/bitcoind_${VERSION}.pid"
+        "${INSTALL_DIR}"/bin/bitcoind -regtest -daemon -pid="${BITCOIND_PID_FILE}"
 
-    if [ "${READY}" != "yes" ]; then
-      echo "Error: bitcoind is not ready or was not started"
-      exit 1
+        shutdown_bitcoind() {
+          "${INSTALL_DIR}"/bin/bitcoin-cli -regtest stop > /dev/null 2>&1
+
+          # Waiting for bitcoind shut down
+          PID_WAIT_COUNT=0
+          while [ -e "${BITCOIND_PID_FILE}" ]
+          do
+            : $((PID_WAIT_COUNT+=1))
+            if [ "${PID_WAIT_COUNT}" -gt 20 ]
+            then
+              echo "Timed out waiting for bitcoind to stop"
+              exit 3
+            fi
+            sleep 0.5
+          done
+        }
+        trap "shutdown_bitcoind" EXIT
+
+        # Waiting for bitcoind to spin up
+        RPC_HELP_WAIT_COUNT=0
+        while ! "${INSTALL_DIR}"/bin/bitcoin-cli -regtest help > /dev/null 2>&1
+        do
+          : $((RPC_HELP_WAIT_COUNT+=1))
+          if [ "${RPC_HELP_WAIT_COUNT}" -gt 10 ]
+          then
+            echo "Timed out waiting for bitcoind to start"
+            exit 2
+          fi
+          sleep 0.5
+        done
+
+        ninja doc-rpc
+      )
     fi
-
-    ninja doc-rpc
-
-    "${INSTALL_DIR}"/bin/bitcoin-cli -regtest stop
-
-    PID_WAIT_COUNT=0
-    echo "Waiting for bitcoind shut down..."
-    while [ -e "${BITCOIND_PID_FILE}" ]
-    do
-      ((PID_WAIT_COUNT+=1))
-      if [ "${PID_WAIT_COUNT}" -gt 20 ]
-      then
-        echo "Timed out waiting for bitcoind to stop"
-        exit 2
-      fi
-      sleep 0.5
-    done
 
     # Cache the result
     cp -R "${BUILD_DIR}/doc/rpc/en/${VERSION}/rpc" "${VERSION_DIR}/"
