@@ -2,7 +2,8 @@
 
 # This script downloads the static JSON for the blog feed in order to improve SEO.
 
-cd _data
+TOPLEVEL=$(git rev-parse --show-toplevel)
+cd "${TOPLEVEL}"/_data
 wget -O blog-feed.json https://blog.bitcoinabc.org/json/
 
 # HTML-escape unicode characters because Jekyll complains about them despite
