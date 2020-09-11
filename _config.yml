@@ -161,9 +161,6 @@ defaults:
     values:
       layout: page
 
-# Use tags index page and make tags on each post clickable
-link-tags: true
-
 collections:
   doc:
     output: true
