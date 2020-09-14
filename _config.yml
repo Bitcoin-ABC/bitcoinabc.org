@@ -24,7 +24,7 @@ navbar-links:
     - Archived Binaries: "https://download.bitcoinabc.org/"
   Documentation: "doc/"
   Developers:
-    - Contributing: "https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/CONTRIBUTING.md"
+    - Contributing: "CONTRIBUTING.html"
     - Code Coverage: "https://build.bitcoinabc.org/viewLog.html?buildId=lastSuccessful&buildTypeId=BitcoinABC_Master_BitcoinAbcMasterCoverage&tab=report__Root_Code_Coverage&guest=1"
     - Code Documentation: "doc/dev/"
 
