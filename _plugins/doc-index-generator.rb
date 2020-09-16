@@ -14,7 +14,8 @@ module Jekyll
       end
 
       # Generate a top-level index listing all of the versions
-      site.pages << DocIndexPage.new(site, site.source, File.join('doc'), versions.to_a())
+      site.pages << DocIndexPage.new(site, site.source, File.join('doc'),
+        versions.to_a().sort_by{ |v| Gem::Version.new(v) }.reverse!)
     end
   end
 
