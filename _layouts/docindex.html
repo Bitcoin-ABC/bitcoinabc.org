@@ -14,6 +14,7 @@ permalink: doc/
           <td>{% if rpccommand %}<a href="{{ rpccommand.url }}">RPC documentation</a>{% endif %}</td>
           {% assign manpage = site.doc | where:"version",version | where:"category","man" | sort:"name.bitcoind","last" | first %}
           <td>{% if manpage %}<a href="{{ manpage.url }}">Man pages</a>{% endif %}</td>
+          <td><a href="/doc/release-notes/release-notes-{{ version }}.html">Release notes</a></td>
         </tr>
       {% endfor %}
     </tbody>
