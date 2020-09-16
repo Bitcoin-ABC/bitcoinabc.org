@@ -673,3 +673,8 @@ td.gutter {
 .flex-row {
   flex: 1 100%;
 }
+
+.doc-index-table {
+  width: 100%;
+  font-size: 1.7vh;
+}
