@@ -8,4 +8,4 @@ wget -O blog-feed.json https://blog.bitcoinabc.org/json/
 
 # HTML-escape unicode characters because Jekyll complains about them despite
 # these characters being within strings.
-sed -i 's/\\\(u[a-z0-9]\{4\}\)/\&#x\1;/g' blog-feed.json
+sed -i 's/\\u\([a-z0-9]\{4\}\)/\&#x\1;/g' blog-feed.json
