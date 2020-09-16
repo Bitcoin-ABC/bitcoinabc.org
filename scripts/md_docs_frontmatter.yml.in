@@ -1,5 +1,6 @@
 ---
 category: doc
+layout: abc_md
 name: ${NAME}
 permalink: ${PERMALINK}
 ---
