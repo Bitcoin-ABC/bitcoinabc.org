@@ -20,11 +20,17 @@ FILES=($(git ls-files "*.md"))
 
 for FILE in "${FILES[@]}"
 do
-  FILE_DST="${ABC_MD_DOCS_BASE}/${FILE}"
+  BASE_NAME=${FILE%.*}
+  FILE_DST="${ABC_MD_DOCS_BASE}/${BASE_NAME}.page.md"
   mkdir -p "$(dirname ${FILE_DST})"
 
-  NAME="${FILE}" \
-  PERMALINK="/${FILE%.*}.html" \
+  NAME="${BASE_NAME}.md" \
+  PERMALINK="/${BASE_NAME}.html" \
   envsubst < "${TOPLEVEL}/scripts/md_docs_frontmatter.yml.in" > "${FILE_DST}"
+  cat "${FILE}" >> "${FILE_DST}"
+
+  FILE_DST="${ABC_MD_DOCS_BASE}/${BASE_NAME}.md"
+  # Jekyll breaks without frontmatter, so give it an empty line
+  echo "" > "${FILE_DST}"
   cat "${FILE}" >> "${FILE_DST}"
 done

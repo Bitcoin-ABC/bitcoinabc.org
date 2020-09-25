@@ -684,3 +684,14 @@ td.gutter {
   width: 100%;
   font-size: 1.7vh;
 }
+
+.hero-box {
+  text-align: center;
+  background: #e9f4ff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.download-button {
+  font-size: 20px;
+}
