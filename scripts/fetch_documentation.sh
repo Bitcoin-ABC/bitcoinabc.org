@@ -21,11 +21,12 @@ TOPLEVEL=$(git -C "${SCRIPT_DIR}" rev-parse --show-toplevel)
 
 # Get the last MAX_RELEASES releases
 RELEASES=$(curl -L -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases?per_page=${MAX_RELEASES})
+echo "${RELEASES}" > "${TOPLEVEL}"/_data/github-releases.json
 
-# Extract releases version number 
+# Extract release version numbers
 RELEASE_VERSIONS=($(echo ${RELEASES} | jq -r .[].name))
 
-# Extract releases version number 
+# Extract release tags
 RELEASE_TAGS=($(echo ${RELEASES} | jq -r .[].tag_name))
 
 # Create the cache directory as needed. This is where the sources will be
