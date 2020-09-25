@@ -1,7 +1,10 @@
+#!/usr/bin/env bash
 # Pull all the markdown files from the ABC repository so they can be converted
 # and rendered by jekyll. The tree directory structure is preserved in order to
 # keep the links working.
 # The path to the ABC repository must be passed as a command line argument.
+
+set -euxo pipefail
 
 SRC_DIR=$1
 
