@@ -692,6 +692,14 @@ td.gutter {
   padding: 20px;
 }
 
+.btn-primary {
+  /**
+   * Ensure btn-primary renders well in flexbox where a row of buttons may wrap
+   * on small screens.
+   */
+  margin: 2px 0;
+}
+
 .download-button {
   font-size: 20px;
 }
