@@ -11,7 +11,7 @@ use-site-title: true
 
   <div style="margin: 6px">Published: {{ releases[0].published_at | date: "%a %b %e %Y" }}</div>
 
-  <div style="margin-bottom: 20px;">
+  <div>
     <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/latest/linux/bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz">
       <i class="fab fa-linux"></i>
       Linux
@@ -29,7 +29,27 @@ use-site-title: true
       Source Snapshot
     </a>
   </div>
-  <div>
+
+  <div style="margin-top: 20px">
+    <h4>Packages</h4>
+    <a class="btn btn-primary download-button" href="https://launchpad.net/~bitcoin-abc/+archive/ubuntu/ppa/">
+      <i class="fab fa-ubuntu"></i>
+      Ubuntu
+    </a>
+    <div class="btn-group">
+      <a class="btn btn-primary download-button" style="border-right: solid 5px #1e5d94;" href="https://aur.archlinux.org/packages/bitcoin-abc/">
+        Arch Linux
+      </a>
+      <a class="btn btn-primary download-button" href="https://aur.archlinux.org/packages/bitcoin-abc-qt/">
+        (Qt)
+      </a>
+    </div>
+    <a class="btn btn-primary download-button" href="https://hub.docker.com/r/zquestz/bitcoin-abc/">
+      <i class="fab fa-docker"></i>
+      Docker
+    </a>
+  </div>
+  <div style="margin-top: 20px;">
     For the latest source code, see <a href="https://github.com/Bitcoin-ABC/bitcoin-abc">Github</a>.
   </div>
 </div>
