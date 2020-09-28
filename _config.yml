@@ -108,10 +108,6 @@ excerpt_length: 30
 # Number of announcements to appear on the front page
 front_page_posts: 2
 
-# Character used to separate site title and description in HTML document title
-# and RSS feed title
-title-separator: "-"
-
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
