@@ -21,7 +21,6 @@ navbar-links:
     - Binaries: "releases/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
     - Ubuntu Packages: "https://launchpad.net/~bitcoin-abc/+archive/ubuntu/ppa"
-    - Archived Binaries: "https://download.bitcoinabc.org/"
   Documentation: "doc/"
   Developers:
     - Contributing: "CONTRIBUTING.html"
