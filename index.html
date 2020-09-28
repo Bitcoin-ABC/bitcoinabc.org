@@ -35,7 +35,7 @@ use-site-title: true
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <!-- Blog feed -->
-  <div class="abc-blog-feed posts-list">
+  <div class="abc-blog-feed">
     {% if site.data.blog-feed %}
     {% assign blogFeedItems = site.data.blog-feed.items | reverse %}
     {% for post in blogFeedItems limit:3 %}

@@ -674,6 +674,12 @@ td.gutter {
   flex: 1 100%;
 }
 
+@media only screen and (max-width: 1000px) {
+  .abc-blog-feed {
+    width: 96vw;
+  }
+}
+
 .doc-index-table {
   width: 100%;
   font-size: 1.7vh;
