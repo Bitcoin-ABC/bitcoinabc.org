@@ -9,29 +9,29 @@
 facebook:
   name: "Facebook"
   baseURL: "https://www.facebook.com/"
-  icon: "fa-facebook"
+  iconClasses: "fab fa-facebook"
 
 github:
   name: "GitHub"
   baseURL: "https://github.com/"
-  icon: "fa-github"
+  iconClasses: "fab fa-github"
 
 twitter:
   name: "Twitter"
   baseURL: "https://twitter.com/"
-  icon: "fa-twitter"
+  iconClasses: "fab fa-twitter"
 
 email:
   name: "Email me"
   baseURL: "mailto:"
-  icon: "fa-envelope"
+  iconClasses: "fas fa-envelope"
 
 linkedin:
   name: "LinkedIn"
   baseURL: "https://linkedin.com/"
-  icon: "fa-linkedin"
+  iconClasses: "fab fa-linkedin"
 
 youtube:
   name: "YouTube"
   baseURL: "https://www.youtube.com/"
-  icon: "fa-youtube"
+  iconClasses: "fab fa-youtube"
