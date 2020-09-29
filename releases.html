@@ -7,6 +7,9 @@ subtitle: Download the latest Bitcoin ABC software
 {% assign releases = site.data.github-releases %}
 {% assign latestVersion = releases[0].name %}
 
+<!-- Offset the version anchor of the first release so that the top of the page is in view -->
+<a class="offset-anchor" style="top: -220px" id="{{ latestVersion }}"></a>
+
 <div class="hero-box">
   <h1>Download Bitcoin ABC {{ latestVersion }}</h1>
 
@@ -60,6 +63,9 @@ subtitle: Download the latest Bitcoin ABC software
 
 <hr />
 
+<!-- Offset the version anchor of the first past release up here so that the top of the table is in view -->
+<a class="offset-anchor" id="{{ releases[1].name }}"></a>
+
 <div style="text-align: center;">
   <h2>Past Releases</h2>
   <table style="margin: 0 auto;">
@@ -70,6 +76,7 @@ subtitle: Download the latest Bitcoin ABC software
         <td>Downloads</td>
         <td>Release Notes</td>
       </tr>
+    {% assign versionAnchorIndex = 2 %}
     {% assign pastReleases = releases | slice:1,15 %}
     {% for release in pastReleases %}
     {% assign version = release.name %}
@@ -77,6 +84,12 @@ subtitle: Download the latest Bitcoin ABC software
         <td>{{ version }}</td>
         <td>{{ release.published_at | date: "%Y %b %e" }}</td>
         <td>
+          <!-- offset-anchor version does not match `version`, as the whole
+               point is to offset the location of the anchor so that the
+               correct version is in view without additional scrolling -->
+          <a class="offset-anchor" id="{{ releases[versionAnchorIndex].name }}"></a>
+          {% assign versionAnchorIndex = versionAnchorIndex | plus: 1 %}
+
           <a class="btn btn-primary" href="https://download.bitcoinabc.org/latest/linux/bitcoin-abc-{{ version }}-x86_64-linux-gnu.tar.gz">
             <i class="fab fa-linux"></i>
           </a>

@@ -703,3 +703,9 @@ td.gutter {
 .download-button {
   font-size: 20px;
 }
+
+.offset-anchor {
+  visibility: hidden;
+  position: relative;
+  top: -40px;
+}
