@@ -41,6 +41,9 @@ then
 fi
 
 pushd "${SRC_DIR}"
+git reset --hard HEAD
+git clean -xffd || true
+git checkout master
 git pull --tags origin master
 popd
 
