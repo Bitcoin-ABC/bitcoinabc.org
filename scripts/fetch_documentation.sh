@@ -160,12 +160,14 @@ do
       exit 3
     fi
 
-    # Build and install the man pages
-    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
     if [[ "${VERSION}" == "0.22.3" ]]; then
       # Cherry pick a fix to ensure the version number is set correctly
       git cherry-pick 6f59a8facadb99ffa0f64421d7248043de507c64
+    fi
 
+    # Build and install the man pages
+    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
+    if [[ "${VERSION}" == "0.22.3" ]]; then
       xvfb-run -a -e /dev/stderr ninja install-manpages-html
     else
       ninja install-manpages-html
