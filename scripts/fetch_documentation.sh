@@ -155,11 +155,10 @@ do
 
   if [ "${BUILD_MAN_PAGES}" = "yes" ] && [ ! -d "${VERSION_DIR}/man" ]
   then
-    # xvfb is only needed to build 0.22.3. Once this version is phased out,
-    # xvfb can be removed.
+    # xvfb is only needed to build headlessly.
     if ! command -v xvfb-run
     then
-      echo "xvfb is required to build 0.22.3 docs headlessly, please install it"
+      echo "xvfb is required to build the docs headlessly, please install it."
       exit 3
     fi
 
@@ -170,11 +169,11 @@ do
 
     # Build and install the man pages
     cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
-    if [[ "${VERSION}" == "0.22.3" ]]; then
-      xvfb-run -a -e /dev/stderr ninja install-manpages-html
-    else
-      ninja install-manpages-html
-    fi
+    # Version 0.22.4 calls xvfb-run and can cause a race, so force using a
+    # single job.
+    # FIXME Remove the -j1 once 0.22.4 gets obsoleted.
+    xvfb-run -a -e /dev/stderr ninja -j1 install-manpages-html
+
     mkdir -p "${VERSION_DIR}/man"
     # Cache the result
     cp "${INSTALL_DIR}"/share/man/html/* "${VERSION_DIR}/man/"
