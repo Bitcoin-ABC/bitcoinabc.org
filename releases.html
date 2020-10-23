@@ -7,8 +7,10 @@ subtitle: Download the latest Bitcoin ABC software
 {% assign releases = site.data.github-releases %}
 {% assign latestVersion = releases[0].name %}
 
+{% include upgrade-notice.html %}
+
 <!-- Offset the version anchor of the first release so that the top of the page is in view -->
-<a class="offset-anchor" style="top: -220px" id="{{ latestVersion }}"></a>
+<a class="offset-anchor" style="top: -400px" id="{{ latestVersion }}"></a>
 
 <div class="hero-box">
   <h1>Download Bitcoin ABC {{ latestVersion }}</h1>

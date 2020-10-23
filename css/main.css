@@ -690,6 +690,7 @@ td.gutter {
   background: #e9f4ff;
   border-radius: 12px;
   padding: 20px;
+  margin: 5px;
 }
 
 .btn-primary {
