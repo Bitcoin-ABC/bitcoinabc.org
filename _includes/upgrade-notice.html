@@ -1,6 +1,35 @@
-<div class="hero-box" style="background: #ffd070;">
+<script>
+  function updateUpgradeNotice() {
+    const activationTime = 1605441600;
+    const secondsInAWeek = 604800;
+
+    // When the upgrade activation is 10 weeks away, make the upgrade notice visible
+    const unixTime = Math.floor((new Date()).getTime() / 1000);
+    if ((unixTime > activationTime - 10 * secondsInAWeek) && (unixTime <= activationTime)) {
+      $("#upgrade-notice-pre-activation").css("display", "");
+    }
+
+    // For the week following the upgrade activation, show a message for late-comers
+    if ((unixTime > activationTime) && (unixTime < activationTime + secondsInAWeek)) {
+      $("#upgrade-notice-post-activation").css("display", "");
+    }
+  }
+  document.addEventListener('DOMContentLoaded', updateUpgradeNotice);
+</script>
+
+<div id="upgrade-notice-pre-activation" class="hero-box" style="background: #ffe090; display: none;">
   <h3>Prepare for the November 2020 protocol upgrade today!</h3>
-  <div>
-    All release versions 0.22.0 and later are compatible with the <a href="https://blog.bitcoinabc.org/2020/09/14/preparing-businesses-for-a-successful-network-upgrade/">planned protocol upgrade</a> that is scheduled to activate on <span style="font-weight: bold">November 15th, 2020</span>. Update early to keep your node in sync with the Bitcoin Cash network.
-  </div>
+  All release versions 0.22.0 and later are compatible with the
+  <a href="https://blog.bitcoinabc.org/2020/09/14/preparing-businesses-for-a-successful-network-upgrade/">planned protocol upgrade</a>
+  that is scheduled to activate on
+  <span style="font-weight: bold">November 15th, 2020</span>.
+  Update early to keep your node in sync with the Bitcoin Cash network.
+</div>
+
+<div id="upgrade-notice-post-activation" class="hero-box" style="background: #ffb0a0; display: none;">
+  <h3>The November 2020 protocol upgrade has activated!</h3>
+  Bitcoin Cash is now following
+  <a href="https://blog.bitcoinabc.org/2020/09/14/preparing-businesses-for-a-successful-network-upgrade/">new protocol rules</a>.
+  If you forgot to upgrade to 0.22.0 or later, your node is no longer in sync with the rest of the network!
+  Upgrade to the latest release below.
 </div>
