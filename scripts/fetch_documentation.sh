@@ -15,6 +15,12 @@ MIN_VERSION_RPC_DOCS='0.22.1'
 # Min version for man pages generation
 MIN_VERSION_MAN_PAGES='0.22.1'
 
+# jq must be installed
+if ! command -v jq > /dev/null; then
+  echo "Error: 'jq' is not installed."
+  exit 10
+fi
+
 
 SCRIPT_DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)
 TOPLEVEL=$(git -C "${SCRIPT_DIR}" rev-parse --show-toplevel)
