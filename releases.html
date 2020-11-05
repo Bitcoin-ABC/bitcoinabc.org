@@ -5,6 +5,14 @@ subtitle: Download the latest Bitcoin ABC software
 ---
 
 {% assign releases = site.data.github-releases %}
+
+{% for release in releases %}
+  {% if release.name == "0.22.6" %}
+    {% assign releases = releases | slice:0,forloop.index %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
 {% if releases.size > 0 %}
   {% assign latestVersion = releases[0].name %}
 
@@ -14,24 +22,24 @@ subtitle: Download the latest Bitcoin ABC software
   <a class="offset-anchor" style="top: -400px" id="{{ latestVersion }}"></a>
 
   <div class="hero-box">
-    <h1>Download Bitcoin ABC {{ latestVersion }}</h1>
+    <h1>Download Bitcoin ABC {{ latestVersion }} (BCHA Network)</h1>
 
     <div style="margin: 6px">Published: {{ releases[0].published_at | date: "%a %b %e %Y" }}</div>
 
     <div>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/{{ latestVersion }}/linux/bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz">
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bcha/{{ latestVersion }}/linux/bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz">
         <i class="fab fa-linux"></i>
         Linux
       </a>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/{{ latestVersion }}/osx/bitcoin-abc-{{ latestVersion }}-osx-unsigned.dmg">
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bcha/{{ latestVersion }}/osx/bitcoin-abc-{{ latestVersion }}-osx-unsigned.dmg">
         <i class="fab fa-apple"></i>
         OSX
       </a>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/{{ latestVersion }}/win/bitcoin-abc-{{ latestVersion }}-win64-setup-unsigned.exe">
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bcha/{{ latestVersion }}/win/bitcoin-abc-{{ latestVersion }}-win64-setup-unsigned.exe">
         <i class="fab fa-windows"></i>
         Windows
       </a>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/{{ latestVersion }}/src/bitcoin-abc-{{ latestVersion }}.tar.gz">
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bcha/{{ latestVersion }}/src/bitcoin-abc-{{ latestVersion }}.tar.gz">
         <i class="fas fa-code-branch"></i>
         Source Snapshot
       </a>
@@ -56,9 +64,55 @@ subtitle: Download the latest Bitcoin ABC software
         Docker
       </a>
     </div>
-    <div style="margin-top: 20px;">
-      For the latest source code, see <a href="https://github.com/Bitcoin-ABC/bitcoin-abc">Github</a>.
+  </div>
+
+  <div class="hero-box">
+    <h1>Download Bitcoin ABC {{ latestVersion }} (BCHN Network)</h1>
+
+    <div style="margin: 6px">Published: {{ releases[0].published_at | date: "%a %b %e %Y" }}</div>
+
+    <div>
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/linux/bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz">
+        <i class="fab fa-linux"></i>
+        Linux
+      </a>
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/osx/bitcoin-abc-{{ latestVersion }}-osx-unsigned.dmg">
+        <i class="fab fa-apple"></i>
+        OSX
+      </a>
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/win/bitcoin-abc-{{ latestVersion }}-win64-setup-unsigned.exe">
+        <i class="fab fa-windows"></i>
+        Windows
+      </a>
+      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/src/bitcoin-abc-{{ latestVersion }}.tar.gz">
+        <i class="fas fa-code-branch"></i>
+        Source Snapshot
+      </a>
     </div>
+
+    <div style="margin-top: 20px">
+      <h4>Packages</h4>
+      <a class="btn btn-primary download-button" href="https://launchpad.net/~bitcoin-abc/+archive/ubuntu/ppa/">
+        <i class="fab fa-ubuntu"></i>
+        Ubuntu
+      </a>
+      <div class="btn-group">
+        <a class="btn btn-primary download-button" style="border-right: solid 5px #1e5d94;" href="https://aur.archlinux.org/packages/bitcoin-abc-bchn/">
+          Arch Linux
+        </a>
+        <a class="btn btn-primary download-button" href="https://aur.archlinux.org/packages/bitcoin-abc-qt-bchn/">
+          (Qt)
+        </a>
+      </div>
+      <a class="btn btn-primary download-button" href="https://hub.docker.com/r/bitcoinabc/bitcoin-abc-bchn/">
+        <i class="fab fa-docker"></i>
+        Docker
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-box">
+    For the latest source code that suports both chains, see <a href="https://github.com/Bitcoin-ABC/bitcoin-abc">Github</a>.
   </div>
 
   {% capture include_release_notes %}{% include_relative abc_md_docs/doc/release-notes/release-notes-{{ latestVersion }}.md %}{% endcapture %}
@@ -70,39 +124,57 @@ subtitle: Download the latest Bitcoin ABC software
   <a class="offset-anchor" id="{{ releases[1].name }}"></a>
 
   <div style="text-align: center;">
+    {% assign versionAnchorIndex = 2 %}
+    {% assign pastReleases = releases | slice:1,15 %}
+    {% if pastReleases.size > 0 %}
     <h2>Past Releases</h2>
     <table style="margin: 0 auto;">
       <tbody>
         <tr>
           <td>Version</td>
           <td>Published</td>
-          <td>Downloads</td>
+          <td>Downloads (BCHA)</td>
+          <td>Downloads (BCHN)</td>
           <td>Release Notes</td>
         </tr>
-      {% assign versionAnchorIndex = 2 %}
-      {% assign pastReleases = releases | slice:1,15 %}
       {% for release in pastReleases %}
       {% assign version = release.name %}
         <tr>
-          <td>{{ version }}</td>
-          <td>{{ release.published_at | date: "%Y %b %e" }}</td>
           <td>
+            {{ version }}
+
             <!-- offset-anchor version does not match `version`, as the whole
                  point is to offset the location of the anchor so that the
                  correct version is in view without additional scrolling -->
             <a class="offset-anchor" id="{{ releases[versionAnchorIndex].name }}"></a>
             {% assign versionAnchorIndex = versionAnchorIndex | plus: 1 %}
-
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/{{ version }}/linux/bitcoin-abc-{{ version }}-x86_64-linux-gnu.tar.gz">
+          </td>
+          <td>{{ release.published_at | date: "%Y %b %e" }}</td>
+          <td>
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bcha/{{ version }}/linux/bitcoin-abc-{{ version }}-x86_64-linux-gnu.tar.gz">
               <i class="fab fa-linux"></i>
             </a>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/{{ version }}/osx/bitcoin-abc-{{ version }}-osx-unsigned.dmg">
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bcha/{{ version }}/osx/bitcoin-abc-{{ version }}-osx-unsigned.dmg">
               <i class="fab fa-apple"></i>
             </a>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/{{ version }}/win/bitcoin-abc-{{ version }}-win64-setup-unsigned.exe">
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bcha/{{ version }}/win/bitcoin-abc-{{ version }}-win64-setup-unsigned.exe">
               <i class="fab fa-windows"></i>
             </a>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/{{ version }}/src/bitcoin-abc-{{ version }}.tar.gz">
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bcha/{{ version }}/src/bitcoin-abc-{{ version }}.tar.gz">
+              <i class="fas fa-code-branch"></i>
+            </a>
+          </td>
+          <td>
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/linux/bitcoin-abc-{{ version }}-x86_64-linux-gnu.tar.gz">
+              <i class="fab fa-linux"></i>
+            </a>
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/osx/bitcoin-abc-{{ version }}-osx-unsigned.dmg">
+              <i class="fab fa-apple"></i>
+            </a>
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/win/bitcoin-abc-{{ version }}-win64-setup-unsigned.exe">
+              <i class="fab fa-windows"></i>
+            </a>
+            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/src/bitcoin-abc-{{ version }}.tar.gz">
               <i class="fas fa-code-branch"></i>
             </a>
           </td>
@@ -111,6 +183,7 @@ subtitle: Download the latest Bitcoin ABC software
       {% endfor %}
       </tbody>
     </table>
+    {% endif %}
     <h3>For older releases, see <a href="https://download.bitcoinabc.org/">Archived Releases</a></h3>
   </div>
 {% else %}
