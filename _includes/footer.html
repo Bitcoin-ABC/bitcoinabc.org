@@ -1,4 +1,7 @@
 <footer>
+  <div style="margin: 0 auto; padding-bottom: 10px;">
+    {% include mailer.html %}
+  </div>
   <ul class="flex-row list-inline footer-links">
     {%- for link in site.social-network-links -%}
     {%- assign curkey = link[0] -%}
