@@ -203,8 +203,10 @@ ${SCRIPT_DIR}/fetch_markdown_files.sh "${SRC_DIR}"
 # latest release notes available for that version number. This temporary copy
 # will be replaced once the release notes are archived.
 ABC_MD_DOCS="${TOPLEVEL}"/abc_md_docs
-LATEST_RELEASE_NOTES="${ABC_MD_DOCS}/doc/release-notes/release-notes-${RELEASE_VERSIONS[0]}.md"
-if [ ! -f "${LATEST_RELEASE_NOTES}" ]; then
-  cp "${ABC_MD_DOCS}/doc/release-notes.md" "${LATEST_RELEASE_NOTES}"
+LATEST_RELEASE_NOTES="${ABC_MD_DOCS}/doc/release-notes/release-notes-${RELEASE_VERSIONS[0]}"
+if [ ! -f "${LATEST_RELEASE_NOTES}.md" ]; then
+  cp "${ABC_MD_DOCS}/doc/release-notes.md" "${LATEST_RELEASE_NOTES}.md"
+  cp "${ABC_MD_DOCS}/doc/release-notes.page.md" "${LATEST_RELEASE_NOTES}.page.md"
+  sed -i "s/permalink: \/doc\/release-notes.html/permalink: \/doc\/release-notes\/release-notes-${RELEASE_VERSIONS[0]}.html/g" "${LATEST_RELEASE_NOTES}.page.md"
 fi
 popd
