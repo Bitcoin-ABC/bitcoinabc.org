@@ -15,3 +15,83 @@ span#subtext {
   font-weight: normal;
   color: #0066CC;
 }
+
+#bchapage {
+    text-align: center;
+}
+
+.bcha-section {
+    margin: 80px 0;
+}
+
+.bcha-section h2 {
+    margin-bottom: 20px;
+}
+
+.bcha-link {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.bcha-exchanges {
+	text-align: center;
+}
+
+.bcha-exchanges a {
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bcha-exchanges a img {
+	width: 100%;
+	max-width: 300px;
+}
+
+.social-ctn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 500px;
+	margin: auto;
+}
+
+.bcha-social {
+	width: 33.333333%;
+}
+
+.bcha-social img {
+	width: 100%;
+	max-width: 80px;
+}
+
+.bcha-icon-ctn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.bcha-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 33.3333%;
+	padding: 0 20px;
+}
+
+.bcha-icon img {
+	width: 120px;
+}
+
+@media (max-width: 768px) {
+	.bcha-icon-ctn {
+		flex-direction: column;
+	}
+
+	.bcha-icon {
+		width: 100%;
+	}
+}
