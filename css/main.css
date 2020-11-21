@@ -781,6 +781,53 @@ padding: 0 20px;
 width: 120px;
 }
 
+.tile {
+  align-items: center;
+  justify-content: center;
+}
+
+.tile a {
+  padding: 2em;
+  border-radius: 5px;
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  border: 1px solid #eee;
+  -webkit-transition: border-color 250ms ease;
+  -moz-transition: border-color 250ms ease;
+  -o-transition: border-color 250ms ease;
+  -ms-transition: border-color 250ms ease;
+  transition: border-color 250ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  -webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.15);
+}
+
+.tile a:hover {
+  border-bottom-color: #f08b16;
+  -webkit-box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.22);
+}
+
+.tile img {
+  vertical-align: middle;
+  max-height: 90px;
+}
+
+.extra-margin {
+  margin-top: 40px;
+}
+
+body .tile .social-img {
+  max-height: 50px;
+}
+
+
 @media (max-width: 768px) {
 .bcha-icon-ctn {
   flex-direction: column;
@@ -789,4 +836,15 @@ width: 120px;
 .bcha-icon {
   width: 100%;
 }
+
+.tile img {
+  max-height: 50px;
 }
+
+.tile a {
+  height: 100px;
+  margin-bottom: 10px;
+}
+}
+
+
