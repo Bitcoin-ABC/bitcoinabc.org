@@ -827,6 +827,15 @@ body .tile .social-img {
   max-height: 50px;
 }
 
+.electrum-note {
+  font-weight: bold;
+  background-color: #ececec;
+  font-size: 14px;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.8em;
+}
+
 
 @media (max-width: 768px) {
 .bcha-icon-ctn {
