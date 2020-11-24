@@ -1,6 +1,8 @@
 <footer>
   <div style="margin: 0 auto; padding-bottom: 10px;">
+    {% if page.title != "Bitcoin ABC" %}
     {% include mailer.html %}
+    {% endif %}
   </div>
   <ul class="flex-row list-inline footer-links">
     {%- for link in site.social-network-links -%}
