@@ -16,7 +16,6 @@ description: Bitcoin ABC - Software for Bitcoin Cash nodes
 # List of links in the navigation bar
 navbar-links:
   BCHA: "bcha/"
-  Latest Roadmap: "https://www.bitcoincash.org/roadmap/"
   Blog: "https://blog.bitcoinabc.org/"
   Download:
     - Releases: "releases/"
