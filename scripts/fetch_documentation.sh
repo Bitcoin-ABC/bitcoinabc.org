@@ -30,10 +30,10 @@ RELEASES=$(curl -L -H "Accept: application/vnd.github.v3+json" https://api.githu
 echo "${RELEASES}" > "${TOPLEVEL}"/_data/github-releases.json
 
 # Extract release version numbers
-RELEASE_VERSIONS=($(echo ${RELEASES} | jq -r .[].name))
+RELEASE_VERSIONS=($(echo ${RELEASES} | jq -r '[.[].name] | reverse[]'))
 
 # Extract release tags
-RELEASE_TAGS=($(echo ${RELEASES} | jq -r .[].tag_name))
+RELEASE_TAGS=($(echo ${RELEASES} | jq -r '[.[].tag_name] | reverse[]'))
 
 # Create the cache directory as needed. This is where the sources will be
 # cloned, and where the docs will be built.
