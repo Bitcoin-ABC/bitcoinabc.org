@@ -4,7 +4,7 @@ title: Bitcoin ABC Releases
 subtitle: Download the latest Bitcoin ABC software
 ---
 
-{% assign abc_only_versions = "0.21.0, 0.21.1, 0.21.2, 0.21.3, 0.21.4, 0.21.5, 0.21.6, 0.21.7, 0.21.8, 0.21.9, 0.21.10, 0.21.11, 0.21.12, 0.21.13, 0.22.0, 0.22.1, 0.22.2, 0.22.3, 0.22.4, 0.22.5" | split: ", " %}
+{% assign bchn_versions = "0.22.6, 0.22.7, 0.22.8, 0.22.9" | split: ", " %}
 {% assign active_versions = "0.23, 0.22" | split: ", " %}
 {% assign releases = site.data.github-releases %}
 
@@ -17,12 +17,13 @@ subtitle: Download the latest Bitcoin ABC software
   <a class="offset-anchor" style="top: -400px" id="{{ latestVersion }}"></a>
 
   <div class="hero-box" style="background: #bea">
-    Why does the same version of Bitcoin ABC exist for two different networks?
-    Read more about it <a href="https://blog.bitcoinabc.org/2020/11/06/bitcoin-abc-will-support-both-bcha-and-bchn-after-the-chain-split/">here</a>.
+    <p>Bitcoin ABC is putting all its energy on delivering new features and improvements <br />
+    to the node software for the <strong>BCHA</strong> chain.</p>
+    <p>As a consequence, Bitcoin ABC will no longer provide a BCH compatible variant starting from version 0.22.10.</p>
   </div>
 
   <div class="hero-box">
-    <h1>Download Bitcoin ABC {{ latestVersion }} (BCHA Network)</h1>
+    <h1>Download Bitcoin ABC {{ latestVersion }}</h1>
 
     <div style="margin: 6px">Published: {{ releases[0].published_at | date: "%a %b %e %Y" }}</div>
 
@@ -67,52 +68,7 @@ subtitle: Download the latest Bitcoin ABC software
   </div>
 
   <div class="hero-box">
-    <h1>Download Bitcoin ABC {{ latestVersion }} (BCHN Network)</h1>
-
-    <div style="margin: 6px">Published: {{ releases[0].published_at | date: "%a %b %e %Y" }}</div>
-
-    <div>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/linux/bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz">
-        <i class="fab fa-linux"></i>
-        Linux
-      </a>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/osx/bitcoin-abc-{{ latestVersion }}-osx-unsigned.dmg">
-        <i class="fab fa-apple"></i>
-        OSX
-      </a>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/win/bitcoin-abc-{{ latestVersion }}-win64-setup-unsigned.exe">
-        <i class="fab fa-windows"></i>
-        Windows
-      </a>
-      <a class="btn btn-primary download-button" href="https://download.bitcoinabc.org/bchn/{{ latestVersion }}/src/bitcoin-abc-{{ latestVersion }}.tar.gz">
-        <i class="fas fa-code-branch"></i>
-        Source Snapshot
-      </a>
-    </div>
-
-    <div style="margin-top: 20px">
-      <h4>Packages</h4>
-      <a class="btn btn-primary download-button" href="https://launchpad.net/~bitcoin-abc/+archive/ubuntu/bitcoin-abc-bchn">
-        <i class="fab fa-ubuntu"></i>
-        Ubuntu
-      </a>
-      <div class="btn-group">
-        <a class="btn btn-primary download-button" style="border-right: solid 5px #1e5d94;" href="https://aur.archlinux.org/packages/bitcoin-abc-bchn/">
-          Arch Linux
-        </a>
-        <a class="btn btn-primary download-button" href="https://aur.archlinux.org/packages/bitcoin-abc-qt-bchn/">
-          (Qt)
-        </a>
-      </div>
-      <a class="btn btn-primary download-button" href="https://hub.docker.com/r/bitcoinabc/bitcoin-abc-bchn/">
-        <i class="fab fa-docker"></i>
-        Docker
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-box">
-    For the latest source code that suports both chains, see <a href="https://github.com/Bitcoin-ABC/bitcoin-abc">Github</a>.
+    For the latest source code, see <a href="https://github.com/Bitcoin-ABC/bitcoin-abc">Github</a>.
   </div>
 
   {% capture include_release_notes %}{% include_relative abc_md_docs/doc/release-notes/release-notes-{{ latestVersion }}.md %}{% endcapture %}
@@ -166,7 +122,7 @@ subtitle: Download the latest Bitcoin ABC software
               <i class="fas fa-code-branch"></i>
             </a>
           </td>
-          {% if abc_only_versions contains version %}
+          {% unless bchn_versions contains version %}
           <td style="text-align: center; color: #bbb">N/A</td>
           {% else %}
           <td>
@@ -183,7 +139,7 @@ subtitle: Download the latest Bitcoin ABC software
               <i class="fas fa-code-branch"></i>
             </a>
           </td>
-          {% endif %}
+          {% endunless %}
           <td><a href="/doc/release-notes/release-notes-{{ version }}.html">{{ version }} Release Notes</a></td>
         </tr>
       {% endif %}
