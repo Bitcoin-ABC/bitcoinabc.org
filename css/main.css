@@ -819,6 +819,7 @@ width: 120px;
   -webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 .tile a:hover {
@@ -831,6 +832,14 @@ width: 120px;
 .tile img {
   vertical-align: middle;
   max-height: 90px;
+}
+
+.logo-tile a {
+  height: 100%;
+}
+
+.logo-tile img {
+  max-height: 100%;
 }
 
 .extra-margin {

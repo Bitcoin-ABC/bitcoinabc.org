@@ -1,0 +1,26 @@
+---
+layout: base
+title: Bitcoin ABC logo
+---
+
+{% assign logo_sizes = "16, 32, 64, 128, 256" | split: ", " %}
+
+<div class="flex-content">
+  <div class="bcha-section">
+    <h2>Bitcoin ABC logo</h2>
+    <p>You can freely download the below Bitcoin ABC logos for use on your website</p>
+    <div class="row extra-margin">
+      {% for logo_size in logo_sizes %}
+      <div class="col-md-4 tile logo-tile">
+        <a href="/logos/bitcoin-abc{{ logo_size }}.png" target="_blank" class="bcha-link">
+          <figure>
+            <img src="/logos/bitcoin-abc{{ logo_size }}.png" alt="Bitcoin ABC logo {{ logo_size }}px" />
+            <figcaption>{{ logo_size }} pixels</figcaption>
+          </figure> 
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

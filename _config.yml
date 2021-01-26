@@ -20,6 +20,7 @@ navbar-links:
   Download:
     - Releases: "releases/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
+    - Logos: "logos/"
   Documentation: "doc/"
   Developers:
     - Contributing: "CONTRIBUTING.html"
