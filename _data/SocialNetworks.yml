@@ -35,3 +35,8 @@ youtube:
   name: "YouTube"
   baseURL: "https://www.youtube.com/"
   iconClasses: "fab fa-youtube"
+
+reddit:
+  name: "Reddit"
+  baseURL: "https://www.reddit.com/r/"
+  iconClasses: "fab fa-reddit"
