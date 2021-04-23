@@ -4,7 +4,6 @@ title: Bitcoin ABC Releases
 subtitle: Download the latest Bitcoin ABC software
 ---
 
-{% assign bchn_versions = "0.22.6, 0.22.7, 0.22.8, 0.22.9" | split: ", " %}
 {% assign active_versions = "0.23, 0.22" | split: ", " %}
 {% assign releases = site.data.github-releases %}
 
@@ -15,12 +14,6 @@ subtitle: Download the latest Bitcoin ABC software
 
   <!-- Offset the version anchor of the first release so that the top of the page is in view -->
   <a class="offset-anchor" style="top: -400px" id="{{ latestVersion }}"></a>
-
-  <div class="hero-box" style="background: #bea">
-    <p>Bitcoin ABC is putting all its energy on delivering new features and improvements <br />
-    to the node software for the <strong>BCHA</strong> chain.</p>
-    <p>As a consequence, Bitcoin ABC will no longer provide a BCH compatible variant starting from version 0.22.10.</p>
-  </div>
 
   <div class="hero-box">
     <h1>Download Bitcoin ABC {{ latestVersion }}</h1>
@@ -89,8 +82,7 @@ subtitle: Download the latest Bitcoin ABC software
         <tr>
           <td>Version</td>
           <td>Published</td>
-          <td>Downloads (BCHA)</td>
-          <td>Downloads (BCHN)</td>
+          <td>Downloads</td>
           <td>Release Notes</td>
         </tr>
       {% for release in pastReleases %}
@@ -122,24 +114,6 @@ subtitle: Download the latest Bitcoin ABC software
               <i class="fas fa-code-branch"></i>
             </a>
           </td>
-          {% unless bchn_versions contains version %}
-          <td style="text-align: center; color: #bbb">N/A</td>
-          {% else %}
-          <td>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/linux/bitcoin-abc-{{ version }}-x86_64-linux-gnu.tar.gz">
-              <i class="fab fa-linux"></i>
-            </a>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/osx/bitcoin-abc-{{ version }}-osx-unsigned.dmg">
-              <i class="fab fa-apple"></i>
-            </a>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/win/bitcoin-abc-{{ version }}-win64-setup-unsigned.exe">
-              <i class="fab fa-windows"></i>
-            </a>
-            <a class="btn btn-primary" href="https://download.bitcoinabc.org/bchn/{{ version }}/src/bitcoin-abc-{{ version }}.tar.gz">
-              <i class="fas fa-code-branch"></i>
-            </a>
-          </td>
-          {% endunless %}
           <td><a href="/doc/release-notes/release-notes-{{ version }}.html">{{ version }} Release Notes</a></td>
         </tr>
       {% endif %}
