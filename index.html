@@ -17,6 +17,8 @@ use-site-title: true
 
   <hr />
 
+  {% include upgrade-notice.html %}
+
   {% assign latestVersion = site.data.github-releases[0].name %}
   <h2><a href="/releases/">Install the latest version ({{ latestVersion }})</a></h2>
 
