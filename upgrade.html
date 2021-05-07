@@ -1,0 +1,21 @@
+---
+layout: base
+title: Network Upgrade
+---
+
+<div class="flex-content">
+  <div id="upgradepage">
+    {% include upgrade-notice.html %}
+    <div class="upgrade-details-section">
+      <h2>Who needs to upgrade?</h2>
+      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.23.x). This is available at our <a href="/releases"> Releases</a> page.</p>
+      <h2>Exactly when will the upgrade activate?</h2>
+      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1621080000 (12:00:00 UTC on May 15th, 2021). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <h2>What features are included in the Network Upgrade?</h2>
+      <p>The May 15th 2021 upgrade does not include any new protocol features. However, because of the automatic replay protection that is part of the 6-month upgrade cadence, it is still necessary for all full node operators to upgrade to 0.23.x.</p>
+      <h2>Do I need to upgrade my wallet?</h2>
+      <p>The network upgrade will only affect full-nodes. This means that other BCHA software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
+    </div>
+  </div>
+</div>
+
