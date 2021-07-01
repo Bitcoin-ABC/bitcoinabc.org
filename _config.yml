@@ -15,7 +15,7 @@ description: Bitcoin ABC - Software for Bitcoin Cash nodes
 
 # List of links in the navigation bar
 navbar-links:
-  BCHA: "bcha/"
+  eCash: "ecash/"
   Blog: "https://blog.bitcoinabc.org/"
   Download:
     - Releases: "releases/"
