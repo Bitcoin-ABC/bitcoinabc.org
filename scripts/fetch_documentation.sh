@@ -10,10 +10,10 @@ GITHUB_REPO='bitcoin-abc'
 MAX_RELEASES=15
 
 # Min version for rpc docs generation
-MIN_VERSION_RPC_DOCS='0.22.1'
+MIN_VERSION_RPC_DOCS='0.23.0'
 
 # Min version for man pages generation
-MIN_VERSION_MAN_PAGES='0.22.1'
+MIN_VERSION_MAN_PAGES='0.23.0'
 
 # jq must be installed
 if ! command -v jq > /dev/null; then
@@ -106,54 +106,7 @@ do
   then
     # Build and install the release version
     cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
-
-    # Prior to version 0.22.2, the rpc-doc target required to manually spin a
-    # regtest bitcoind server.
-    if version_greater_equal "${VERSION}" "0.22.2"
-    then
-      ninja doc-rpc
-    else
-      # FIXME Remove the else branch after versions < 0.22.2 are obsolete
-      (
-        ninja install/strip
-
-        BITCOIND_PID_FILE="${VERSION_DIR}/bitcoind_${VERSION}.pid"
-        "${INSTALL_DIR}"/bin/bitcoind -regtest -daemon -pid="${BITCOIND_PID_FILE}"
-
-        shutdown_bitcoind() {
-          "${INSTALL_DIR}"/bin/bitcoin-cli -regtest stop > /dev/null 2>&1
-
-          # Waiting for bitcoind shut down
-          PID_WAIT_COUNT=0
-          while [ -e "${BITCOIND_PID_FILE}" ]
-          do
-            : $((PID_WAIT_COUNT+=1))
-            if [ "${PID_WAIT_COUNT}" -gt 20 ]
-            then
-              echo "Timed out waiting for bitcoind to stop"
-              exit 3
-            fi
-            sleep 0.5
-          done
-        }
-        trap "shutdown_bitcoind" EXIT
-
-        # Waiting for bitcoind to spin up
-        RPC_HELP_WAIT_COUNT=0
-        while ! "${INSTALL_DIR}"/bin/bitcoin-cli -regtest help > /dev/null 2>&1
-        do
-          : $((RPC_HELP_WAIT_COUNT+=1))
-          if [ "${RPC_HELP_WAIT_COUNT}" -gt 10 ]
-          then
-            echo "Timed out waiting for bitcoind to start"
-            exit 2
-          fi
-          sleep 0.5
-        done
-
-        ninja doc-rpc
-      )
-    fi
+    ninja doc-rpc
 
     # Cache the result
     cp -R "${BUILD_DIR}/doc/rpc/en/${VERSION}/rpc" "${VERSION_DIR}/"
@@ -168,17 +121,9 @@ do
       exit 3
     fi
 
-    if [[ "${VERSION}" == "0.22.3" ]]; then
-      # Cherry pick a fix to ensure the version number is set correctly
-      git cherry-pick 6f59a8facadb99ffa0f64421d7248043de507c64
-    fi
-
     # Build and install the man pages
     cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
-    # Version 0.22.4 calls xvfb-run and can cause a race, so force using a
-    # single job.
-    # FIXME Remove the -j1 once 0.22.4 gets obsoleted.
-    xvfb-run -a -e /dev/stderr ninja -j1 install-manpages-html
+    xvfb-run -a -e /dev/stderr ninja install-manpages-html
 
     mkdir -p "${VERSION_DIR}/man"
     # Cache the result
