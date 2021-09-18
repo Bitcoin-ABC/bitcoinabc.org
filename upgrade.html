@@ -7,15 +7,15 @@ title: Network Upgrade
   <div id="upgradepage">
     {% include upgrade-notice.html %}
     <div class="bcha-section">
-      <img src="/img/Upgrade_2021-05-15.png" alt="May 15, 2021 Upgrade">
-      <h2>What happened?</h2>
-      <p>The planned upgrade of the BCHA network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.bitcoinabc.org/block-height/686621">686621</a>.</p>
-      <h2>I forgot to upgrade, what should I do?</h2>
-      <p>If you forgot to upgrade, your node may have marked the upgraded chain as invalid. In order to fix this problem, simply upgrade to Bitcoin ABC version 0.23.4 or greater, available at our <a href="/releases">Releases page</a>.</p>
-      <h2>What features were included in the Network Upgrade?</h2>
-      <p>The May 15th 2021 upgrade did not include any new protocol features. However, because of the automatic replay protection that is part of the 6-month upgrade cadence, it is necessary for all full node operators to upgrade to 0.23.x.</p>
+      <img src="/img/Upgrade_2021-11-15.png" alt="November 15, 2021 Upgrade">
+      <h2>Who needs to upgrade?</h2>
+      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.24.x). This is available at our <a href="/releases"> Releases</a> page.</p>
+      <h2>Exactly when will the upgrade activate?</h2>
+      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1636977600 (12:00:00 UTC on November 15th, 2021). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <h2>What features are included in the Network Upgrade?</h2>
+      <p>The November 15th 2021 upgrade does not include any new protocol features. However, because of the automatic replay protection that is part of the 6-month upgrade cadence, it is still necessary for all full node operators to upgrade to 0.24.x.</p>
       <h2>Do I need to upgrade my wallet?</h2>
-      <p>The network upgrade only affects full-nodes. This means that other BCHA software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
+      <p>The network upgrade only affects full-nodes. This means that other eCash software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
     </div>
   </div>
 </div>
