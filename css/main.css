@@ -725,35 +725,35 @@ td.gutter {
   top: -40px;
 }
 
-#bchapage {
+#ecashpage {
   text-align: center;
 }
 
-.bcha-section {
+.ecash-section {
   margin: 80px 0;
 }
 
-.bcha-section h2 {
+.ecash-section h2 {
   margin-bottom: 20px;
 }
 
-.bcha-link {
+.ecash-link {
 display: block;
 margin-bottom: 10px;
 }
 
-.bcha-exchanges {
+.ecash-exchanges {
 text-align: center;
 }
 
-.bcha-exchanges a {
+.ecash-exchanges a {
 height: 120px;
 display: flex;
 align-items: center;
 justify-content: center;
 }
 
-.bcha-exchanges a img {
+.ecash-exchanges a img {
 width: 100%;
 max-width: 300px;
 }
@@ -766,23 +766,23 @@ max-width: 500px;
 margin: auto;
 }
 
-.bcha-social {
+.ecash-social {
 width: 33.333333%;
 }
 
-.bcha-social img {
+.ecash-social img {
 width: 100%;
 max-width: 80px;
 }
 
-.bcha-icon-ctn {
+.ecash-icon-ctn {
 display: flex;
 align-items: center;
 justify-content: center;
 margin-top: 50px;
 }
 
-.bcha-icon {
+.ecash-icon {
 display: flex;
 align-items: center;
 justify-content: center;
@@ -791,7 +791,7 @@ width: 33.3333%;
 padding: 0 20px;
 }
 
-.bcha-icon img {
+.ecash-icon img {
 width: 120px;
 }
 
@@ -861,11 +861,11 @@ body .tile .social-img {
 
 
 @media (max-width: 768px) {
-.bcha-icon-ctn {
+.ecash-icon-ctn {
   flex-direction: column;
 }
 
-.bcha-icon {
+.ecash-icon {
   width: 100%;
 }
 
