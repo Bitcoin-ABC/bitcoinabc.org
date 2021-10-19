@@ -14,6 +14,9 @@ title: Network Upgrade
       <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1636977600 (12:00:00 UTC on November 15th, 2021). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
       <h2>What features are included in the Network Upgrade?</h2>
       <p>The November 15th 2021 upgrade does not include any new protocol features. However, because of the automatic replay protection that is part of the 6-month upgrade cadence, it is still necessary for all full node operators to upgrade to 0.24.x.</p>
+      <p><b>Note:</b> Version 0.24 has the "ecash" option ON by default.
+      If you are already setting "ecash=1" in the node configuration, then nothing will change, 
+      but it is a good idea to double check this setup when you upgrade the node version.</p>
       <h2>Do I need to upgrade my wallet?</h2>
       <p>The network upgrade only affects full-nodes. This means that other eCash software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
     </div>
