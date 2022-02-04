@@ -16,7 +16,7 @@ description: Bitcoin ABC - Software for eCash
 # List of links in the navigation bar
 navbar-links:
   eCash: "ecash/"
-  Blog: "https://blog.bitcoinabc.org/"
+  Announcements: "announcements/"
   Download:
     - Releases: "releases/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
