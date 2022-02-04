@@ -15,7 +15,7 @@ This article explains a method to split BCH and eCash from each other using [Ele
 
 ## What is Transaction Replay
 
-Transaction Replay affects coins that have not been moved since before to the blockchain split. This means that if you have Bitcoin Cash coins that have not moved since before Nov 15th, 2020, you will also have eCash (XEC). If you create a transaction to spend the BCH, or the XEC, the same transaction will be valid on both networks. This means that both the BCH and XEC will be spent, and sent to the same destination address. If the recipient is not expecting coins on both networks, then either the BCH or XEC may be lost. In order to avoid this problem, you should "split" the coins before sending to anyone.
+Transaction Replay affects coins that have not been moved since before the blockchain split. This means that if you have Bitcoin Cash coins that have not moved since before Nov 15th, 2020, you will also have eCash (XEC). If you create a transaction to spend the BCH, or the XEC, the same transaction will be valid on both networks. This means that both the BCH and XEC will be spent, and sent to the same destination address. If the recipient is not expecting coins on both networks, then either the BCH or XEC may be lost. In order to avoid this problem, you should "split" the coins before sending to anyone.
 
 ## How coin splitting works
 
@@ -27,15 +27,15 @@ You should be aware that there are also other methods to split coins. But in all
 
 These are the steps to split XEC from BCH using Electron Cash and Electrum ABC.
 
-**Note:** These instructions work is you are holding unsplit BCH/XEC in a wallet that you control. If the coins are on an exchange, you will not be able to access the unsplit coins, and you will have to rely on the exchange to split the coins for you.
+**Note:** These instructions work if you are holding unsplit BCH/XEC in a wallet that you control. If the coins are on an exchange, you will not be able to access the unsplit coins, and you will have to rely on the exchange to split the coins for you.
 
 ### Step one: Get your unsplit coins into Electron Cash and Electrum ABC
 Depending on where your BCH/XEC coins are held, there are different ways to get your unsplit coins into Electron Cash and Electrum ABC wallets.
 * If you don’t already have Electron Cash, you can install it from [here](https://electroncash.org/).
-* The best method is to import other wallets into Electron Cash is by importing your "passphrase" this is the 12 words you should have writte down to back up the wallet. Import that wallet to Electron Cash by selecting “File” then “New/Restore” and following those steps.
-* If you can't restore the wallet from the passphrase, you can try sending the BCH coins to a new Electron Cash wallet. In Electron Cash, go to "File" then "New/Restore", and make a new wallet. If you do this, make sure you write down the 12-word passphrase, you will need them for Electrum ABC. If you do this method, there's a chance your coins won't replay on the eCash network. The transaction can be done manually, but this is more complicated. So it is recommended you do the method where you import the passphrase into Electron Cash directly.
+* The best method is to import other wallets into Electron Cash by importing your "passphrase". This is the 12 words you should have written down to back up the wallet. Import that wallet to Electron Cash by selecting “File” then “New/Restore” and following those steps.
+* If you can't restore the wallet from the passphrase, you can try sending the BCH coins to a new Electron Cash wallet. In Electron Cash, go to "File" then "New/Restore", and make a new wallet. If you do this, make sure you write down the 12-word passphrase, you will need them for Electrum ABC. If you use this method, there's a chance your coins won't replay on the eCash network. The transaction can be broadcast manually, but this is more complicated, and therefore it is recommended you use the method where you import the passphrase into Electron Cash directly.
 * After the coins are in Electron Cash, you should confirm that the XEC side is now in Electrum ABC. If you do not already have Electrum ABC installed, you can get it [here](https://www.bitcoinabc.org/electrum/). Upon installation, Electrum ABC will copy existing Electron Cash wallets for you.
-* If the wallet wasn't create automatically, follow that same method you used above to create the same wallet in Electrum ABC. Confirm that you have the XEC side of the unsplit coins in this wallet.
+* If the wallet wasn't copied automatically, follow that same method you used above to create the same wallet in Electrum ABC. Confirm that you have the XEC side of the unsplit coins in this wallet.
 
 ### Step two: Send BCH to yourself in Electron Cash
 * Now that you have your BCH coins in an Electron Cash wallet, open that wallet.
