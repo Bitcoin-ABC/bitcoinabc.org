@@ -16,7 +16,7 @@ description: Bitcoin ABC - Software for eCash
 # List of links in the navigation bar
 navbar-links:
   eCash: "ecash/"
-  Announcements: "announcements/"
+  Blog: "blog/"
   Download:
     - Releases: "releases/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
@@ -107,7 +107,7 @@ url-pretty: "bitcoinabc.org"  # eg. "deanattali.com/beautiful-jekyll"
 # Truncates the excerpt to the specified number of words on the index page
 excerpt_length: 30
 
-# Number of announcements to appear on the front page
+# Number of blog posts to appear on the front page
 front_page_posts: 2
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
