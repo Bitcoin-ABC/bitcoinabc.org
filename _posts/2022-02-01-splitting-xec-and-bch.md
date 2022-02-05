@@ -45,6 +45,12 @@ Depending on where your BCH/XEC coins are held, there are different ways to get 
 * Click on the “Preview” button, and make sure that the address in the “Output” box is colored green. The green address indicates that you are sending the coins to yourself in the same wallet. You can also check that the “Input” coins are the coins that you want to split.
 * If everything looks okay, click “Sign” and then “Broadcast”.
 
+**Note:** The reason this method works, and this transaction doesn't replay on the eCash blockchain, is because Electron Cash inserts a “locktime” in the transaction that prevents it from being spent until a certain block height.
+Because the eCash blockchain is behind BCH, the transaction created by Electron Cash can’t confirm on the eCash blockchain until a few days later.
+So you have that time to make a different transaction on eCash.
+This is not true for most other wallets. It is something specific to Electron Cash and Electrum ABC that they add a locktime to transactions.
+For this reason, the coin splitting method described in this article only works with Electron Cash and Electrum ABC, and not with most other wallets.
+
 ### Step three: Send coins to yourself in Electrum ABC
 * In Electrum ABC, select the same coin or coins that were split in step one above, and begin a transaction in the “Send” tab.
 * Go to the “Address” tab. Right-click and copy the second unused address from the “Receiving” list. Make sure that this address is different than the one used in step one above.
