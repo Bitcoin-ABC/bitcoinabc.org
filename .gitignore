@@ -12,3 +12,6 @@ Thumbs.db
 ehthumbs.db
 
 _data/github-releases.json
+
+# Jekyll metadata for incremental builds
+.jekyll-metadata
