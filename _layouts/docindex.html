@@ -7,7 +7,7 @@ permalink: doc/
 <div>
   <table class="doc-index-table">
     <tbody>
-      {% for version in page.versions %}
+      {% for version in page.versions limit:15 %}
         <tr>
           <td><strong>{{ version }}</strong></td>
           {% assign rpccommand = site.doc | where:"version",version | where:"category","rpc" | sort:"name.help","last" | first %}
