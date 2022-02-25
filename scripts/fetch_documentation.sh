@@ -152,7 +152,7 @@ LATEST_RELEASE_VERSION=${RELEASE_VERSIONS[${#RELEASE_VERSIONS[@]}-1]}
 LATEST_RELEASE_NOTES="${ABC_MD_DOCS}/doc/release-notes/release-notes-${LATEST_RELEASE_VERSION}"
 if [ ! -f "${LATEST_RELEASE_NOTES}.md" ]; then
   cp "${ABC_MD_DOCS}/doc/release-notes.md" "${LATEST_RELEASE_NOTES}.md"
-  cp "${ABC_MD_DOCS}/doc/release-notes.page.md" "${LATEST_RELEASE_NOTES}.page.md"
-  sed -i "s/permalink: \/doc\/release-notes.html/permalink: \/doc\/release-notes\/release-notes-${LATEST_RELEASE_VERSION}.html/g" "${LATEST_RELEASE_NOTES}.page.md"
+  cp "${ABC_MD_DOCS}/doc/release-notes.orig.md" "${LATEST_RELEASE_NOTES}.orig.md"
+  sed -i "s/permalink: \/doc\/release-notes.html/permalink: \/doc\/release-notes\/release-notes-${LATEST_RELEASE_VERSION}.html/g" "${LATEST_RELEASE_NOTES}.md"
 fi
 popd

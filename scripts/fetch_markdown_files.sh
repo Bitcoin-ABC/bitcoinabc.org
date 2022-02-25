@@ -21,7 +21,7 @@ FILES=($(git ls-files "*.md"))
 for FILE in "${FILES[@]}"
 do
   BASE_NAME=${FILE%.*}
-  FILE_DST="${ABC_MD_DOCS_BASE}/${BASE_NAME}.page.md"
+  FILE_DST="${ABC_MD_DOCS_BASE}/${BASE_NAME}.md"
   mkdir -p "$(dirname ${FILE_DST})"
 
   NAME="${BASE_NAME}.md" \
@@ -29,8 +29,8 @@ do
   envsubst < "${TOPLEVEL}/scripts/md_docs_frontmatter.yml.in" > "${FILE_DST}"
   cat "${FILE}" >> "${FILE_DST}"
 
-  FILE_DST="${ABC_MD_DOCS_BASE}/${BASE_NAME}.md"
+  FILE_ORIG="${ABC_MD_DOCS_BASE}/${BASE_NAME}.orig.md"
   # Jekyll breaks without frontmatter, so give it an empty line
-  echo "" > "${FILE_DST}"
-  cat "${FILE}" >> "${FILE_DST}"
+  echo "" > "${FILE_ORIG}"
+  cat "${FILE}" >> "${FILE_ORIG}"
 done
