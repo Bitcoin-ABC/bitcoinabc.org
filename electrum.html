@@ -13,24 +13,87 @@ title: Electrum ABC
       <p class="electrum-note">NOTE: The coins in the wallet will not split automatically. To ensure that transactions are not replayed between Bitcoin Cash and eCash networks, please refer to one of the coin splitting guides linked at <a href="/ecash#split">bitcoinabc.org/ecash</a> and make sure your pre-fork coins are safely split prior to transacting on either network.</p>
     </div>
 
-    <div class="ecash-section">
-      <h2>Download links</h2>
-      <div class="row extra-margin">
-        <div class="col-md-4 tile col-md-push-2">
-          <h3>Releases</h3>
-          <a href="https://github.com/bitcoin-abc/ElectrumABC/releases/" target="_blank">
-            <img src="/img/GitHub_Logo.png" alt="github" />
+    {% assign releases = site.data.github-releases-electrum %}
+    {% assign bcha_versions_prefix = "4.3." %}
+
+    {% if releases.size > 0 %}
+      {% assign latestVersion = releases[0].tag_name %}
+
+      <div class="hero-box">
+        <h1>Download Electrum ABC {{ latestVersion }}</h1>
+
+        <div style="margin: 6px">Published: {{ releases[0].published_at | date: "%a %b %e %Y" }}</div>
+
+        <div>
+          <a class="btn btn-primary download-button" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ latestVersion }}/ElectrumABC-{{ latestVersion }}-x86_64.AppImage">
+            <i class="fab fa-linux"></i>
+            Linux
           </a>
-        </div>
-        <div class="col-md-4 tile col-md-push-2">
-          <h3>Source</h3>
-          <a href="https://github.com/bitcoin-abc/ElectrumABC/" target="_blank">
-            <img src="/img/GitHub-Mark.png" alt="github" />
+          <a class="btn btn-primary download-button" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ latestVersion }}/ElectrumABC-{{ latestVersion }}-macosx.dmg">
+            <i class="fab fa-apple"></i>
+            OSX
+          </a>
+          <a class="btn btn-primary download-button" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ latestVersion }}/ElectrumABC-{{ latestVersion }}-setup.exe">
+            <i class="fab fa-windows"></i>
+            Windows
+          </a>
+          <a class="btn btn-primary download-button" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ latestVersion }}/ElectrumABC-{{ latestVersion }}.tar.gz">
+            <i class="fas fa-code-branch"></i>
+            Source Snapshot
           </a>
         </div>
       </div>
-    </div>
 
+      <div class="hero-box">
+        Read the release notes on <a href="https://github.com/Bitcoin-ABC/ElectrumABC/blob/master/RELEASE-NOTES.md">Github</a>.
+      </div>
+
+      <!-- Offset the version anchor of the first past release up here so that the top of the table is in view -->
+      <a class="offset-anchor" id="{{ releases[1].tag_name }}"></a>
+
+      <div style="text-align: center;">
+        {% assign pastReleases = releases | slice:1,15 %}
+        {% if pastReleases.size > 0 %}
+        <h2>Past Releases</h2>
+        <table style="margin: 0 auto;">
+          <tbody>
+            <tr>
+              <td>Version</td>
+              <td>Published</td>
+              <td>Downloads</td>
+            </tr>
+          {% for release in pastReleases %}
+            {% assign version = release.tag_name %}
+            {% unless version contains bcha_versions_prefix %}
+            <tr>
+              <td>
+                {{ version }}
+              </td>
+              <td>{{ release.published_at | date: "%Y %b %e" }}</td>
+              <td>
+                <a class="btn btn-primary" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ version }}/ElectrumABC-{{ version }}-x86_64.AppImage">
+                  <i class="fab fa-linux"></i>
+                </a>
+                <a class="btn btn-primary" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ version }}/ElectrumABC-{{ version }}-macosx.dmg">
+                  <i class="fab fa-apple"></i>
+                </a>
+                <a class="btn btn-primary" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ version }}/ElectrumABC-{{ version }}-setup.exe">
+                  <i class="fab fa-windows"></i>
+                </a>
+                <a class="btn btn-primary" href="https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/{{ version }}/ElectrumABC-{{ version }}.tar.gz">
+                  <i class="fas fa-code-branch"></i>
+                </a>
+              </td>
+            </tr>
+            {% endunless %}
+          {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+      </div>
+    {% else %}
+      <h3 style="text-align: center"><a href="https://github.com/Bitcoin-ABC/ElectrumABC/releases">Download Electrum ABC on Github</a></h3>
+    {% endif %}
   </div>
 </div>
 
