@@ -144,33 +144,6 @@ pushd "${SRC_DIR}"
 git checkout master
 ${SCRIPT_DIR}/fetch_markdown_files.sh "${SRC_DIR}"
 
-convert_links()
-{
-  SRC_FILE="$1"
-
-  # Find the links to markdown files, but exclude the hyperlinks (no colon).
-  # NOTE: this does not work if several links appear on the same line, which
-  # should be rare enough that it's fine to not deal with it.
-  REL_LINKS="$(grep -Eo "\]\([^:]+\.md\)" "${SRC_FILE}")"
-
-  for REL_LINK in ${REL_LINKS[@]}; do
-    echo "FOUND LINK ${REL_LINK} FOO"
-    # REL_LINK is in the form `](link.md)` so prefix and suffix need to be
-    # stripped before replacement. This is necessary to make sure we're really 
-    # matching a markdown link and not just some file in parenthesis.
-    REL_LINK="${REL_LINK:2:-4}"
-
-    # Make the link project absolute if it is relative
-    if [[ "${REL_LINK::1}" == "/" ]]; then
-      PREFIX=""
-    else
-      PREFIX="/doc/"
-    fi
-
-    sed -i "s#](${REL_LINK}.md)#](${PREFIX}${REL_LINK}.html)#" "${SRC_FILE}"
-  done
-}
-
 # If the release notes file for the latest release isn't archived yet, make the
 # latest release notes available for that version number. This temporary copy
 # will be replaced once the release notes are archived.
@@ -181,11 +154,5 @@ if [ ! -f "${LATEST_RELEASE_NOTES}.md" ]; then
   cp "${ABC_MD_DOCS}/doc/release-notes.md" "${LATEST_RELEASE_NOTES}.md"
   cp "${ABC_MD_DOCS}/doc/release-notes.orig.md" "${LATEST_RELEASE_NOTES}.orig.md"
   sed -i "s/permalink: \/doc\/release-notes.html/permalink: \/doc\/release-notes\/release-notes-${LATEST_RELEASE_VERSION}.html/g" "${LATEST_RELEASE_NOTES}.md"
-
-  # If the original file contains markdown links, they need to be converted.
-  # The relative link plugin will not operate on files with no front matter,
-  # and the directory has changed. The easiest way is to make it project
-  # absolute, by prepending the link with /doc/.
-  convert_links "${LATEST_RELEASE_NOTES}.orig.md"
 fi
 popd
