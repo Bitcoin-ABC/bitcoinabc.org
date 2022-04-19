@@ -26,3 +26,22 @@ bundle exec jekyll serve
 2. Set `lang` to the desired language code.
 3. Verify that `multiLangId` is the same as the base filename **without** the language code.
 4. Translate the file.
+
+# Troubleshooting
+
+## Permission issues when executing 'arc land'
+
+If you are encountering various 'master not found on origin' or permission errors when attempting to land a diff for this website, then ensure your remotes are set to:
+```
+ssh://vcs@reviews.bitcoinabc.org:2221/source/bitcoin-abc-website.git
+```
+which can be verified via:
+```
+git remote -v
+```
+If you have a different remote connection for this website repo, update it:
+```
+git remote rm origin
+git remote add origin ssh://vcs@reviews.bitcoinabc.org:2221/source/bitcoin-abc-website.git
+```
+
