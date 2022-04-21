@@ -12,7 +12,7 @@ title: Network Upgrade
       <h2>Exactly when will the upgrade activate?</h2>
       <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1652616000 (12:00:00 UTC on May 15th, 2022). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
       <h2>What features are included in the Network Upgrade?</h2>
-      <p>The May 15th 2022 upgrade includes an update to the Miner Infrastructure Fund address. This change primarily affect mining pool operators, who may have to change their pool setup to make sure the coinbase reward goes to the updated address.</p>
+      <p>The May 15th 2022 upgrade includes an update to the Miner Infrastructure Fund address. This change primarily affect mining pool operators, who may have to change their pool setup to make sure the coinbase reward goes to the updated address: <code style="overflow-wrap: break-word;">ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07</code>.</p>
       <p>Other users of the eCash network will be unaffected by the upgrade, but because of the automatic replay protection that is part of the 6-month upgrade cadence, it is still necessary for all full node operators to upgrade to 0.25.x.</p> 
       <h2>Do I need to upgrade my wallet?</h2>
       <p>The network upgrade only affects full-nodes. This means that other eCash software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
