@@ -7,7 +7,17 @@ of the "beautiful Jekyll" theme.  Please refer upstream for helpful notes on usi
 
 # Basic Install Instructions
 
-Install rvm: https://rvm.io/rvm/install
+## Install rvm
+
+To install rvm to `$HOME/.rvm` (as in a single-user setup), just execute the following:
+```
+gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s -- --ignore-dotfiles
+echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
+```
+Otherwise, read rvm's installation documentation: https://rvm.io/rvm/install
+
+## Install ruby and other dependencies
 
 ```
 rvm install "$(cat .ruby-version)"
