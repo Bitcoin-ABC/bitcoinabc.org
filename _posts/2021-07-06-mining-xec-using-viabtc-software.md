@@ -36,8 +36,8 @@ The defaults only work for some networks. Try the following configuration:
 
 ```
 "diff_min": 1000,
-"diff_max": 500000,
-"diff_default": 100000000,
+"diff_max": 100000000,
+"diff_default": 500000,
 ```
 
 ### jobmaster/config.json
