@@ -2,7 +2,7 @@
 layout: post
 title: eCash Avalanche Development Update
 subtitle: The Road to Post Consensus
-multiLangId: 2022-05-02-avalanche-post-consensus-launch
+multiLangId: 2022-05-02-avalanche-dev-update
 lang: en
 ---
 

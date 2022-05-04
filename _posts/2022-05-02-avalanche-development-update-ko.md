@@ -1,7 +1,7 @@
 ---
 layout: post
 title: eCash 아발란체 개발 업데이트
-multiLangId: 2022-05-02-avalanche-post-consensus-launch
+multiLangId: 2022-05-02-avalanche-dev-update
 lang: ko
 ---
 
