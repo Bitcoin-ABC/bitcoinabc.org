@@ -10,7 +10,9 @@ title: Network Upgrade
       <h2>What happened?</h2>
       <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.bitcoinabc.org/block-height/739536">739536</a>.</p>
       <h2>Who needs to upgrade?</h2>
-      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.25.x). This is available at our <a href="/releases"> Releases</a> page.</p>
+      <p>All operators of a Bitcoin ABC full node should have upgraded to the latest major version (0.25.x). This is available at our <a href="/releases"> Releases page</a>.</p>
+      <h2>I forgot to upgrade, what should I do?</h2>
+      <p>If you forgot to upgrade and had an old node version running though the upgrade, your node may have marked the upgraded chain as invalid. In order to fix this problem, simply upgrade to Bitcoin ABC version 0.25.6 or greater, available at our <a href="/releases">Releases page</a>.</p>
       <h2>What features were included in the Network Upgrade?</h2>
       <p>The May 15th 2022 upgrade included an update to the Miner Infrastructure Fund address. This change primarily affects mining pool operators, who may have to change their pool setup to make sure the coinbase reward goes to the updated address: <code style="overflow-wrap: break-word;">ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07</code>.</p>
       <p>Other users of the eCash network are unaffected by the upgrade, but because of the automatic replay protection that is part of the 6-month upgrade cadence, it is still necessary for all full node operators to upgrade to 0.25.x.</p> 
