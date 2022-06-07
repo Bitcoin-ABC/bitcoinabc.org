@@ -17,6 +17,7 @@ description: Bitcoin ABC - Software for eCash
 navbar-links:
   eCash: "ecash/"
   Blog: "blog/"
+  Electrum: "electrum/"
   Download:
     - Releases: "releases/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
