@@ -1,18 +1,18 @@
 ---
 layout: post
-title: How to Run Cash Fusion Remotely
+title: How to Run CashFusion Remotely
 subtitle: Using the Electrum ABC eCash Wallet in Daemon mode
 multiLangId: 2022-07-01-running-cashfusion-remotely
 lang: en
 ---
 
-![Cash Fusion for eCash](/img/CashFusion-graphic.jpg "Cash Fusion for eCash")
+![CashFusion for eCash](/img/CashFusion-graphic.jpg "CashFusion for eCash")
 
-The Electrum ABC eCash wallet contains the Cash Fusion feature. Cash Fusion provides basic opt-in anonymity for regular eCash (XEC) users. For example, if someone is paid in XEC, then goes to make a retail purchase, they may not want the retailer to be able to trivially see their salary payments. It's also important for businesses using eCash for payments, as they may not want their competitors to easily see all of their transactions with suppliers and customers.
+The Electrum ABC eCash wallet contains the CashFusion feature. CashFusion provides basic opt-in anonymity for regular eCash (XEC) users. For example, if someone is paid in XEC, then goes to make a retail purchase, they may not want the retailer to be able to trivially see their salary payments. It's also important for businesses using eCash for payments, as they may not want their competitors to easily see all of their transactions with suppliers and customers.
 
-The way Cash Fusion works is to automatically create transactions with other users of the protocol which combine many inputs and outputs from the different participating wallets. In this way, it becomes difficult or impossible to know which coins (outputs) correspond to the different inputs.
+The way CashFusion works is to automatically create transactions with other users of the protocol which combine many inputs and outputs from the different participating wallets. In this way, it becomes difficult or impossible to know which coins (outputs) correspond to the different inputs.
 
-Some users of Cash Fusion like to leave it running continuously in order to keep a fresh supply of Fused coins, and also help provide liquidity to other Cash Fusion wallets on the network. In the past, this would typically mean running the Electrum ABC GUI application on your desktop computer, and just leaving the application going. But this is inconvenient and unreliable. With the release of [Electrum ABC 5.1.3](https://bitcoinabc.org/electrum/#5.1.3), it becomes possible to run Electrum ABC with Cash Fusion on daemon mode, making it convenient to leave it "always on", and easy to run on a remote server.
+Some users of CashFusion like to leave it running continuously in order to keep a fresh supply of Fused coins, and also help provide liquidity to other CashFusion wallets on the network. In the past, this would typically mean running the Electrum ABC GUI application on your desktop computer, and just leaving the application going. But this is inconvenient and unreliable. With the release of [Electrum ABC 5.1.3](https://bitcoinabc.org/electrum/#5.1.3), it becomes possible to run Electrum ABC with CashFusion on daemon mode, making it convenient to leave it "always on", and easy to run on a remote server.
 
 ## Getting Electrum ABC up and running
  
@@ -42,7 +42,7 @@ Now it's time to get the Electrum ABC daemon running, create a new wallet (save 
 ./ElectrumABC-5.1.3-x86_64.AppImage addrequest 0
 ```
 
-You may repeatedly use the `addrequest` command to generate fresh addresses to send coins to. For Cash Fusion, it is generally recommended to start with around least 5 to 10 coins of various amounts to get it going.
+You may repeatedly use the `addrequest` command to generate fresh addresses to send coins to. For CashFusion, it is generally recommended to start with around least 5 to 10 coins of various amounts to get it going.
 
 If you have a pre-existing wallet, it can be added with the following command. You can change the wallet path and name as needed.
 
@@ -57,9 +57,9 @@ There are also help commands which provide lists of other commands available to 
 ./ElectrumABC-5.1.3-x86_64.AppImage daemon --help
 ```
 
-## Enabling Cash Fusion
+## Enabling CashFusion
 
-Next you will enable "autofuse". This tells the wallet to start automatically participating in Cash Fusion rounds as soon as the coins are confirmed.
+Next you will enable "autofuse". This tells the wallet to start automatically participating in CashFusion rounds as soon as the coins are confirmed.
 
 ```
 ./ElectrumABC-5.1.3-x86_64.AppImage daemon enable_autofuse 
@@ -71,15 +71,15 @@ If the wallet is password protected, specify the password as an extra argument a
 ./ElectrumABC-5.1.3-x86_64.AppImage daemon enable_autofuse  "my_password"
 ```
  
-You are now running Cash Fusion!
+You are now running CashFusion!
 
-The status of the Cash fusion can be checked with this command:
+The status of the CashFusion can be checked with this command:
 
 ```
 ./ElectrumABC-5.1.3-x86_64.AppImage daemon fusion_status
 ```
 
-When you want to stop Cash Fusion, you can stop the daemon with:
+When you want to stop CashFusion, you can stop the daemon with:
 
 ```
 ./ElectrumABC-5.1.3-x86_64.AppImage daemon stop
@@ -87,5 +87,5 @@ When you want to stop Cash Fusion, you can stop the daemon with:
 
 ## Happy Fusing!
 
-Congratulations, you are now able to run Electrum ABC as a command line daemon, and run Cash Fusion in this mode.
-This daemon can be left running for extended periods of time to keep your wallet with a fresh supply of fused coins, and provide liquidity for other Cash Fusion users on the network.
+Congratulations, you are now able to run Electrum ABC as a command line daemon, and run CashFusion in this mode.
+This daemon can be left running for extended periods of time to keep your wallet with a fresh supply of fused coins, and provide liquidity for other CashFusion users on the network.
