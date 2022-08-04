@@ -13,14 +13,14 @@ happening in our development activities on Avalanche for eCash, since the
 [previous update](/2022-05-02-avalanche-development-update/) from early May 2022.
 
 The two primary advancements since the last update were:
-1. Faster and more robust discovery of Proofs from the network. This was accomplished through
-implementation of a “Compact Proof Request” networking capability which allow nodes to actively request
-all the Proofs that other node know about, and
+1. Faster and more robust discovery of Proofs from the network. This was accomplished through the
+implementation of a “Compact Proof Request” networking capability which allows nodes to actively request
+all the Proofs that other nodes know about, and
 2. Many cycles of iterative improvements via repeated rounds of testing. The details of these fixes and
 improvements are expanded later in this article.
 
 As context for understanding these developments, it may be helpful to explain how the networking requirements
-for the avalanche protocol differ from traditional Nakamoto consensus.
+for the Avalanche protocol differ from traditional Nakamoto consensus.
 
 ## Avalanche Networking
 
@@ -115,8 +115,8 @@ A simple idea would be to simply hard-code a list of nodes to connect to to obta
 state. In fact, as far as we understand, this is actually what AVAX does for its bootstrap.
 But because eCash also has a Proof-of-work blockchain in addition to Avalanche, we can leverage
 this to provide a good initial state for Avalanche. The node will first do the normal
-Initial Block Download (IBD), and sync to the heaviest PoW chain. Then it will use the
-Compact Proofs Requests to ask for Proofs from all the Avalanche-aware nodes it is connected to.
+Initial Block Download (IBD), and sync to the heaviest PoW chain. Then it will use
+Compact Proof Requests to ask for Proofs from all the Avalanche-aware nodes it is connected to.
 Then, once it has reached a good threshold of stake amount and number of connections,
 it activates Avalanche.
 
