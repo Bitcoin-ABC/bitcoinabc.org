@@ -1,0 +1,27 @@
+<script>
+  function updateAvalancheNotice() {
+    const activationTime = 1663156800;
+    const currentTime = Math.floor((new Date()).getTime() / 1000);
+
+    if (currentTime <= activationTime) {
+      // Before avalanche activation, show an "Avalanche is coming" message
+      $("#avalanche-notice-pre-activation").css("display", "");
+    } else {
+      // After avalanche activation, show an "Avalanche is live" message
+      $("#avalanche-notice-post-activation").css("display", "");
+    }
+  }
+  document.addEventListener('DOMContentLoaded', updateAvalancheNotice);
+</script>
+
+<div id="avalanche-notice-pre-activation" class="hero-box avalanche-notice" style="display: none;">
+  <img src="/img/avalanche-notice/avalanche_coming_banner.jpg" alt="Avalanche is coming !" />
+  <p>On Sept 14th, 2022, Avalanche Post-Consensus will be live on the eCash mainnet.
+  <br />
+  See the <a href="/2022-08-28-avalanche-post-consensus-launch/">announcement page</a> for more details.</p>
+</div>
+
+<div id="avalanche-notice-post-activation" class="hero-box avalanche-notice" style="display: none;">
+  <img src="/img/avalanche-notice/avalanche_live_banner.jpg" alt="Avalanche Post-Consensus is now live on the eCash mainnet !" />
+  <p>You can read our <a href="/2022-09-07-avalanche-staking-tutorial/">Avalanche staking tutorial</a> to learn how to participate.</p>
+</div>
