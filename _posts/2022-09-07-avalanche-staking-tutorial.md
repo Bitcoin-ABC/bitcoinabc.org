@@ -85,7 +85,9 @@ Can be any standard type address that you own and want the coins to be sent to.
 
 **Stakes:** This is an array of the UTXOs to be attached to the proof. There are some limitations to these UTXOs: 
 - Limited to 1000 UTXOs per proof.
-- Each UTXO must have an amount greater or equal to 100 MegXEC.
+- Each UTXO must have an amount greater or equal to 100 MegXEC (aka 100,000,000.00 XEC).
+- Each UTXO must have 2016 or more confirmations in the blockchain. This means that the coin must not have moved
+within the previous 2 weeks.
 - Only P2PKH UTXO type is supported, you cannot stake P2SH (often used for multisig) coins.
 
 ## Generate a Proof using Electrum ABC
@@ -120,7 +122,9 @@ manage your Proofs, and create Delegations if you decide to do that later. Simpl
 
 Online portion:
 1. Open a watch-only version of your coin-holding wallet. For example, this could be your regular Trezor wallet within Electrum ABC.
-2. Open the 'Coins' tab, select the coins you want to stake, right click and click 'Export coin details' to export coins file.
+2. Open the 'Coins' tab, select the coins you want to stake, right click and click 'Export coin details'
+to export coins file. Make sure the coins you select meet the requirements for Staking: each coin must be at least
+100,000,000.00 XEC and have at least 2016 confirmations.
 
 For the next steps, move to an offline computer. For example, you could use a “Live CD” to temporarily recreate your
 hardware wallet (Trezor or Ledger) within Electrum ABC, without saving the wallet or connecting to the internet. When
