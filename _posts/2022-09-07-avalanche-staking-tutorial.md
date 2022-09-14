@@ -154,7 +154,7 @@ Now you have an Avalanche Proof, and can run an eCash Avalanche node!
 
 ## Run an eCash Avalanche Node
 
-To run Avalanche, use Bitcoin ABC version 0.25.13 or greater,
+To run Avalanche, use [Bitcoin ABC version 0.26.0](/releases/#0.26.0) or greater,
 and simply restart your node with the following added to your bitcoin.conf file:
 
 ```
