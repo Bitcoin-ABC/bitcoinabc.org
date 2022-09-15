@@ -10,10 +10,10 @@ GITHUB_REPO='bitcoin-abc'
 MAX_RELEASES=15
 
 # Min version for rpc docs generation
-MIN_VERSION_RPC_DOCS='0.24.0'
+MIN_VERSION_RPC_DOCS='0.25.0'
 
 # Min version for man pages generation
-MIN_VERSION_MAN_PAGES='0.24.0'
+MIN_VERSION_MAN_PAGES='0.25.0'
 
 # jq must be installed
 if ! command -v jq > /dev/null; then
