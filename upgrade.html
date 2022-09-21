@@ -6,18 +6,20 @@ title: Network Upgrade
 <div class="flex-content">
   <div id="upgradepage">
     <div class="ecash-section">
-      <img src="/img/Upgrade_2022-05-15.png" alt="May 15, 2022 Upgrade">
-      <h2>What happened?</h2>
-      <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.bitcoinabc.org/block-height/739536">739536</a>.</p>
+      <img src="/img/Upgrade-2022-11-15.jpg" alt="Nov 15, 2022 Upgrade">
       <h2>Who needs to upgrade?</h2>
-      <p>All operators of a Bitcoin ABC full node should have upgraded to the latest major version (0.25.x). This is available at our <a href="/releases"> Releases page</a>.</p>
-      <h2>I forgot to upgrade, what should I do?</h2>
-      <p>If you forgot to upgrade and had an old node version running though the upgrade, your node may have marked the upgraded chain as invalid. In order to fix this problem, simply upgrade to Bitcoin ABC version 0.25.6 or greater, available at our <a href="/releases">Releases page</a>.</p>
-      <h2>What features were included in the Network Upgrade?</h2>
-      <p>The May 15th 2022 upgrade included an update to the Miner Infrastructure Fund address. This change primarily affects mining pool operators, who may have to change their pool setup to make sure the coinbase reward goes to the updated address: <code style="overflow-wrap: break-word;">ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07</code>.</p>
-      <p>Other users of the eCash network are unaffected by the upgrade, but because of the automatic replay protection that is part of the 6-month upgrade cadence, it is still necessary for all full node operators to upgrade to 0.25.x.</p> 
+      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.26.x). This is available at our <a href="/releases"> Releases</a> page.</p>
+      <h2>Exactly when will the upgrade activate?</h2>
+      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1668513600 (12:00:00 UTC on Nov 15th, 2022). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <h2>What features are included in the Network Upgrade?</h2>
+      <p>The Bitcoin ABC 0.26.x upgrade release includes the capability for node operators to run
+<a href="https://avalanche.cash/">Avalanche</a> Post-Consensus on the eCash network. This capability is optional and off by default.</p>
+      <p>Avalanche Post-Consensus brings 51% attack prevention which increases security of the network significantly,
+bringing it on par with leading proof-of-work chains. It also brings 1-block finality to eCash, which opens 
+the door to exchanges enabling 1 confirmation deposits.</p>
+      <p>Even if you don't plan to activate Avalanche, it is necessary for all full node operators to upgrade to 0.26.x because of the automatic replay protection that is part of the 6-month upgrade cadence.</p> 
       <h2>Do I need to upgrade my wallet?</h2>
-      <p>The network upgrade only affects full-nodes. This means that other eCash software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
+      <p>The network upgrade only affects full nodes. This means that other eCash software, including wallets such as <a href="/electrum">Electrum ABC</a> are not affected by the network upgrade.
     </div>
   </div>
 </div>
