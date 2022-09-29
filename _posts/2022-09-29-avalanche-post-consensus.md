@@ -2,7 +2,7 @@
 layout: post
 title: Avalanche Post-Consensus on eCash
 subtitle: Benefits for Miners, Exchanges, and Everyday People.
-multiLangId: 2022-09-22-avalanche-post-consensus
+multiLangId: 2022-09-29-avalanche-post-consensus
 lang: en
 ---
 
