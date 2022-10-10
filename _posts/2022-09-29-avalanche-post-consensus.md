@@ -60,7 +60,7 @@ XEC directly using a wallet such as [Cashtab](https://cashtab.com/), payments ty
 seconds, with sub-cent fees.
 
 What users can expect from the Avalanche Post-Consensus is that the cash-like experience will improve further
-as exchanges and other eCash services take advantage of the re-org protection and 1-block finality offerered
+as exchanges and other eCash services take advantage of the re-org protection and 1-block finality offered
 by Avalanche Post-Consensus. This will enable services to offer a faster and more cash-like payment experience.
 
 Looking further into the future, the eCash experience should continue to improve even more with Pre-Consensus
