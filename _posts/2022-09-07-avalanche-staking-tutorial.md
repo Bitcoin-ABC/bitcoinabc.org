@@ -16,8 +16,10 @@ After reading this article, the reader should be able to:
 - Generate your own Avalanche Proof
 - Use your Avalanche Proof to run a Bitcoin ABC node with Avalanche enabled
 
-It is important to keep in mind that this feature is still considered a prototype version. It is possible that
-certain aspects, such as the Proof format, may change in the future.
+**Note:** There are no staking rewards at this time. Creating a Stake Proof
+simply allows you to run an eCash Avalanche node and have that node participate in Post-Consensus.
+This benefits the eCash network, and gives you some influence over consensus formation to decide
+which blocks are finalized in Post-Consensus. But it does not result in direct rewards from staking.
 
 ## What is Avalanche?
 
