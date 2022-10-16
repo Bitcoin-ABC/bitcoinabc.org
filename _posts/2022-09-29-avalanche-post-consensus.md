@@ -75,7 +75,7 @@ means the node can query the network to find the finalization staus of blocks, b
 Avalanche consensus.
 
 Node operators who wish to contribute to the eCash network by participating in Avalanche can set up a staking node
-by following our written [Avalanche Staking Tutorial](/2022-09-07-avalanche-staking-tutorial/), and the
+by following our written [Avalanche Tutorial](/2022-09-07-avalanche-tutorial/), and the
 [Stake Proof video guide](https://youtu.be/3k5M4k8OF-I).
 
 One of the characteristics of the Avalanche protocol is that its security relies on the nodes being well connected

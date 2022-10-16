@@ -1,9 +1,11 @@
 ---
 layout: post
-title: eCash Avalanche Staking Tutorial
+title: eCash Avalanche Tutorial
 subtitle: How to Generate Stake Proofs and Run an Avalanche Node
-multiLangId: 2022-09-07-avalanche-staking-tutorial
+multiLangId: 2022-09-07-avalanche-tutorial
 lang: en
+redirect_from:
+  - /2022-09-07-avalanche-staking-tutorial
 ---
 
 The goal of this article is to explain how the eCash Avalanche protocol works, and give basic step-by-step
@@ -63,7 +65,7 @@ messages that prove it possesses the private key corresponding to the Proof, kno
 To facilitate key management, there are also “Delegations” which allow different nodes associated with the same Proof
 to use different keys. The relationship between Coins, Proofs, Delegations, and Nodes is shown below:
 
-![eCash Avalanche Proofs, Nodes and Delegations](/img/avalanche-staking/avalanche-proof.jpg)
+![eCash Avalanche Proofs, Nodes and Delegations](/img/avalanche-tutorial/avalanche-proof.jpg)
 
 ## Proof Format
 
@@ -103,7 +105,7 @@ The Proof Editor is a general tool that can be used to generate new Proofs, as w
 inspect their contents and modify them to create new Proofs. For example, you could load an existing Proof,
 and add coins from the wallet to stake in the Proof. 
 
-![Electrum ABC Proof editor](/img/avalanche-staking/proof-editor-blank.jpg)
+![Electrum ABC Proof editor](/img/avalanche-tutorial/proof-editor-blank.jpg)
 
 In this tutorial, we will use two Electrum ABC wallets, along with the Proof Editor, to generate a Stake Proof.
 The reason for using two wallets is to keep the coin spending keys separate from the wallet that controls the Proof

@@ -165,6 +165,7 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-relative-links
+  - jekyll-redirect-from
 
 relative_links:
   enabled: true
