@@ -67,6 +67,12 @@ to use different keys. The relationship between Coins, Proofs, Delegations, and 
 
 ![eCash Avalanche Proofs, Nodes and Delegations](/img/avalanche-tutorial/avalanche-proof.jpg)
 
+Note the one-to-many relationship between Nodes, the Proof, and staked coins (UTXOs) in this image. One Avalanche
+Proof can be used by several different eCash nodes. This is useful for providing redundancy, geographic
+diversity, and load balancing. Each Node, however, can only use one Proof. If you wish to use several staked
+coins with the same Node, even coins held in different wallets by different people, this can be done by adding
+all the different coin stakes into one Proof.
+
 ## Proof Format
 
 The Avalanche Proofs contain information within them in various fields as follows:
