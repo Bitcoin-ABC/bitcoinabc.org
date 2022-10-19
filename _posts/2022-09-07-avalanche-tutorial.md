@@ -6,6 +6,7 @@ multiLangId: 2022-09-07-avalanche-tutorial
 lang: en
 redirect_from:
   - /2022-09-07-avalanche-staking-tutorial
+  - /2022-09-07-avalanche-staking-tutorial/
 ---
 
 The goal of this article is to explain how the eCash Avalanche protocol works, and give basic step-by-step
