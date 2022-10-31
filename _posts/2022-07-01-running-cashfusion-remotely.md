@@ -57,6 +57,19 @@ There are also help commands which provide lists of other commands available to 
 ./ElectrumABC-5.1.3-x86_64.AppImage daemon --help
 ```
 
+---
+**NOTE**
+
+For Electrum ABC >= 5.1.6, the `load_wallet` command is no longer a daemon command. Use it like a regular command:
+
+```
+./ElectrumABC-5.1.6-x86_64.AppImage load_wallet
+...
+./ElectrumABC-5.1.6-x86_64.AppImage -w ~/.electrum-abc/wallets/default_wallet load_wallet
+```
+
+---
+
 ## Enabling CashFusion
 
 Next you will enable "autofuse". This tells the wallet to start automatically participating in CashFusion rounds as soon as the coins are confirmed.
