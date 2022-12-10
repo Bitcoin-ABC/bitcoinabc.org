@@ -12,15 +12,15 @@ The Electrum ABC eCash wallet contains the CashFusion feature. CashFusion provid
 
 The way CashFusion works is to automatically create transactions with other users of the protocol which combine many inputs and outputs from the different participating wallets. In this way, it becomes difficult or impossible to know which coins (outputs) correspond to the different inputs.
 
-Some users of CashFusion like to leave it running continuously in order to keep a fresh supply of Fused coins, and also help provide liquidity to other CashFusion wallets on the network. In the past, this would typically mean running the Electrum ABC GUI application on your desktop computer, and just leaving the application going. But this is inconvenient and unreliable. With the release of [Electrum ABC 5.1.3](https://bitcoinabc.org/electrum/#5.1.3), it becomes possible to run Electrum ABC with CashFusion on daemon mode, making it convenient to leave it "always on", and easy to run on a remote server.
+Some users of CashFusion like to leave it running continuously in order to keep a fresh supply of Fused coins, and also help provide liquidity to other CashFusion wallets on the network. In the past, this would typically mean running the Electrum ABC GUI application on your desktop computer, and just leaving the application going. But this is inconvenient and unreliable. With the recent releases of [Electrum ABC](https://bitcoinabc.org/electrum/), it becomes possible to run Electrum ABC with CashFusion on daemon mode, making it convenient to leave it "always on", and easy to run on a remote server.
 
 ## Getting Electrum ABC up and running
  
-You will be using the "AppImage" executable file to run Electrum ABC on a Linux terminal. This could either be on a remote server, or on your local machine. The first step is to download the Electrum ABC application in your Linux terminal:
+You will be using the "AppImage" executable file to run Electrum ABC on a Linux terminal. This could either be on a remote server, or on your local machine. The first step is to download the Electrum ABC application in your Linux terminal. The examples in this article use Electrum ABC 5.1.6, but it is recommended to use the most recent release. Simply edit the version numbers in the examples as needed.
 
 ```
-wget https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/5.1.3/ElectrumABC-5.1.3-x86_64.AppImage
-chmod +x ElectrumABC-5.1.3-x86_64.AppImage
+wget https://github.com/Bitcoin-ABC/ElectrumABC/releases/download/5.1.6/ElectrumABC-5.1.6-x86_64.AppImage
+chmod +x ElectrumABC-5.1.6-x86_64.AppImage
 ```
 
 If you are unable to run AppImage, it may be because you are missing the "Filesystem in User Space" (FUSE) library. This is the case with Debian and Ubuntu. To fix this, run the following commands:
@@ -35,11 +35,11 @@ sudo adduser $USER fuse
 Now it's time to get the Electrum ABC daemon running, create a new wallet (save the seed), load it, generate addresses, and send funds to the addresses.
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage daemon start
-./ElectrumABC-5.1.3-x86_64.AppImage create
-./ElectrumABC-5.1.3-x86_64.AppImage daemon load_wallet
-./ElectrumABC-5.1.3-x86_64.AppImage addrequest 0
-./ElectrumABC-5.1.3-x86_64.AppImage addrequest 0
+./ElectrumABC-5.1.6-x86_64.AppImage daemon start
+./ElectrumABC-5.1.6-x86_64.AppImage create
+./ElectrumABC-5.1.6-x86_64.AppImage load_wallet
+./ElectrumABC-5.1.6-x86_64.AppImage addrequest 0
+./ElectrumABC-5.1.6-x86_64.AppImage addrequest 0
 ```
 
 You may repeatedly use the `addrequest` command to generate fresh addresses to send coins to. For CashFusion, it is generally recommended to start with around least 5 to 10 coins of various amounts to get it going.
@@ -47,25 +47,14 @@ You may repeatedly use the `addrequest` command to generate fresh addresses to s
 If you have a pre-existing wallet, it can be added with the following command. You can change the wallet path and name as needed.
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage -w ~/.electrum-abc/wallets/default_wallet daemon load_wallet
+./ElectrumABC-5.1.6-x86_64.AppImage -w ~/.electrum-abc/wallets/default_wallet load_wallet
 ```
 
 There are also help commands which provide lists of other commands available to Electrum ABC in daemon mode. Two useful help commands are:
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage help
-./ElectrumABC-5.1.3-x86_64.AppImage daemon --help
-```
-
----
-**NOTE**
-
-For Electrum ABC >= 5.1.6, the `load_wallet` command is no longer a daemon command. Use it like a regular command:
-
-```
-./ElectrumABC-5.1.6-x86_64.AppImage load_wallet
-...
-./ElectrumABC-5.1.6-x86_64.AppImage -w ~/.electrum-abc/wallets/default_wallet load_wallet
+./ElectrumABC-5.1.6-x86_64.AppImage help
+./ElectrumABC-5.1.6-x86_64.AppImage daemon --help
 ```
 
 ---
@@ -75,13 +64,13 @@ For Electrum ABC >= 5.1.6, the `load_wallet` command is no longer a daemon comma
 Next you will enable "autofuse". This tells the wallet to start automatically participating in CashFusion rounds as soon as the coins are confirmed.
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage daemon enable_autofuse 
+./ElectrumABC-5.1.6-x86_64.AppImage daemon enable_autofuse 
 ```
  
 If the wallet is password protected, specify the password as an extra argument after enable_autofuse:
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage daemon enable_autofuse  "my_password"
+./ElectrumABC-5.1.6-x86_64.AppImage daemon enable_autofuse  "my_password"
 ```
  
 You are now running CashFusion!
@@ -89,13 +78,13 @@ You are now running CashFusion!
 The status of the CashFusion can be checked with this command:
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage daemon fusion_status
+./ElectrumABC-5.1.6-x86_64.AppImage daemon fusion_status
 ```
 
 When you want to stop CashFusion, you can stop the daemon with:
 
 ```
-./ElectrumABC-5.1.3-x86_64.AppImage daemon stop
+./ElectrumABC-5.1.6-x86_64.AppImage daemon stop
 ```
 
 ## Happy Fusing!
