@@ -38,13 +38,12 @@ Now it's time to get the Electrum ABC daemon running, create a new wallet (save 
 ./ElectrumABC-5.1.6-x86_64.AppImage daemon start
 ./ElectrumABC-5.1.6-x86_64.AppImage create
 ./ElectrumABC-5.1.6-x86_64.AppImage load_wallet
-./ElectrumABC-5.1.6-x86_64.AppImage addrequest 0
-./ElectrumABC-5.1.6-x86_64.AppImage addrequest 0
+./ElectrumABC-5.1.6-x86_64.AppImage listaddresses --receiving --unused
 ```
 
-You may repeatedly use the `addrequest` command to generate fresh addresses to send coins to. For CashFusion, it is generally recommended to start with around least 5 to 10 coins of various amounts to get it going.
-
-If you have a pre-existing wallet, it can be added with the following command. You can change the wallet path and name as needed.
+The `listaddresses` command will generate a list of fresh addresses suitable for sending coins to.
+Starting with 5 to 10 coins of different amounts is recommended for CashFusion.
+If you have a pre-existing wallet, it can be added with the following command (change the wallet path and name as needed):
 
 ```
 ./ElectrumABC-5.1.6-x86_64.AppImage -w ~/.electrum-abc/wallets/default_wallet load_wallet
