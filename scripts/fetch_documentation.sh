@@ -151,7 +151,7 @@ convert_links()
   # Find the links to markdown files, but exclude the hyperlinks (no colon).
   # NOTE: this does not work if several links appear on the same line, which
   # should be rare enough that it's fine to not deal with it.
-  REL_LINKS="$(grep -Eo "\]\([^:]+\.md\)" "${SRC_FILE}")"
+  REL_LINKS="$(grep -Eo "\]\([^:]+\.md\)" "${SRC_FILE}" || true)"
 
   for REL_LINK in ${REL_LINKS[@]}; do
     echo "FOUND LINK ${REL_LINK} FOO"
