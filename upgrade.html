@@ -6,24 +6,20 @@ title: Network Upgrade
 <div class="flex-content">
   <div id="upgradepage">
     <div class="ecash-section">
-      <img src="/img/Upgrade-2022-11-15.jpg" alt="Nov 15, 2022 Upgrade">
-      <h2>What happened?</h2>
-      <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.e.cash/block-height/766195">766195</a>.</p>
+      <img src="/img/Upgrade-2023-05-15.jpg" alt="May 15, 2023 Upgrade">
       <h2>Who needs to upgrade?</h2>
-      <p>All operators of a Bitcoin ABC full node should have upgraded to the latest major version (0.26.x). This is available at our <a href="/releases/"> Releases</a> page.</p>
-      <h2>I forgot to upgrade, what should I do?</h2>
-      <p>If you forgot to upgrade and had an old node version running through the upgrade, your node may have marked the upgraded chain as invalid. In order to fix this problem, simply upgrade to Bitcoin ABC version 0.26.6 or greater,  available at our <a href="/releases/">Releases page</a>.
-This version includes a checkpoint that will cause the node to reconsider the upgrade block, and get back onto the correct chain tip.</p>
-      <h2>What features were included in the Network Upgrade?</h2>
-      <p>The Bitcoin ABC 0.26.x upgrade release includes the capability for node operators to run
-<a href="/2022-09-29-avalanche-post-consensus/">Avalanche Post-Consensus</a> on the eCash network. This capability is optional and off by default.</p>
-      <p>Avalanche Post-Consensus brings 51% attack prevention which increases security of the network significantly,
-bringing it on par with leading proof-of-work chains. It also brings 1-block finality to eCash, which opens 
-the door to exchanges enabling 1 confirmation deposits.</p>
-      <p>Even if you don't plan to activate Avalanche, it is necessary for all full node operators to upgrade to 0.26.x because of the automatic replay protection that is part of the 6-month upgrade cadence.</p> 
+      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.27.x). This is available at our <a href="/releases/">Releases</a> page.</p>
+      <h2>Exactly when will the upgrade activate?</h2>
+	    <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1684152000 (12:00:00 UTC on May 15th, 2023). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <h2>What features are included in the Network Upgrade?</h2>
+      <h3>Consensus-enforced transaction version</h3>
+      <p>The version field of eCash transactions will be restricted to versions 1 or 2 by the consensus rules. This means that blocks containing a transaction with a different version number can no longer be mined. This was previously enforced by policy, so no wallet update is required.</p>
+      <h3>Miner fund moved out of consensus rules</h3>
+      <p>The miner fund, part of the block reward that is funding eCash network development, will no longer enforced by consensus. It will be enforced by policy, and a block that contains an invalid or no miner fund output will be rejected by Avalanche Post-Consensus. This will make it easier for updating the miner fund parameters such as the acceptable addresses.</p>
+      <h3>Removed chained transactions limits</h3>
+      <p>After the upgrade activates, Bitcoin ABC nodes will start accepting an unlimited number of chained transactions in the mempool. This was limited to 50 transactions before the upgrade. Note that this is a policy change and has no impact on the consensus rules.</p>
       <h2>Do I need to upgrade my wallet?</h2>
-      <p>The network upgrade only affects full nodes. This means that other eCash software, including wallets such as <a href="/electrum/">Electrum ABC</a> are not affected by the network upgrade.
+      <p>The network upgrade only affects full nodes. Other eCash software, including wallets such as <a href="/electrum/">Electrum ABC</a> are not affected by the network upgrade.
     </div>
   </div>
 </div>
-
