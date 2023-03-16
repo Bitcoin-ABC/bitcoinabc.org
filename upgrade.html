@@ -18,8 +18,25 @@ title: Network Upgrade
       <p>The miner fund, part of the block reward that is funding eCash network development, will no longer be enforced by consensus. It will be enforced by policy, and a block that contains an invalid or no miner fund output will be rejected by Avalanche Post-Consensus. This will make it easier for updating the miner fund parameters such as the acceptable addresses.</p>
       <h3>Removed chained transactions limits</h3>
       <p>After the upgrade activates, Bitcoin ABC nodes will start accepting an unlimited number of chained transactions in the mempool. This was limited to 50 transactions before the upgrade. Note that this is a policy change and has no impact on the consensus rules.</p>
+      <h2>How do I upgrade?</h2>
+      {% assign latestVersion = site.data.github-releases[0].name %}
+      <p>The process of upgrading your node is straightforward: simply stop the currently running node, download the new version, and start the new version. Here are some example instructions for upgrading from version 0.26.13 to the latest version ({{ latestVersion }}) on Linux:
+        <ul>
+          <li>Shut down the node: <code>./bitcoin-abc-0.26.13/bin/bitcoin-cli stop</code></li>
+          <li>Download the new version archive from the website: <code>wget https://download.bitcoinabc.org/{{ latestVersion }}/linux/bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz</code></li>
+          <li>Extract the archive: <code>tar xzf bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz</code></li>
+          <li>Restart the node with the new version: <code>./bitcoin-abc-{{ latestVersion }}/bin/bitcoind -daemon</code></li>
+          <li>Clean up old version and archives (optional):
+            <ul>
+              <li><code>rm -rf bitcoin-abc-0.26.13</code></li>
+              <li><code>rm -f bitcoin-abc-0.26.13-x86_64-linux-gnu.tar.gz</code></li>
+              <li><code>rm -f bitcoin-abc-{{ latestVersion }}-x86_64-linux-gnu.tar.gz</code></li>
+            </ul>
+          </li>
+        </ul>
+      </p>
       <h2>Do I need to upgrade my wallet?</h2>
-      <p>The network upgrade only affects full nodes. Other eCash software, including wallets such as <a href="/electrum/">Electrum ABC</a> are not affected by the network upgrade.
+      <p>The network upgrade only affects full nodes. Other eCash software, including wallets such as <a href="/electrum/">Electrum ABC</a> are not affected by the network upgrade.</p>
     </div>
   </div>
 </div>
