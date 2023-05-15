@@ -60,7 +60,7 @@ You can add as many entries to "coin_recipients" as you like. For mainnet, it mu
 
 ```
 {
-  "address": "35A4uDKb6p9AFu7w1R4sDhiFfevSBv4uLq",
+  "address": "3LyFQTKbPwXtgrsGpMbbEECY7ViBeFbonU",
   "percent": 0.08
 }
 ```
@@ -69,7 +69,7 @@ For **testnet**, your eCash node must be configured with -enableminerfund=1, and
 
 ```
 {
-  "address": "2MviGxxFciGeWTgkUgYgjqehWt18c4ZsShd",
+  "address": "2NCXTUCFd1Q3EteVpVVDTrBBoKqvMPAoeEn",
   "percent": 0.08
 }
 ```
