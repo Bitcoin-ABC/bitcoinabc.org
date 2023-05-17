@@ -10,7 +10,10 @@ title: Network Upgrade
       <h2>What happened?</h2>
       <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.e.cash/block-height/792117">792117</a>.</p>
       <h2>Who needs to upgrade?</h2>
-      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.27.x). This includes Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
+      <p>All operators of a Bitcoin ABC full node should have upgraded to the latest major version (0.27.x). This includes Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
+      <h2>I forgot to upgrade, what should I do?</h2>
+      <p>If you forgot to upgrade and had an old node version running through the upgrade, your node may have marked the upgraded chain as invalid. In order to fix this problem, simply upgrade to Bitcoin ABC version 0.27.5 or greater,  available at our <a href="/releases/">Releases page</a>.
+This version includes a checkpoint that will cause the node to reconsider the upgrade block, and get back onto the correct chain tip.</p>
       <h2>What features are included in the Network Upgrade?</h2>
       <h3>Consensus-enforced transaction version</h3>
       <p>The version field of eCash transactions is now restricted to versions 1 or 2 by the consensus rules. This means that blocks containing a transaction with a different version number can no longer be mined. The purpose of this change is to pave the way for future implementation of a new transaction format. It will allow the new transaction format to use a version number that has never been used before in the eCash blockchain. This rule was previously enforced by policy, so no wallet update is required.</p>
