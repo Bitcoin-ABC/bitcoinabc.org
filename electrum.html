@@ -15,7 +15,6 @@ title: Electrum ABC
     </div>
 
     {% assign releases = site.data.github-releases-electrum %}
-    {% assign bcha_versions_prefix = "4.3." %}
 
     {% if releases.size > 0 %}
       {% assign latestVersion = releases[0].tag_name %}
@@ -46,14 +45,14 @@ title: Electrum ABC
       </div>
 
       <div class="hero-box">
-        Read the release notes on <a href="https://github.com/Bitcoin-ABC/ElectrumABC/blob/master/RELEASE-NOTES.md">Github</a>.
+        <a href="https://www.bitcoinabc.org/electrum/RELEASE-NOTES.html">Read the release notes.</a>
       </div>
 
       <!-- Offset the version anchor of the first past release up here so that the top of the table is in view -->
       <a class="offset-anchor" id="{{ releases[1].tag_name }}"></a>
 
       <div style="text-align: center;">
-        {% assign pastReleases = releases | slice:1,15 %}
+        {% assign pastReleases = releases | slice:1,5 %}
         {% if pastReleases.size > 0 %}
         <h2>Past Releases</h2>
         <table style="margin: 0 auto;">
@@ -65,7 +64,6 @@ title: Electrum ABC
             </tr>
           {% for release in pastReleases %}
             {% assign version = release.tag_name %}
-            {% unless version contains bcha_versions_prefix %}
             <tr>
               <td>
                 {{ version }}
@@ -86,7 +84,6 @@ title: Electrum ABC
                 </a>
               </td>
             </tr>
-            {% endunless %}
           {% endfor %}
           </tbody>
         </table>
