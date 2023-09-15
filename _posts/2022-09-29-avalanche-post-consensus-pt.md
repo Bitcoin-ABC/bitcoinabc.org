@@ -66,24 +66,6 @@ Depois que o Pré-Consenso for implementado no Bitcoin ABC, o Pós-Consenso tamb
 
 ## Sobre o Avalanche
 
-Using a fast consensus protocol to do Pre-Consensus has been a long-standing item on the
- (and previously on the Bitcoin Cash roadmap).
-This is one of the improvements needed to power eCash to be a competitor and alternative to
-Central Bank Digital Currencies (CBDCs). When the 
-appeared in 2018, eCash founder Amaury Séchet and the Bitcoin ABC team recognized that this new 
-protocol was what they had been searching for, as it fulfilled the needed requirements.
-
-It should be noted that eCash's Avalanche implementation is completely separate and distinct from the
-AVAX Avalanche project. They have no connection, other than both using the protocol described in the
-Avalanche whitepaper. Avalanche on eCash is an entirely new implementation which had to be developed
-from scratch by the Bitcoin ABC team.
-
-In the case of eCash, Avalanche consensus is used for fast and live consensus needs, such as fast
-transaction finality. Proof-of-work based Nakamoto consensus is retained where it is superior,
-providing objective consensus criterion to enable decentralized node bootstrapping.
-
-For more info and to monitor development progress, see 
-##
 Usar um protocolo de consenso rápido para fazer o pré-consenso tem sido um item de longa data no [roteiro do eCash](https://e.cash/roadmap-explained) (e anteriormente no roteiro do Bitcoin Cash). Esta é uma das melhorias necessárias para que o eCash seja um concorrente e uma alternativa às Moedas Digitais de Banco Central (CBDCs). Quando o [whitepaper do Avalanche](https://ipfs.io/ipfs/QmUy4jh5mGNZvLkjies1RWM4YuvJh5o2FYopNPVYwrRVGV) apareceu em 2018, o fundador do eCash, Amaury Séchet, e a equipe Bitcoin ABC reconheceram que esse novo protocolo era o que procuravam, pois atendia aos requisitos necessários.
 
 Deve-se notar que a implementação do Avalanche do eCash é completamente separada e distinta do projeto AVAX Avalanche. Eles não têm nenhuma conexão, exceto ambos usando o protocolo descrito no whitepaper do Avalanche. O Avalanche no eCash é uma implementação totalmente nova que teve que ser desenvolvida do zero pela equipe Bitcoin ABC.
