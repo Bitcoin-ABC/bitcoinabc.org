@@ -1,16 +1,22 @@
 <script>
   function updateUpgradeNotice() {
     const activationTime = 1700049600;
+    // The upgrade usually happens 1h after the time (due to being based on MTP).
+    // However it can take a bit more time due to variance. Let's be pessimistic
+    // and add a safety margin of 3h. Worst case the message is updated a bit
+    // late, and otherwise it's enough time for some dev to update this page
+    // manually after the update completed.
+    const switchTime = activationTime + 3 * 3600
     const secondsInAWeek = 604800;
 
     // When the upgrade activation is 10 weeks away, make the upgrade notice visible
     const unixTime = Math.floor((new Date()).getTime() / 1000);
-    if ((unixTime > activationTime - 10 * secondsInAWeek) && (unixTime <= activationTime)) {
+    if ((unixTime > activationTime - 10 * secondsInAWeek) && (unixTime <= switchTime)) {
       $("#upgrade-notice-pre-activation").css("display", "");
     }
 
     // For the week following the upgrade activation, show a message for late-comers
-    if ((unixTime > activationTime) && (unixTime < activationTime + secondsInAWeek)) {
+    if ((unixTime > switchTime) && (unixTime < activationTime + secondsInAWeek)) {
       $("#upgrade-notice-post-activation").css("display", "");
     }
   }
