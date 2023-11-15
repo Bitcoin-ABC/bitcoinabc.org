@@ -3,28 +3,28 @@ layout: base
 title: Network Upgrade
 ---
 
+<!-- Use the next minor in instructions even if it's not released yet -->
+{% assign latestVersion = site.data.github-releases[0].name %}
+{% assign latestMinorVersion = site.data.github-releases[0].name | slice: 0, 4 %}
+{% if latestMinorVersion != "0.28" %}
+  {% assign latestVersion = "0.28.0" %}
+{% endif %}
+
 <div class="flex-content">
   <div id="upgradepage">
     <div class="ecash-section">
       <img src="/img/Upgrade-2023-11-15.jpg" alt="Nov 15, 2023 Upgrade">
-      <h2></h2>
+      <h2>What happened ?</h2>
+      <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.e.cash/block/000000000000000003e79cfe757a675909fd2bffde52158ce4ec826e5ac6ae79" target="_blank" rel="noreferrer">818670</a>.</p>
       <h2>Who needs to upgrade?</h2>
-      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version (0.28.x). This includes node operators, Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
-      <h2>Exactly when will the upgrade activate?</h2>
-      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1700049600 (12:00:00 UTC on Nov 15th, 2023). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version ({{ latestVersion }}). This includes node operators, Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
       <h2>What features are included in the Network Upgrade?</h2>
       <h3>Staking Rewards</h3>
       <p>A block policy is added that 10% of the block reward is allocated as a staking reward. There is one recipient in each block, chosen from the avalanche quorum. The reward is sent to the Proof `payoutAddress` field, chosen deterministically from the quorum based on the previous block hash, with probability weighted by the Proof's stake amount.</p>
       <h3>Miner fund increase</h3>
-      <p>The miner fund, part of the block reward that is funding eCash network development, will increase from 8% of the block reward to 32%.</p>
+      <p>The miner fund, part of the block reward that is funding eCash network development, was increased from 8% of the block reward to 32%.</p>
       <p>eCash miners must ensure that their mining setup is properly configured to use the proper miner fund amount. This information is available via the `getblocktemplate` RPC.</p>
       <h2>How do I upgrade?</h2>
-      <!-- Use the next minor in instructions even if it's not released yet -->
-      {% assign latestVersion = site.data.github-releases[0].name %}
-      {% assign latestMinorVersion = site.data.github-releases[0].name | slice: 0, 4 %}
-      {% if latestMinorVersion != "0.28" %}
-        {% assign latestVersion = "0.28.0" %}
-      {% endif %}
 
       <p>The process of upgrading your node is straightforward: simply stop the currently running node, download the new version, and start the new version. Here are some example instructions for upgrading from version 0.27.15 to the {% if latestVersion == site.data.github-releases[0].name %}latest{% else %}upcoming{% endif %} version ({{ latestVersion }}) on Linux:
         <ul>
