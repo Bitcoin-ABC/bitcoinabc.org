@@ -32,6 +32,12 @@ sudo addgroup fuse
 sudo adduser $USER fuse
 ```
 
+As of Electrum ABC version 5.2.3, `tor` is no longer bundled with the release binary files. CashFusion requires `tor` to operate, so install it before starting the Electrum ABC daemon:
+
+```
+sudo apt-get install tor
+```
+
 Now it's time to get the Electrum ABC daemon running, create a new wallet (save the seed), load it, generate addresses, and send funds to the addresses.
 
 ```
