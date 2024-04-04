@@ -15,6 +15,9 @@ MIN_VERSION_RPC_DOCS='0.28.0'
 # Min version for man pages generation
 MIN_VERSION_MAN_PAGES='0.28.0'
 
+# Version that contains chronik in the man pages
+MIN_VERSION_CHRONIK_MAN_PAGES='0.29.0'
+
 # jq must be installed
 if ! command -v jq > /dev/null; then
   echo "Error: 'jq' is not installed."
@@ -121,8 +124,16 @@ do
       exit 3
     fi
 
-    # Build and install the man pages
-    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
+    if version_greater_equal "${VERSION}" "${MIN_VERSION_CHRONIK_MAN_PAGES}"
+    then
+      BUILD_CHRONIK="ON"
+    else
+      BUILD_CHRONIK="OFF"
+    fi
+
+    # Build and install the man pages. Note that it's safe to set the chronik
+    # build option starting v0.28.0
+    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DBUILD_BITCOIN_CHRONIK="${BUILD_CHRONIK}" -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
     xvfb-run -a -e /dev/stderr ninja install-manpages-html
 
     mkdir -p "${VERSION_DIR}/man"
