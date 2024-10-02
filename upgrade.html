@@ -3,27 +3,26 @@ layout: base
 title: Network Upgrade
 ---
 
-{% assign oldVersion = "0.28.12" %}
+{% assign oldVersion = "0.29.13" %}
 
 <!-- Use the next minor in instructions even if it's not released yet -->
 {% assign latestVersion = site.data.github-releases[0].name %}
 {% assign latestMinorVersion = site.data.github-releases[0].name | slice: 0, 4 %}
-{% if latestMinorVersion != "0.29" %}
-  {% assign latestVersion = "0.29.1" %}
+{% if latestMinorVersion != "0.30" %}
+  {% assign latestVersion = "0.30.0" %}
 {% endif %}
 
 <div class="flex-content">
   <div id="upgradepage">
     <div class="ecash-section">
-      <img src="/img/Upgrade-2024-05-15.jpg" alt="May 15, 2024 Upgrade">
+      <img src="/img/Upgrade-2024-11-15.jpg" alt="Nov 15, 2024 Upgrade">
       <h2>Who needs to upgrade?</h2>
       <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version ({{ latestVersion }}). This includes node operators, Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
       <h2>Exactly when will the upgrade activate?</h2>
-      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1715774400 (12:00:00 UTC on May 15th, 2024). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1731672000 (12:00:00 UTC on November 15th, 2024). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
       <h2>What features are included in the Network Upgrade?</h2>
-      <p>There are no consensus changes activating at the upgrade, however the upgrade release includes the Chronik indexer as an opt-in option to the Bitcoin ABC node software for Linux and Windows.</p>
-      <p>Chronik gives you access to a brand new API to get notified of finalized blocks, retrieve transaction history by eCash address, gather eToken transaction data, and much more. To enable Chronik, simply turn it on with the <code>-chronik</code> option.</p>
-      <p>Take a look at the full <a target="_blank" rel="noreferrer" href="https://docs.chronik.xyz/"> Setup and API documentation</a> to get an overview of the features, and start building your own application with the <a target="_blank" rel="noreferrer" href="https://www.npmjs.com/package/chronik-client">chronik-client</a> npm package.</p>
+      <p>The Heartbeat feature, also known as Real Time Targeting, will activate with this upgrade. This is a block policy that makes it more difficult to mine blocks faster than the expected 10 minutes average, preventing large bumps in difficulty that can lead to inconsistent block intervals.</p>
+      <p>Miners need to update their setup according to the instructions on the <a href="https://e.cash/mining">eCash Mining page</a>.</p>
       <h2>How do I upgrade?</h2>
       <p>The process of upgrading your node is straightforward: simply stop the currently running node, download the new version, and start the new version. Here are some example instructions for upgrading from version {{ oldVersion }} to the {% if latestVersion == site.data.github-releases[0].name %}latest{% else %}upcoming{% endif %} version ({{ latestVersion }}) on Linux:
         <ul>
