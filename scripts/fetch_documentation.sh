@@ -24,9 +24,16 @@ if ! command -v jq > /dev/null; then
   exit 10
 fi
 
-
 SCRIPT_DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)
 TOPLEVEL=$(git -C "${SCRIPT_DIR}" rev-parse --show-toplevel)
+
+# This script will create a bunch of of files that might not be the same owner
+# as other files in the repo, due to mounted volumes. So we find the original
+# uid and gid so we can chown as needed.
+# We can get the user/group from a file that we know won't disappear and is
+# not created by this script. The README.md is a good candidate.
+ORIG_UID=$(stat --format=%u README.md)
+ORIG_GID=$(stat --format=%g README.md)
 
 # Get the last MAX_RELEASES releases
 RELEASES=$(curl -L -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases?per_page=${MAX_RELEASES})
@@ -145,6 +152,7 @@ do
 
   # Copy everything from the cache to the website directory
   cp -R "${VERSION_DIR}"/* "${WEBSITE_DIR}/"
+  chown -R ${ORIG_UID}:${ORIG_GID} "${WEBSITE_DIR}"
 
 done
 
@@ -199,4 +207,5 @@ if [ ! -f "${LATEST_RELEASE_NOTES}.md" ]; then
   # absolute, by prepending the link with /doc/.
   convert_links "${LATEST_RELEASE_NOTES}.orig.md"
 fi
+chown -R ${ORIG_UID}:${ORIG_GID} "${ABC_MD_DOCS}"
 popd
