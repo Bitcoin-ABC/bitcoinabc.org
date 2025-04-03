@@ -32,8 +32,8 @@ TOPLEVEL=$(git -C "${SCRIPT_DIR}" rev-parse --show-toplevel)
 # uid and gid so we can chown as needed.
 # We can get the user/group from a file that we know won't disappear and is
 # not created by this script. The README.md is a good candidate.
-ORIG_UID=$(stat --format=%u README.md)
-ORIG_GID=$(stat --format=%g README.md)
+ORIG_UID=$(stat --format=%u "${TOPLEVEL}/README.md")
+ORIG_GID=$(stat --format=%g "${TOPLEVEL}/README.md")
 
 # Get the last MAX_RELEASES releases
 RELEASES=$(curl -L -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases?per_page=${MAX_RELEASES})
