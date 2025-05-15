@@ -16,12 +16,12 @@ title: Network Upgrade
   <div id="upgradepage">
     <div class="ecash-section">
       <img src="/img/Upgrade-2025-05-15.jpg" alt="May 15, 2025 Upgrade">
+      <h2>What happened?</h2>
+      <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.e.cash/block/0000000000000000051b048b2d7801b854dbbe3fcdf8f28e995d2bbbd29e7cf5">896974</a>.</p>
       <h2>Who needs to upgrade?</h2>
       <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version ({{ latestVersion }}). This includes node operators, Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
-      <h2>Exactly when will the upgrade activate?</h2>
-      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1747310400 (12:00:00 UTC on May 15th, 2025). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
       <h2>What features are included in the Network Upgrade?</h2>
-      <p>This upgrade does not include any new protocol features. However, because of the automatic replay protection that is part of the 6-month upgrade cadence, it is necessary for all full node operators to upgrade to 0.31.x before the upgrade time.</p>
+      <p>This upgrade does not include any new protocol features. However, because of the automatic replay protection that is part of the 6-month upgrade cadence, it is necessary for all full node operators to upgrade to 0.31.x.</p>
       <p>Miners need to update their setup according to the instructions on the <a href="https://e.cash/mining">eCash Mining page</a>.</p>
       <h2>How do I upgrade?</h2>
       <p>The process of upgrading your node is straightforward: simply stop the currently running node, download the new version, and start the new version. Here are some example instructions for upgrading from version {{ oldVersion }} to the {% if latestVersion == site.data.github-releases[0].name %}latest{% else %}upcoming{% endif %} version ({{ latestVersion }}) on Linux:
