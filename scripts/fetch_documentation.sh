@@ -140,7 +140,7 @@ do
 
     # Build and install the man pages. Note that it's safe to set the chronik
     # build option starting v0.28.0
-    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DBUILD_BITCOIN_CHRONIK="${BUILD_CHRONIK}" -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
+    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DBUILD_CHRONIK="${BUILD_CHRONIK}" -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
     xvfb-run -a -e /dev/stderr ninja install-manpages-html
 
     mkdir -p "${VERSION_DIR}/man"
