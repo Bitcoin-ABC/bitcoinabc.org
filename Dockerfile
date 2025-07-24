@@ -1,5 +1,5 @@
 # Build layer
-FROM ruby:2.7.1-buster
+FROM ruby:2.7.4-bullseye
 
 # Install program to configure locales
 RUN apt-get update && apt-get install -y locales
