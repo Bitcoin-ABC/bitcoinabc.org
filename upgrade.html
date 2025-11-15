@@ -16,24 +16,24 @@ title: Network Upgrade
   <div id="upgradepage">
     <div class="ecash-section">
       <img src="/img/Upgrade-2025-11-15.jpg" alt="November 15, 2025 Upgrade">
+      <h2>What happened?</h2>
+      <p>The planned upgrade of the eCash network has successfully been completed. The first post-upgrade block is block number <a href="https://explorer.e.cash/block/00000000000000004eb0a7a410071b9ff243ed02ea61ce3d566081dd05c05576" target="_blank" rel="noopener noreferrer">923348</a></p>
       <h2>Who needs to upgrade?</h2>
-      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version ({{ latestVersion }}). This includes node operators, Avalanche staking nodes, Miners and Exchanges. The up-to-date node version is available at our <a href="/releases/">Releases</a> page.</p>
-      <h2>Exactly when will the upgrade activate?</h2>
-      <p>In order to activate reliably at a predictable time, the network upgrade uses the "Median Time Past" mechanism. The upgrade activates when the median of the last 11 blocks reaches timestamp 1763208000 (12:00:00 UTC on November 15th, 2025). This means that the upgrade doesn't actually activate exactly at that time, but typically about one hour later, when 6 blocks with timestamps greater than the activation time have been produced.</p>
+      <p>All operators of a Bitcoin ABC full node must upgrade to the latest major version {{ latestMinorVersion }} (current latest version is {{ latestVersion }}). This includes node operators, Avalanche staking nodes, Miners and Exchanges. This is available at the Bitcoin ABC <a href="/releases/">Releases Page</a>.</p>
       <h2>What features are included in the Network Upgrade?</h2>
       <p>This upgrade includes several new protocol features:</p>
       <h3>Avalanche Pre-Consensus</h3>
       <p>Pre-Consensus allows nodes to finalize transactions using the Avalanche protocol. Finalized transactions are protected from double-spending by rejecting blocks containing transactions that conflict with them.</p>
       <p>This means that transactions can be relied on within 2-3 seconds with a high degree of trust, since finalized transactions are protected from double spending by Avalanche-enabled eCash nodes.</p>
-      <p>See <a href="https://e.cash/blog/preconsensus-pr" target="_blank" rel="noopener noreferrer">the Pre-Consensus launch announcement</a> for more information on this new feature.</p>
+      <p>See <a href="https://e.cash/blog/preconsensus-launch" target="_blank" rel="noopener noreferrer">the Pre-Consensus launch announcement</a> for more information on this new feature.</p>
       <h3>64-Bit Integers in Script</h3>
-      <p>After this upgrade, 64-bit integers (63 value bits + 1 sign bit) will be enabled. This is an increase from the 31+sign-bit range that is currently active on Script.</p>
-      <p>This improvement will allow more finely grained Script smart contracts, for example enabling more precise prices for large Agora offers.</p>
+      <p>After this upgrade, 64-bit integers (63 value bits + 1 sign bit) are enabled. This is an increase from the 31+sign-bit range that was previously active on Script.</p>
+      <p>This improvement allows more finely grained Script smart contracts, for example enabling more precise prices for large Agora offers.</p>
       <h3>Heartbeat update</h3>
-      <p>A 1-block window is added to the Real-Time Target calculation. This is a refinement to reduce an artifact in the Heartbeat behaviour in particular the case where two blocks are mined in quick succession</p>
+      <p>A 1-block window was added to the Real-Time Target calculation. This is a refinement to reduce an artifact in the Heartbeat behaviour in particular the case where two blocks are mined in quick succession</p>
       <p>See the <a href="https://e.cash/mining" target="_blank" rel="noopener noreferrer">eCash Mining page</a> for more details.</p>
       <h3>Staking Rewards Pre-Consensus</h3>
-      <p>With this feature, eCash staking nodes use Avalanche polling to come to consensus on the staking reward winner for the next block before it is mined. This makes the network more robust while retaining the existing staking reward behavior.</p>
+      <p>With this feature, eCash staking nodes use Avalanche polling to come to consensus on the staking reward winner for the next block before it is mined. This makes the network more robust while retaining the previous staking reward behavior.</p>
       <h2>How do I upgrade?</h2>
       <p>The process of upgrading your node is straightforward: simply stop the currently running node, download the new version, and start the new version. Here are some example instructions for upgrading from version {{ oldVersion }} to the {% if latestVersion == site.data.github-releases[0].name %}latest{% else %}upcoming{% endif %} version ({{ latestVersion }}) on Linux:
         <ul>
