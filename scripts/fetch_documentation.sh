@@ -18,6 +18,9 @@ MIN_VERSION_MAN_PAGES='0.31.0'
 # Version that contains chronik in the man pages
 MIN_VERSION_CHRONIK_MAN_PAGES='0.31.0'
 
+# Version that contains iguana and the proof-manager-cli in the man pages
+MIN_VERSION_IGUANA_PMCLI_MAN_PAGES='0.32.4'
+
 # jq must be installed
 if ! command -v jq > /dev/null; then
   echo "Error: 'jq' is not installed."
@@ -138,9 +141,18 @@ do
       BUILD_CHRONIK="OFF"
     fi
 
+    if version_greater_equal "${VERSION}" "${MIN_VERSION_IGUANA_PMCLI_MAN_PAGES}"
+    then
+      BUILD_IGUANA="ON"
+      BUILD_PROOF_MANAGER_CLI="ON"
+    else
+      BUILD_IGUANA="OFF"
+      BUILD_PROOF_MANAGER_CLI="OFF"
+    fi
+
     # Build and install the man pages. Note that it's safe to set the chronik
     # build option starting v0.28.0
-    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DBUILD_CHRONIK="${BUILD_CHRONIK}" -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
+    cmake -GNinja "${SRC_DIR}" -DCLIENT_VERSION_IS_RELEASE=ON -DBUILD_CHRONIK="${BUILD_CHRONIK}" -DBUILD_IGUANA="${BUILD_IGUANA}" -DBUILD_PROOF_MANAGER_CLI="${BUILD_PROOF_MANAGER_CLI}" -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}"
     xvfb-run -a -e /dev/stderr ninja install-manpages-html
 
     mkdir -p "${VERSION_DIR}/man"
