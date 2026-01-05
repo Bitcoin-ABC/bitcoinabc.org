@@ -23,6 +23,7 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN bundle install
 COPY . .
+ARG STRAPI_TOKEN
 RUN bundle exec jekyll build
 
 # Hosting Layer

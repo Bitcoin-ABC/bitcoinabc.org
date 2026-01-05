@@ -16,7 +16,6 @@ description: Bitcoin ABC - Software for eCash
 # List of links in the navigation bar
 navbar-links:
   eCash: "ecash/"
-  Blog: "blog/"
   Electrum: "electrum/"
   Download:
     - Releases: "releases/"
@@ -104,13 +103,6 @@ url-pretty: "bitcoinabc.org"  # eg. "deanattali.com/beautiful-jekyll"
 # Facebook App ID
 # fb_app_id: ""
 
-# Excerpt Word Length
-# Truncates the excerpt to the specified number of words on the index page
-excerpt_length: 30
-
-# Number of blog posts to appear on the front page
-front_page_posts: 2
-
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
@@ -166,10 +158,22 @@ plugins:
   - jekyll-paginate
   - jekyll-relative-links
   - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-strapi-4
 
 relative_links:
   enabled: true
   collections: false
+
+strapi:
+  endpoint: https://strapi.e.cash
+  collections:
+    posts:
+      type: posts
+      populate: "index.html"
+      parameters:
+        sort: publishedAt:desc
+        pagination[pageSize]: 5
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

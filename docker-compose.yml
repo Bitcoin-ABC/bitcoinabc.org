@@ -7,3 +7,5 @@ services:
       - '8080:80'
     volumes:
       - /usr/share/nginx/html/
+    args:
+      STRAPI_TOKEN: xxx
