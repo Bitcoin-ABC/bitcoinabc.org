@@ -1,5 +1,5 @@
 # Build layer
-FROM ruby:2.7.4-bullseye
+FROM ruby:3.4.8-trixie
 
 # Install program to configure locales
 RUN apt-get update && apt-get install -y locales
@@ -18,7 +18,7 @@ ENV LANGUAGE en_US.UTF-8
 
 RUN mkdir -p /work
 WORKDIR work
-RUN gem install bundler -v 2.4.22
+RUN gem install bundler -v 2.6.9
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN bundle install
