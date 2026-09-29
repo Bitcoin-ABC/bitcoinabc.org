@@ -10,16 +10,16 @@ GITHUB_REPO='bitcoin-abc'
 MAX_RELEASES=15
 
 # Min version for rpc docs generation
-MIN_VERSION_RPC_DOCS='0.32.0'
+MIN_VERSION_RPC_DOCS='0.33.0'
 
 # Min version for man pages generation
-MIN_VERSION_MAN_PAGES='0.32.0'
+MIN_VERSION_MAN_PAGES='0.33.0'
 
 # Version that contains chronik in the man pages
-MIN_VERSION_CHRONIK_MAN_PAGES='0.32.0'
+MIN_VERSION_CHRONIK_MAN_PAGES='0.33.0'
 
 # Version that contains iguana and the proof-manager-cli in the man pages
-MIN_VERSION_IGUANA_PMCLI_MAN_PAGES='0.32.4'
+MIN_VERSION_IGUANA_PMCLI_MAN_PAGES='0.33.0'
 
 # jq must be installed
 if ! command -v jq > /dev/null; then
