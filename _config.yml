@@ -16,7 +16,10 @@ description: Bitcoin ABC - Software for eCash
 # List of links in the navigation bar
 navbar-links:
   eCash: "https://e.cash"
-  Electrum: "electrum/"
+  Electrum:
+    - Download: "electrum/"
+    - About: "electrum/README.html"
+    - Release notes: "electrum/RELEASE-NOTES.html"
   Download:
     - Releases: "releases/"
     - Source Code: "https://github.com/Bitcoin-ABC/bitcoin-abc"
