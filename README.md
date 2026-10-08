@@ -55,3 +55,10 @@ git remote rm origin
 git remote add origin ssh://vcs@reviews.bitcoinabc.org:2221/source/bitcoin-abc-website.git
 ```
 
+## Strapi issues during local development
+
+```
+Liquid Exception: The Strapi server sent a error with the following status: 403. Please provide STRAPI_TOKEN or allow public access for find and findOne actions. in index.html
+```
+If you are encountering this issue when running `bundle exec jekyll` commands during local development,
+you must comment the "Blog feed" `div` in the `index.html` file.
